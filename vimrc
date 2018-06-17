@@ -9,7 +9,7 @@ inoremap <F3> <Esc> :w <Enter> :!python % <Enter>
 noremap <F3> :w <Enter> :!python % <Enter>
 
 inoremap <F4> <Esc>:w<Enter>:!g++ %<Enter> :!./a.out<Enter>
-noremap <F4> <Esc>:w<Enter>:!g++ %<Enter> :!./a.out<Enter>
+noremap <F4> <Esc>:w<Enter>:!g++ -o %:t:r.out %<Enter> :!./a.out<Enter>
 
 "inoremap <leader><space> <Esc>/<++><Enter>c4l
 noremap <leader><space> <Esc>/<++><Enter>c4l
