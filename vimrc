@@ -29,6 +29,7 @@ set shiftwidth=4
 
 nnoremap <leader>d o<Esc>0icout<<" #### *!*Debug*!* 1 #### "<<endl;<Esc>0
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
+nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 
 inoremap kj <Esc>
 
