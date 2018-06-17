@@ -1,3 +1,4 @@
+"vimrc Janik
 set nocompatible
 :let mapleader = ","
 
@@ -7,8 +8,8 @@ noremap <F2>  <Esc> :w <Enter> :!root -l % <Enter>
 inoremap <F3> <Esc> :w <Enter> :!python % <Enter>
 noremap <F3> :w <Enter> :!python % <Enter>
 
-inoremap <F4> <Esc>:w<Enter>:!g++ %<Enter>
-noremap <F4> <Esc>:w<Enter>:!g++ %<Enter>
+inoremap <F4> <Esc>:w<Enter>:!g++ %<Enter> :!./a.out<Enter>
+noremap <F4> <Esc>:w<Enter>:!g++ %<Enter> :!./a.out<Enter>
 
 "inoremap <leader><space> <Esc>/<++><Enter>c4l
 noremap <leader><space> <Esc>/<++><Enter>c4l
