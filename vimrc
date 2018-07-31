@@ -87,7 +87,7 @@ vnoremap <silent> # :<C-U>
 \<CR><Bslash>beamertemplatenavigationsymbolsempty
 \<CR>%<Bslash>setbeamertemplate{footline}[frame number]
 \<CR>
-\<CR><Bslash>title[short title]{Higgs production at the FCC-ee in the missing energy channel}
+\<CR><Bslash>title[short title]{Title}
 \<CR>%<Bslash>titlegraphic{<Bslash>includegraphics[scale=0.1]{DESY-Logo.pdf}}
 \<CR><Bslash>author[Janik von Ahnen (DESY)]{Janik von Ahnen}
 \<CR><Bslash>institute[]{Krisztian Peters, Othmane Rifki}
