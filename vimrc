@@ -78,19 +78,20 @@ vnoremap <silent> # :<C-U>
 "LaTeX beamer snippet
 :iab BEAMER 
 \<Bslash>documentclass{beamer}
+\<CR><Bslash>usetheme{CambridgeUS}
 \<CR><Bslash>usepackage{graphicx}
 \<CR><Bslash>usepackage{bm}
 \<CR><Bslash>usepackage{subfigure}
 \<CR><Bslash>usepackage{appendixnumberbeamer}
 \<CR><Bslash>graphicspath{{../bpics/}}
 \<CR><Bslash>beamertemplatenavigationsymbolsempty
-\<CR><Bslash>setbeamertemplate{footline}[frame number]
+\<CR>%<Bslash>setbeamertemplate{footline}[frame number]
 \<CR>
-\<CR><Bslash>title{Higgs production at the FCC-ee in the missing energy channel}
+\<CR><Bslash>title[short title]{Higgs production at the FCC-ee in the missing energy channel}
 \<CR>%<Bslash>titlegraphic{<Bslash>includegraphics[scale=0.1]{DESY-Logo.pdf}}
-\<CR><Bslash>author{Janik von Ahnen}
-\<CR><Bslash>institute{Supervisors}
-\<CR><Bslash>date{<Bslash>today}
+\<CR><Bslash>author[Janik von Ahnen (DESY)]{Janik von Ahnen}
+\<CR><Bslash>institute[]{Krisztian Peters, Othmane Rifki}
+\<CR><Bslash>date[short date]{Meeting, <Bslash>today}
 \<CR>
 \<CR>
 \<CR>
