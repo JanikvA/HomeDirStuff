@@ -1,6 +1,7 @@
 "vimrc Janik
 set nocompatible
 
+" ### remove if not present ###
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -8,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end() 
 filetype plugin indent on
+" ### remove if not present ###
 
 :let mapleader = ","
 
@@ -83,17 +85,15 @@ vnoremap <silent> # :<C-U>
 \<CR><Bslash>usepackage{bm}
 \<CR><Bslash>usepackage{subfigure}
 \<CR><Bslash>usepackage{appendixnumberbeamer}
-\<CR><Bslash>graphicspath{{../bpics/}}
+\<CR><Bslash>graphicspath{{/afs/desy.de/user/a/ahnenjan/public/Plots/}}
 \<CR><Bslash>beamertemplatenavigationsymbolsempty
 \<CR>%<Bslash>setbeamertemplate{footline}[frame number]
 \<CR>
 \<CR><Bslash>title[short title]{Title}
-\<CR>%<Bslash>titlegraphic{<Bslash>includegraphics[scale=0.1]{DESY-Logo.pdf}}
+\<CR>%<Bslash>titlegraphic{<Bslash>includegraphics[scale=0.2]{DESY_logo.png}}
 \<CR><Bslash>author[Janik von Ahnen (DESY)]{Janik von Ahnen}
 \<CR><Bslash>institute[]{Krisztian Peters, Othmane Rifki}
-\<CR><Bslash>date[short date]{Meeting, <Bslash>today}
-\<CR>
-\<CR>
+\<CR><Bslash>date[VBF Hinv, <Bslash>today]{VBF Hinv, <Bslash>today}
 \<CR>
 \<CR><Bslash>begin{document}
 \<CR><Bslash>frame{<Bslash>titlepage}
@@ -101,11 +101,15 @@ vnoremap <silent> # :<C-U>
 \<CR>%<Bslash>frame{<Bslash>tableofcontents}
 \<CR>
 \<CR><Bslash>begin{frame}
-\<CR><tab><Bslash>frametitle{Title}
+\<CR><Bslash>frametitle{<++>}
 \<CR><Bslash>begin{itemize}
-\<CR><tab><Bslash>item
-\<CR><C-w><tab><Bslash>end{itemize}
-\<CR><C-w><Bslash>end{frame}
+\<CR><Bslash>item <++>
+\<CR><Bslash>end{itemize}
+\<CR><Bslash>begin{figure}
+\<CR><Bslash>subfigure{<Bslash>includegraphics[width=0.45<Bslash>textwidth]{<++>}}
+\<CR><Bslash>subfigure{<Bslash>includegraphics[width=0.45<Bslash>textwidth]{<++>}}
+\<CR><Bslash>end{figure}
+\<CR><Bslash>end{frame}
 \<CR>
 \<CR>
 \<CR><Bslash>appendix
@@ -113,3 +117,16 @@ vnoremap <silent> # :<C-U>
 \<CR><tab><Bslash>frametitle{Backup}
 \<CR><C-w><Bslash>end{frame}
 \<CR><Bslash>end{document}
+
+"Beamer frame snippet
+:iab FRAME 
+\<CR><Bslash>begin{frame}
+\<CR><Bslash>frametitle{<++>}
+\<CR><Bslash>begin{itemize}
+\<CR><Bslash>item <++>
+\<CR><Bslash>end{itemize}
+\<CR><Bslash>begin{figure}
+\<CR><Bslash>subfigure{<Bslash>includegraphics[width=0.45<Bslash>textwidth]{<++>}}
+\<CR><Bslash>subfigure{<Bslash>includegraphics[width=0.45<Bslash>textwidth]{<++>}}
+\<CR><Bslash>end{figure}
+\<CR><Bslash>end{frame}
