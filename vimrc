@@ -48,10 +48,25 @@ nnoremap <leader><space> <Esc>/<++><Enter>c4l
 
 inoremap kj <Esc>
 
+"easier window movement
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+
+" Needed to be able to properly map the alt key
+execute "set <A-h>=\eh"
+execute "set <A-j>=\ej"
+execute "set <A-k>=\ek"
+execute "set <A-l>=\el"
+
+" provide hjkl movements in Insert mode and Command-line mode via the <Alt> modifier key
+noremap! <A-h> <Left>
+noremap! <A-j> <Down>
+noremap! <A-k> <Up>
+noremap! <A-l> <Right>
+
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
