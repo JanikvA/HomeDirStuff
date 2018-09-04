@@ -13,6 +13,8 @@ filetype plugin indent on
 
 :let mapleader = ","
 
+let g:netrw_liststyle= 2 " Change the default style of newtree
+
 noremap <F2>  <Esc>:w<Enter>:!root -l %<Enter>
 noremap <F3> <Esc>:w<Enter>:!python %<Enter>
 noremap <F4> <Esc>:w<Enter>:!g++ -o %:t:r.out %<Enter> :!./%:t:r.out<Enter>
@@ -44,6 +46,8 @@ nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Es
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 nnoremap <leader>b i<Bslash>begin{<++>}<CR><CR><Bslash>end{<++>}<Esc>3k/<++><Enter>c4l
+nnoremap <leader>e <Esc>:e <C-d>
+
 nnoremap <leader><space> <Esc>/<++><Enter>c4l
 
 inoremap kj <Esc>
