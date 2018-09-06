@@ -13,7 +13,7 @@ filetype plugin indent on
 
 :let mapleader = ","
 
-let g:netrw_liststyle= 2 " Change the default style of newtree
+let g:netrw_liststyle= 2 " Change the default style of netrw
 
 noremap <F2>  <Esc>:w<Enter>:!root -l %<Enter>
 noremap <F3> <Esc>:w<Enter>:!python %<Enter>
@@ -25,6 +25,7 @@ noremap <F6> <Esc>:w<Enter>:!pdflatex %<Enter>
 imap <C-f> <Enter>{<Enter>}<Esc>kA<Enter>
 
  
+set confirm
 
 set smartindent
 set pastetoggle=<F5>
@@ -47,6 +48,7 @@ nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 nnoremap <leader>b i<Bslash>begin{<++>}<CR><CR><Bslash>end{<++>}<Esc>3k/<++><Enter>c4l
 nnoremap <leader>e <Esc>:e <C-d>
+nnoremap <leader>b <Esc>:b <C-d>
 
 nnoremap <leader><space> <Esc>/<++><Enter>c4l
 
