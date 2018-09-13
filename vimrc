@@ -46,9 +46,11 @@ set hlsearch            " highlight matches
 nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
-nnoremap <leader>b i<Bslash>begin{<++>}<CR><CR><Bslash>end{<++>}<Esc>3k/<++><Enter>c4l
+nnoremap <leader>l i<Bslash>begin{<++>}<CR><CR><Bslash>end{<++>}<Esc>3k/<++><Enter>c4l
 nnoremap <leader>e <Esc>:e <C-d>
 nnoremap <leader>b <Esc>:b <C-d>
+nnoremap <leader>q <Esc>T i"<Esc>Ea"<Esc>
+nnoremap <space> <Esc>i<space><Esc>l
 
 nnoremap <leader><space> <Esc>/<++><Enter>c4l
 
