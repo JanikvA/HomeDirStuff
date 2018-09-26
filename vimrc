@@ -22,7 +22,7 @@ noremap <F6> <Esc>:w<Enter>:!pdflatex %<Enter>
 
 
 
-imap <C-f> <Enter>{<Enter>}<Esc>kA<Enter>
+inoremap <C-f> <Enter>{<Enter>}<Esc>kA<Enter>
 
  
 set confirm
@@ -49,7 +49,7 @@ nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 nnoremap <leader>l i<Bslash>begin{<++>}<CR><CR><Bslash>end{<++>}<Esc>3k/<++><Enter>c4l
 nnoremap <leader>e <Esc>:e <C-d>
 nnoremap <leader>b <Esc>:b <C-d>
-nnoremap <leader>q <Esc>T i"<Esc>Ea"<Esc>
+nnoremap <leader>q <Esc>bi"<Esc>ea"<Esc>
 nnoremap <space> <Esc>i<space><Esc>l
 
 nnoremap <leader><space> <Esc>/<++><Enter>c4l
