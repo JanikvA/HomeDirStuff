@@ -7,9 +7,20 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 call vundle#end() 
 filetype plugin indent on
+
+imap <C-d> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-d> <Plug>snipMateNextOrTrigger
+
 " ### remove if not present ###
+
 
 :let mapleader = ","
 
@@ -17,13 +28,16 @@ let g:netrw_liststyle= 2 " Change the default style of netrw
 
 noremap <F2>  <Esc>:w<Enter>:!root -l %<Enter>
 noremap <F3> <Esc>:w<Enter>:!python %<Enter>
-noremap <F4> <Esc>:w<Enter>:!g++ -o %:t:r.out %<Enter> :!./%:t:r.out<Enter>
+noremap <F4> <Esc>:w<Enter>:!./%<Enter>
 noremap <F6> <Esc>:w<Enter>:!pdflatex %<Enter>
 
 
+inoremap <C-f> {}<Esc>i<Enter><Esc>kA<Enter>
 
-inoremap <C-f> <Enter>{<Enter>}<Esc>kA<Enter>
+set wildmenu "allows easier use of tab completions, e.g. :e <tab>
+set wildmode=list:longest,full
 
+set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find
  
 set confirm
 
@@ -32,7 +46,7 @@ set pastetoggle=<F5>
 set ignorecase
 set smartcase
 set tabstop=4
-"set expandtab
+set expandtab
 set nu
 :command W w
 :command Q q
@@ -47,8 +61,10 @@ nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Es
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 nnoremap <leader>l i<Bslash>begin{<++>}<CR><CR><Bslash>end{<++>}<Esc>3k/<++><Enter>c4l
-nnoremap <leader>e <Esc>:e <C-d>
+nnoremap <leader>e <Esc>:e <C-d> "kind of useless after adding leader+f mapping
 nnoremap <leader>b <Esc>:b <C-d>
+nnoremap <leader>f <Esc>:find <C-d>
+" not really nice. find a good plugin
 nnoremap <leader>q <Esc>bi"<Esc>ea"<Esc>
 nnoremap <space> <Esc>i<space><Esc>l
 
