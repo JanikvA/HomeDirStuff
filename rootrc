@@ -1,0 +1,4 @@
+# load same alias filer for all root sessions
+Rint.Logon: ~/rootlogon.C
+Rint.Load:	$(HOME)/.rootalias.C
+Rint.Logoff: ~/rootlogoff.C
