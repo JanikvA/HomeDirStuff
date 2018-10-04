@@ -16,8 +16,8 @@ Plugin 'honza/vim-snippets'
 call vundle#end() 
 filetype plugin indent on
 
-imap <C-d> <esc>a<Plug>snipMateNextOrTrigger
-smap <C-d> <Plug>snipMateNextOrTrigger
+imap <C-a> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-a> <Plug>snipMateNextOrTrigger
 
 " ### remove if not present ###
 
@@ -61,11 +61,9 @@ nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Es
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 nnoremap <leader>l i<Bslash>begin{<++>}<CR><CR><Bslash>end{<++>}<Esc>3k/<++><Enter>c4l
-nnoremap <leader>e <Esc>:e <C-d> "kind of useless after adding leader+f mapping
-nnoremap <leader>b <Esc>:b <C-d>
-nnoremap <leader>f <Esc>:find <C-d>
-" not really nice. find a good plugin
-nnoremap <leader>q <Esc>bi"<Esc>ea"<Esc>
+nnoremap <leader>e <Esc>:w<Enter>:e <C-d>
+nnoremap <leader>b <Esc>:w<Enter>:b <C-d>
+nnoremap <leader>f <Esc>:w<Enter>:find <C-d>
 nnoremap <space> <Esc>i<space><Esc>l
 
 nnoremap <leader><space> <Esc>/<++><Enter>c4l
