@@ -1,0 +1,2 @@
+### mount ###
+sudo umount -l /mnt/dust # In case of connection lost resulting in bad mount

@@ -26,6 +26,32 @@ smap <C-a> <Plug>snipMateNextOrTrigger
 
 let g:netrw_liststyle= 2 " Change the default style of netrw
 
+" folding stuff
+set foldmethod=indent
+set foldlevel=0
+
+"allows to jump to nearest fold that is closed
+nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
+nnoremap <silent> <leader>zk :call NextClosedFold('k')<cr>
+function! NextClosedFold(dir)
+    let cmd = 'norm!z' . a:dir
+    let view = winsaveview()
+    let [l0, l, open] = [0, view.lnum, 1]
+    while l != l0 && open
+        exe cmd
+        let [l0, l] = [l, line('.')]
+        let open = foldclosed(l) < 0
+    endwhile
+    if open
+        call winrestview(view)
+    endif
+endfunction
+
+"this saves the folding automatically. only works with foldmethod=manual
+"autocmd BufWinLeave *.* mkview
+"autocmd BufWinEnter *.* silent loadview
+
+
 noremap <F2>  <Esc>:w<Enter>:!root -l %<Enter>
 noremap <F3> <Esc>:w<Enter>:!python %<Enter>
 noremap <F4> <Esc>:w<Enter>:!./%<Enter>
@@ -60,11 +86,15 @@ set hlsearch            " highlight matches
 nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
-nnoremap <leader>l i<Bslash>begin{<++>}<CR><CR><Bslash>end{<++>}<Esc>3k/<++><Enter>c4l
+
 nnoremap <leader>e <Esc>:w<Enter>:e <C-d>
 nnoremap <leader>b <Esc>:w<Enter>:b <C-d>
 nnoremap <leader>f <Esc>:w<Enter>:find <C-d>
+
 nnoremap <space> <Esc>i<space><Esc>l
+nnoremap <leader>dm %x``x
+nnoremap <leader>sc :setlocal spell spelllang=en_us
+nnoremap <leader>t :tabnew<CR>:Ex<CR>
 
 nnoremap <leader><space> <Esc>/<++><Enter>c4l
 
@@ -75,7 +105,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
 
 " Needed to be able to properly map the alt key
 execute "set <A-h>=\eh"
