@@ -11,26 +11,49 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" Plugin 'garbas/vim-snipmate'
+Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-commentary'
+Plugin 'easymotion/vim-easymotion'
 
-"Plugin 'scrooloose/syntastic'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'scrooloose/syntastic'
+
 call vundle#end() 
 filetype plugin indent on
 
+"YouCompleteMe
+" uncomment the following to activate syntax checking in c++ files
+" let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+
 ""syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
-"let g:syntastic_always_populate_loc_list = 0
-"let g:syntastic_auto_loc_list = 0
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+ nnoremap <leader>cs :SyntasticCheck<CR>
+ let g:syntastic_always_populate_loc_list = 1
+ let g:syntastic_auto_loc_list = 1
+ let g:syntastic_check_on_open = 0
+ let g:syntastic_check_on_wq = 0
+ let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
+ let g:syntastic_python_pylint_args = '-E'
+" let g:syntastic_quiet_messages = {
+"         \ "!level":  "errors",
+"         \ "type":    "style",
+"         \ "regex":   '.*',
+"         \ "file:p":  '.*' }
+
+" easymotion
+let g:EasyMotion_do_mapping = 1 " Disable default mappings
+map <leader> <Plug>(easymotion-prefix)
+let g:EasyMotion_smartcase = 1
+
 
 "fugitive
 nnoremap <leader>gs :Gstatus<CR>
@@ -41,7 +64,7 @@ nnoremap <leader>gw :Gwrite<CR><CR>
 set diffopt+=vertical
 
 "tagbar
-nmap <leader>t :TagbarToggle<CR>
+nmap <leader>c :TagbarToggle<CR>
 
 "ctrlpvim
 let g:ctrlp_map = '<c-p>'
@@ -55,8 +78,13 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "garbas/vim-snipmate
-imap <C-a> <esc>a<Plug>snipMateNextOrTrigger
-smap <C-a> <Plug>snipMateNextOrTrigger
+" imap <C-a> <esc>a<Plug>snipMateNextOrTrigger
+" smap <C-a> <Plug>snipMateNextOrTrigger
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<C-a>"
+let g:UltiSnipsJumpForwardTrigger="<C-n>"
+let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 
 " ### remove if not present ###
 
@@ -72,7 +100,8 @@ smap <C-a> <Plug>snipMateNextOrTrigger
 "set statusline+=%{StatuslineGit()}
 
 
-set statusline+=%{FugitiveStatusline()}
+"set statusline+=%{FugitiveStatusline()} "Slows stuff down when working on
+"mounted dust
 set statusline+=%#LineNr#
 set statusline+=\ %f
 set statusline+=%m\
@@ -158,14 +187,15 @@ nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Es
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 
-nnoremap <leader>e <Esc>:w<Enter>:e <C-d>
-nnoremap <leader>b <Esc>:w<Enter>:b <C-d>
-nnoremap <leader>f <Esc>:w<Enter>:find <C-d>
+" Not needed after using ctrlP and conflict with easymotion
+" nnoremap <leader>e <Esc>:w<Enter>:e <C-d>
+" nnoremap <leader>b <Esc>:w<Enter>:b <C-d>
+" nnoremap <leader>f <Esc>:w<Enter>:find <C-d>
 
-nnoremap <space> <Esc>i<space><Esc>l
+nnoremap <space> i<space><Esc>l
 nnoremap <leader>dm %x``x
 nnoremap <leader>sc :setlocal spell spelllang=en_us
-nnoremap <leader>n :tabnew<CR>:Ex<CR>
+nnoremap <leader>g <C-]>
 
 
 nnoremap <leader>q :qa<CR>
@@ -204,9 +234,12 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-"set tags+=/home/janik/terascale_school/app/solution/tags
+set tags+=/home/janik/terascale_school/app/solution/tags
 
-hi Search ctermbg=DarkBlue
+" custom colour stuff
+hi Search ctermbg=DarkBlue ctermfg=DarkRed
+hi Folded ctermbg=DarkMagenta ctermfg=DarkRed
+
 
 "c++ snippet
 :iab CPPMAIN 
