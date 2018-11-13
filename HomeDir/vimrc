@@ -23,10 +23,16 @@ Plugin 'tpope/vim-commentary'
 Plugin 'easymotion/vim-easymotion'
 
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/syntastic'
 
+Plugin 'vim-airline/vim-airline'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+" Plugin 'scrooloose/syntastic'
 call vundle#end() 
 filetype plugin indent on
+" vim-airline
+" let g:airline#extensions#syntastic#enabled = 0
+
 
 "YouCompleteMe
 " uncomment the following to activate syntax checking in c++ files
@@ -36,13 +42,13 @@ filetype plugin indent on
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
- nnoremap <leader>cs :SyntasticCheck<CR>
- let g:syntastic_always_populate_loc_list = 1
- let g:syntastic_auto_loc_list = 1
- let g:syntastic_check_on_open = 0
- let g:syntastic_check_on_wq = 0
- let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
- let g:syntastic_python_pylint_args = '-E'
+" nnoremap <leader>cs :SyntasticCheck<CR>
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
+" let g:syntastic_python_pylint_args = '-E'
 " let g:syntastic_quiet_messages = {
 "         \ "!level":  "errors",
 "         \ "type":    "style",
@@ -70,6 +76,8 @@ nmap <leader>c :TagbarToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_by_filename = 1
+set wildignore+=*/.pyc/*,*/.swp/*
 
 "scrooloose/nerdtree
 map <C-e> :NERDTreeToggle<CR>
@@ -199,6 +207,7 @@ nnoremap <leader>g <C-]>
 
 
 nnoremap <leader>q :qa<CR>
+nnoremap <leader>s :w<CR>
 nnoremap <leader><space> <Esc>/<++><Enter>c4l
 
 inoremap kj <Esc>
@@ -239,6 +248,7 @@ set tags+=/home/janik/terascale_school/app/solution/tags
 " custom colour stuff
 hi Search ctermbg=DarkBlue ctermfg=DarkRed
 hi Folded ctermbg=DarkMagenta ctermfg=DarkRed
+
 
 
 "c++ snippet
