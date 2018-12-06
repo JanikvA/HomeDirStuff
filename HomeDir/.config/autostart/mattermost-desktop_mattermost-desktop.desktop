@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Mattermost
+Comment=Mattermost
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/mattermost-desktop_mattermost-desktop.desktop /snap/bin/mattermost-desktop %U
+Terminal=false
+Type=Application
+Icon=/snap/mattermost-desktop/95/meta/gui/icon.png
+Categories=InstantMessaging;
+
+X-GNOME-Autostart-enabled=false

@@ -1,0 +1,167 @@
+Starting Jedi Python language engine.
+##########Linting Output - pylint##########
+************* Module HistFitter
+19,0,error,E0401:Unable to import 'ROOT'
+23,0,error,E0401:Unable to import 'ROOT'
+25,0,error,E0401:Unable to import 'ROOT'
+32,0,error,E0401:Unable to import 'logger'
+55,4,error,E0401:Unable to import 'ROOT'
+79,4,error,E0401:Unable to import 'configManager'
+360,7,error,E0401:Unable to import 'ROOT'
+413,12,error,E1111:Assigning to function call which doesn't return
+453,8,error,E0401:Unable to import 'ROOT'
+
+-----------------------------------
+Your code has been rated at 8.57/10
+
+##########Linting Output - pylint##########
+************* Module HistFitter_onepoint
+151,0,warning,W0301:Unnecessary semicolon
+7,0,error,E0401:Unable to import 'ROOT'
+17,4,error,E0401:Unable to import 'ROOT'
+18,4,error,E0401:Unable to import 'ROOT'
+41,4,warning,W0612:Unused variable 'fitChannelsCR'
+198,4,error,E0401:Unable to import 'ROOT'
+224,4,error,E0401:Unable to import 'configManager'
+225,4,error,E0401:Unable to import 'prepareHistos'
+337,8,error,E0401:Unable to import 'ROOT'
+
+-----------------------------------
+Your code has been rated at 8.62/10
+
+##########Linting Output - pylint##########
+************* Module HistFitter
+19,0,error,E0401:Unable to import 'ROOT'
+23,0,error,E0401:Unable to import 'ROOT'
+25,0,error,E0401:Unable to import 'ROOT'
+32,0,error,E0401:Unable to import 'logger'
+55,4,error,E0401:Unable to import 'ROOT'
+79,4,error,E0401:Unable to import 'configManager'
+360,7,error,E0401:Unable to import 'ROOT'
+413,12,error,E1111:Assigning to function call which doesn't return
+453,8,error,E0401:Unable to import 'ROOT'
+
+------------------------------------------------------------------
+Your code has been rated at 8.57/10 (previous run: 8.57/10, +0.00)
+
+##########Linting Output - pylint##########
+##########Linting Output - pylint##########
+
+------------------------------------
+Your code has been rated at 10.00/10
+
+##########Linting Output - pylint##########
+************* Module fitConfig
+20,0,error,E0401:Unable to import 'ROOT'
+21,0,error,E0401:Unable to import 'ROOT'
+22,0,error,E0401:Unable to import 'ROOT'
+333,13,warning,W0612:Unused variable 'systName'
+494,92,error,E0602:Undefined variable 'sam'
+526,31,error,E1306:Not enough arguments for format string
+526,78,error,E0602:Undefined variable 's'
+
+-----------------------------------
+Your code has been rated at 9.28/10
+
+##########Linting Output - pylint##########
+************* Module configManager
+21,0,error,E0401:Unable to import 'ROOT'
+22,0,error,E0401:Unable to import 'ROOT'
+23,0,error,E0401:Unable to import 'ROOT'
+536,43,error,E1136:Value 'self.scanRange' is unsubscriptable
+536,62,error,E1136:Value 'self.scanRange' is unsubscriptable
+739,24,warning,W0612:Unused variable 'syst'
+877,19,error,E1310:Suspicious argument in str.rstrip call
+961,32,error,E1305:Too many arguments for format string
+853,12,warning,W0612:Unused variable 'varDataDict'
+850,12,warning,W0612:Unused variable 'cutStackDict'
+851,12,warning,W0612:Unused variable 'varStackDict'
+849,12,warning,W0612:Unused variable 'cutHistoDict'
+852,12,warning,W0612:Unused variable 'varSUSYDict'
+1306,96,error,E0602:Undefined variable 'nomName'
+1327,82,error,E0602:Undefined variable 'getSample'
+1418,8,warning,W0612:Unused variable 'histoName'
+
+-----------------------------------
+Your code has been rated at 9.52/10
+
+##########Linting Output - pylint##########
+************* Module measurement
+21,0,error,E0401:Unable to import 'ROOT'
+22,0,error,E0401:Unable to import 'ROOT'
+23,0,error,E0401:Unable to import 'ROOT'
+146,13,warning,W0612:Unused variable 'iPOI'
+
+-----------------------------------
+Your code has been rated at 7.89/10
+
+##########Linting Output - pylint##########
+************* Module VBFHInv_TF3b_data_fitFakes_kZW_allNewWZsys_3NPmjj_SR
+93,0,error,E0401:Unable to import 'configManager'
+94,0,error,E0401:Unable to import 'ROOT'
+95,0,error,E0401:Unable to import 'configWriter'
+96,0,error,E0401:Unable to import 'systematic'
+99,0,error,E0401:Unable to import 'ROOT'
+101,0,error,E0401:Unable to import 'ROOT'
+111,0,error,E0401:Unable to import 'SystematicsUtils'
+115,0,error,E0401:Unable to import 'ROOT'
+284,7,error,E0602:Undefined variable 'myFitType'
+284,18,error,E0602:Undefined variable 'FitType'
+1669,3,error,E0602:Undefined variable 'myFitType'
+1669,14,error,E0602:Undefined variable 'FitType'
+1876,10,error,E0602:Undefined variable 'log'
+1877,10,error,E0602:Undefined variable 'log'
+1885,10,error,E0602:Undefined variable 'log'
+1886,10,error,E0602:Undefined variable 'log'
+2033,3,error,E0602:Undefined variable 'myFitType'
+2033,14,error,E0602:Undefined variable 'FitType'
+2043,33,error,E0602:Undefined variable 'SR_channel'
+2059,3,error,E0602:Undefined variable 'myFitType'
+2059,14,error,E0602:Undefined variable 'FitType'
+2304,3,error,E0602:Undefined variable 'myFitType'
+2304,14,error,E0602:Undefined variable 'FitType'
+
+-----------------------------------
+Your code has been rated at 8.87/10
+
+##########Linting Output - pylint##########
+************* Module sample
+20,0,error,E0401:Unable to import 'ROOT'
+21,0,error,E0401:Unable to import 'ROOT'
+22,0,error,E0401:Unable to import 'ROOT'
+509,19,error,E1305:Too many arguments for format string
+528,29,error,E1306:Not enough arguments for format string
+611,22,error,E0602:Undefined variable 'copy'
+
+-----------------------------------
+Your code has been rated at 9.60/10
+
+##########Linting Output - pylint##########
+************* Module VBFHInv_TF3b_data_fitFakes_kZW_allNewWZsys_3NPmjj_SR
+93,0,error,E0401:Unable to import 'configManager'
+94,0,error,E0401:Unable to import 'ROOT'
+95,0,error,E0401:Unable to import 'configWriter'
+96,0,error,E0401:Unable to import 'systematic'
+99,0,error,E0401:Unable to import 'ROOT'
+101,0,error,E0401:Unable to import 'ROOT'
+111,0,error,E0401:Unable to import 'SystematicsUtils'
+115,0,error,E0401:Unable to import 'ROOT'
+284,7,error,E0602:Undefined variable 'myFitType'
+284,18,error,E0602:Undefined variable 'FitType'
+1669,3,error,E0602:Undefined variable 'myFitType'
+1669,14,error,E0602:Undefined variable 'FitType'
+1876,10,error,E0602:Undefined variable 'log'
+1877,10,error,E0602:Undefined variable 'log'
+1885,10,error,E0602:Undefined variable 'log'
+1886,10,error,E0602:Undefined variable 'log'
+2033,3,error,E0602:Undefined variable 'myFitType'
+2033,14,error,E0602:Undefined variable 'FitType'
+2043,33,error,E0602:Undefined variable 'SR_channel'
+2059,3,error,E0602:Undefined variable 'myFitType'
+2059,14,error,E0602:Undefined variable 'FitType'
+2304,3,error,E0602:Undefined variable 'myFitType'
+2304,14,error,E0602:Undefined variable 'FitType'
+
+------------------------------------------------------------------
+Your code has been rated at 8.87/10 (previous run: 8.87/10, +0.00)
+

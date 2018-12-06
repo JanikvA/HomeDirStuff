@@ -1,0 +1,20 @@
+[2018-11-05 17:37:39.934] [exthost] [info] extension host started
+[2018-11-05 17:37:40.005] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2018-11-05 17:37:40.006] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2018-11-05 17:37:40.127] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2018-11-05 17:37:40.127] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/dist/extension
+[2018-11-05 17:37:40.753] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2018-11-05 17:37:40.753] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/dist/main
+[2018-11-05 17:37:41.386] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2018-11-05 17:37:41.386] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2018-11-05 17:37:41.746] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-rg {"startup":true,"activationEvent":"*"}
+[2018-11-05 17:37:41.746] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/search-rg/dist/extension
+[2018-11-05 17:37:42.003] [exthost] [info] ExtensionService#_doActivateExtension vscodevim.vim {"startup":true,"activationEvent":"*"}
+[2018-11-05 17:37:42.003] [exthost] [info] ExtensionService#loadCommonJSModule /home/janik/.vscode/extensions/vscodevim.vim-0.16.12/out/extension
+[2018-11-05 17:38:00.201] [exthost] [info] eager extensions activated
+[2018-11-05 17:38:54.488] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cpptools {"startup":false,"activationEvent":"onLanguage:cpp"}
+[2018-11-05 17:38:54.489] [exthost] [info] ExtensionService#loadCommonJSModule /home/janik/.vscode/extensions/ms-vscode.cpptools-0.20.1/out/src/main
+[2018-11-05 17:39:02.711] [exthost] [info] ExtensionService#_doActivateExtension vscode.python {"startup":false,"activationEvent":"onLanguage:python"}
+[2018-11-05 17:39:02.711] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/python/out/pythonMain
+[2018-11-05 17:39:02.744] [exthost] [info] ExtensionService#_doActivateExtension ms-python.python {"startup":false,"activationEvent":"onLanguage:python"}
+[2018-11-05 17:39:02.745] [exthost] [info] ExtensionService#loadCommonJSModule /home/janik/.vscode/extensions/ms-python.python-2018.9.2/out/client/extension

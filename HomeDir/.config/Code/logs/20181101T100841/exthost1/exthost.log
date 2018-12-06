@@ -1,0 +1,30 @@
+[2018-11-01 10:08:58.945] [exthost] [info] extension host started
+[2018-11-01 10:08:58.998] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:08:58.999] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2018-11-01 10:08:59.071] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:08:59.071] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/dist/extension
+[2018-11-01 10:08:59.257] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:08:59.257] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/dist/main
+[2018-11-01 10:08:59.746] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:08:59.746] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2018-11-01 10:08:59.803] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-rg {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:08:59.803] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/search-rg/dist/extension
+[2018-11-01 10:08:59.889] [exthost] [info] ExtensionService#_doActivateExtension vscodevim.vim {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:08:59.889] [exthost] [info] ExtensionService#loadCommonJSModule /home/janik/.vscode/extensions/vscodevim.vim-0.16.12/out/extension
+[2018-11-01 10:09:02.106] [exthost] [info] eager extensions activated
+[2018-11-01 10:10:07.975] [exthost] [info] extension host started
+[2018-11-01 10:10:08.059] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:10:08.059] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2018-11-01 10:10:08.079] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:10:08.079] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/dist/extension
+[2018-11-01 10:10:08.211] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:10:08.211] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/dist/main
+[2018-11-01 10:10:08.640] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:10:08.640] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2018-11-01 10:10:08.661] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-rg {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:10:08.662] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/search-rg/dist/extension
+[2018-11-01 10:10:08.677] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cpptools {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:10:08.677] [exthost] [info] ExtensionService#loadCommonJSModule /home/janik/.vscode/extensions/ms-vscode.cpptools-0.20.1/out/src/main
+[2018-11-01 10:10:09.136] [exthost] [info] ExtensionService#_doActivateExtension vscodevim.vim {"startup":true,"activationEvent":"*"}
+[2018-11-01 10:10:09.136] [exthost] [info] ExtensionService#loadCommonJSModule /home/janik/.vscode/extensions/vscodevim.vim-0.16.12/out/extension
+[2018-11-01 10:10:10.199] [exthost] [info] eager extensions activated

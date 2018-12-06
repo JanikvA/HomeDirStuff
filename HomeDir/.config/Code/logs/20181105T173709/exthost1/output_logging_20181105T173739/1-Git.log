@@ -1,0 +1,59 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /mnt/dust/STPProcessing/source
+> git status -z -u
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/STPProcessing/source/VBFAnalysis/scripts/fitPlot.py
+> git status -z -u
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/STPProcessing/source/VBFAnalysis/src/VBFAnalysisAlg.cxx
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git ls-tree -l HEAD -- /mnt/dust/STPProcessing/source/VBFAnalysis/src/VBFAnalysisAlg.cxx
+> git show 1cf45a58f8c3c8dc5d6ffcfec755c2a18346c010
+> git ls-files --stage -- /mnt/dust/STPProcessing/source/VBFAnalysis/src/VBFAnalysisAlg.cxx
+> git cat-file -s f11a64a3cc28f677933a13d4df977eabc7c44276
+> git show f11a64a3cc28f677933a13d4df977eabc7c44276
+> git show HEAD:VBFAnalysis/src/VBFAnalysisAlg.cxx
+> git show :VBFAnalysis/src/VBFAnalysisAlg.cxx
+> git ls-tree -l HEAD -- /mnt/dust/STPProcessing/source/VBFAnalysis/scripts/fitPlot.py
+> git show 95aec22023668f66955f593d7e855df4c9ccd867
+> git ls-files --stage -- /mnt/dust/STPProcessing/source/VBFAnalysis/scripts/fitPlot.py
+> git cat-file -s fbe71120828be237dfab6211841101e87444521e
+> git show fbe71120828be237dfab6211841101e87444521e
+> git show HEAD:VBFAnalysis/scripts/fitPlot.py
+> git show :VBFAnalysis/scripts/fitPlot.py
+> git commit --quiet --allow-empty-message --file -
+> git status -z -u
+> git show HEAD:VBFAnalysis/scripts/fitPlot.py
+> git show :VBFAnalysis/scripts/fitPlot.py
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template

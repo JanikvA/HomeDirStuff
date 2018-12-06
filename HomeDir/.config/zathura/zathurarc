@@ -1,0 +1,20 @@
+set window-height 768
+set window-width 1366
+
+set selection-clipboard clipboard
+
+# Why are these only defined for normal mode by default?
+map [fullscreen] a adjust_window best-fit
+map [fullscreen] s adjust_window width
+map [fullscreen] f follow
+map [fullscreen] d toggle_page_mode 2
+map [fullscreen] <Tab> toggle_index
+map [fullscreen] j scroll down
+map [fullscreen] k scroll up
+map [fullscreen] <C-d> scroll half-down
+map [fullscreen] <C-u> scroll half-up
+map [fullscreen] <C-o> jumplist backward
+map [fullscreen] <C-i> jumplist forward
+
+map [presentation] j navigate next
+map [presentation] k navigate previous

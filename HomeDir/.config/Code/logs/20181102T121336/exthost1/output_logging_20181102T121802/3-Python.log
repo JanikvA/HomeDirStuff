@@ -1,0 +1,50 @@
+Starting Jedi Python language engine.
+##########Linting Output - pylint##########
+************* Module drawPlot
+5,0,error,E0401:Unable to import 'ROOT'
+7,0,error,E0401:Unable to import 'VBFAnalysis.ATLAS'
+8,0,error,E0401:Unable to import 'VBFAnalysis.Style'
+10,0,error,E0401:Unable to import 'VBFAnalysis.listSamples'
+
+------------------------------------------------------------------
+Your code has been rated at 9.15/10 (previous run: 9.15/10, +0.00)
+
+##########Linting Output - pylint##########
+************* Module fitPlot
+5,0,error,E0401:Unable to import 'ROOT'
+7,0,error,E0401:Unable to import 'VBFAnalysis.ATLAS'
+8,0,error,E0401:Unable to import 'VBFAnalysis.Style'
+10,0,error,E0401:Unable to import 'VBFAnalysis.listSamples'
+42,4,warning,W0612:Unused variable 'nEntries'
+
+-----------------------------------
+Your code has been rated at 8.97/10
+
+##########Linting Output - pylint##########
+************* Module makeHFinput
+4,0,error,E0401:Unable to import 'ROOT'
+5,0,error,E0401:Unable to import 'VBFAnalysis.systematics'
+
+------------------------------------------------------------------
+Your code has been rated at 9.66/10 (previous run: 9.66/10, +0.00)
+
+##########Linting Output - pylint##########
+************* Module makeInput
+4,0,error,E0401:Unable to import 'ROOT'
+5,0,error,E0401:Unable to import 'VBFAnalysis.Style'
+6,0,error,E0401:Unable to import 'VBFAnalysis.listSamples'
+171,4,error,E1111:Assigning to function call which doesn't return
+171,4,warning,W0612:Unused variable 'allDirs'
+
+------------------------------------------------------------------
+Your code has been rated at 8.78/10 (previous run: 8.85/10, -0.07)
+
+##########Linting Output - pylint##########
+************* Module tables
+8,0,error,E0401:Unable to import 'ROOT'
+10,0,error,E0401:Unable to import 'VBFAnalysis.listSamples'
+11,0,error,E0401:Unable to import 'VBFAnalysis.Style'
+
+-----------------------------------
+Your code has been rated at 9.19/10
+

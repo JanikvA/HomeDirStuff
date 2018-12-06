@@ -1,0 +1,156 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /mnt/dust/automatedLimitcalc
+> git status -z -u
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/automatedLimitcalc/makeXMLdelSys.py
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/automatedLimitcalc/HTCsubmit.pyc
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git branch
+> git reset -q HEAD -- /mnt/dust/automatedLimitcalc/HTCsubmit.pyc
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/automatedLimitcalc/runLimit.py
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/automatedLimitcalc/runLimitOnHTC.py
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/automatedLimitcalc/systematicsSettings.py
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/automatedLimitcalc/xmlTemplates/makeNewXMLs.py
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/automatedLimitcalc/xmlTemplates/readHists.py
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/automatedLimitcalc/xmlTemplates/readHists.py
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git ls-tree -l HEAD -- /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_SR1_cuts.xml
+> git show afb5d9835751128e95752855d71d7ab3240a7010
+> git show HEAD:xmlTemplates/fullSyst/VBFHinv_SR1_cuts.xml
+git.stage 55
+git.stage.scmResources 55
+> git add -A -- /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_SR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_SR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_SR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneEleNegCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneEleNegCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneEleNegCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneEleNegLowSigCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneEleNegLowSigCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneEleNegLowSigCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneElePosCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneElePosCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneElePosCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneElePosLowSigCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneElePosLowSigCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneElePosLowSigCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneMuNegCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneMuNegCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneMuNegCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneMuPosCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneMuPosCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_oneMuPosCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_twoEleCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_twoEleCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_twoEleCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_twoMuCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_twoMuCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/fullSyst/VBFHinv_twoMuCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_SR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_SR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_SR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneEleNegCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneEleNegCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneEleNegCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneEleNegLowSigCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneEleNegLowSigCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneEleNegLowSigCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneElePosCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneElePosCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneElePosCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneElePosLowSigCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneElePosLowSigCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneElePosLowSigCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneMuNegCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneMuNegCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneMuNegCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneMuPosCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneMuPosCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_oneMuPosCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_twoEleCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_twoEleCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_twoEleCR3_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_twoMuCR1_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_twoMuCR2_cuts.xml /mnt/dust/automatedLimitcalc/xmlTemplates/oldFullSyst/VBFHinv_twoMuCR3_cuts.xml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :xmlTemplates/fullSyst/VBFHinv_SR1_cuts.xml
+> git commit --quiet --allow-empty-message --file -
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show HEAD:xmlTemplates/fullSyst/VBFHinv_SR1_cuts.xml
+> git pull --tags origin Rel21Branch
+> git show HEAD:xmlTemplates/fullSyst/VBFHinv_SR1_cuts.xml
+From ssh://gitlab.cern.ch:7999/jvonahne/automatedLimitcalc
+ * branch            Rel21Branch -> FETCH_HEAD
+> git push origin Rel21Branch:Rel21Branch
+> git show HEAD:xmlTemplates/fullSyst/VBFHinv_SR1_cuts.xml
+remote: 
+remote: To create a merge request for Rel21Branch, visit:        
+remote:   https://gitlab.cern.ch/jvonahne/automatedLimitcalc/merge_requests/new?merge_request%5Bsource_branch%5D=Rel21Branch        
+remote: 
+To ssh://gitlab.cern.ch:7999/jvonahne/automatedLimitcalc.git
+   d5caa49..8bbdf8d  Rel21Branch -> Rel21Branch
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse Rel21Branch
+> git rev-parse --symbolic-full-name Rel21Branch@{u}
+> git rev-list --left-right Rel21Branch...refs/remotes/origin/Rel21Branch
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show HEAD:xmlTemplates/fullSyst/VBFHinv_SR1_cuts.xml

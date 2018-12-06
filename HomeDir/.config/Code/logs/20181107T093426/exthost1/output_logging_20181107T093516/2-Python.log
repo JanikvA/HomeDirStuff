@@ -1,0 +1,25 @@
+Starting Jedi Python language engine.
+##########Linting Output - pylint##########
+************* Module configManager
+21,0,error,E0401:Unable to import 'ROOT'
+22,0,error,E0401:Unable to import 'ROOT'
+28,0,error,E0401:Unable to import 'ROOT'
+371,29,warning,W0612:Unused variable 'name'
+541,43,error,E1136:Value 'self.scanRange' is unsubscriptable
+541,62,error,E1136:Value 'self.scanRange' is unsubscriptable
+702,25,warning,W0612:Unused variable 'systName'
+731,25,warning,W0612:Unused variable 'systName'
+832,19,error,E1310:Suspicious argument in str.rstrip call
+808,12,warning,W0612:Unused variable 'varDataDict'
+805,12,warning,W0612:Unused variable 'cutStackDict'
+806,12,warning,W0612:Unused variable 'varStackDict'
+834,17,warning,W0612:Unused variable 'iSam'
+824,13,warning,W0612:Unused variable 'iChan'
+804,12,warning,W0612:Unused variable 'cutHistoDict'
+807,12,warning,W0612:Unused variable 'varSUSYDict'
+1206,96,error,E0602:Undefined variable 'nomName'
+1227,82,error,E0602:Undefined variable 'getSample'
+
+------------------------------------------------------------------
+Your code has been rated at 9.51/10 (previous run: 9.52/10, -0.01)
+

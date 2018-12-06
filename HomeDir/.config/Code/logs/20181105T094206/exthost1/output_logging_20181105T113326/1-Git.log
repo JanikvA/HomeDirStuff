@@ -1,0 +1,123 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /mnt/dust/STPProcessing/source
+> git status -z -u
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git ls-tree -l HEAD -- /mnt/dust/STPProcessing/source/VBFAnalysis/python/Plotting/CxxCode/plotEvents.h
+> git show 8be15188e5aad71f864cc9407a2f1478ba84d7eb
+> git show HEAD:VBFAnalysis/python/Plotting/CxxCode/plotEvents.h
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/STPProcessing/source/VBFAnalysis/python/Plotting/CxxCode/plotEvents.h
+> git status -z -u
+> git show HEAD:VBFAnalysis/python/Plotting/CxxCode/plotEvents.h
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/STPProcessing/source/VBFAnalysis/python/Plotting/CxxCode/rel207plotEvents.h
+> git status -z -u
+> git show :VBFAnalysis/python/Plotting/CxxCode/plotEvents.h
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git ls-tree -l HEAD -- /mnt/dust/STPProcessing/source/VBFAnalysis/scripts/makeHFinput.py
+> git show 96d03fb925a4b906fee36538b08c0b28e295e652
+> git show HEAD:VBFAnalysis/scripts/makeHFinput.py
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/STPProcessing/source/VBFAnalysis/scripts/makeHFinput.py
+> git status -z -u
+> git show HEAD:VBFAnalysis/scripts/makeHFinput.py
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git ls-tree -l HEAD -- /mnt/dust/STPProcessing/source/VBFAnalysis/scripts/sigHists.py
+> git show 4c6b76b871a1f25902a671402af0f826d69de5b2
+> git show HEAD:VBFAnalysis/scripts/sigHists.py
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/STPProcessing/source/VBFAnalysis/scripts/sigHists.py
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git show HEAD:VBFAnalysis/scripts/sigHists.py
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+git.stage 1
+git.stage.scmResources 1
+> git add -A -- /mnt/dust/STPProcessing/source/VBFAnalysis/src/treeClass.h
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git show :VBFAnalysis/scripts/sigHists.py
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git commit --quiet --allow-empty-message --file -
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show HEAD:VBFAnalysis/scripts/sigHists.py
+> git pull --tags origin v11dev
+> git show HEAD:VBFAnalysis/scripts/sigHists.py
+From ssh://gitlab.cern.ch:7999/jvonahne/STPostProcessing
+ * branch            v11dev     -> FETCH_HEAD
+> git push origin v11dev:v11dev
+> git show HEAD:VBFAnalysis/scripts/sigHists.py
+remote: 
+remote: To create a merge request for v11dev, visit:        
+remote:   https://gitlab.cern.ch/jvonahne/STPostProcessing/merge_requests/new?merge_request%5Bsource_branch%5D=v11dev        
+remote: 
+To ssh://gitlab.cern.ch:7999/jvonahne/STPostProcessing.git
+   959b05d..e89b922  v11dev -> v11dev
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show HEAD:VBFAnalysis/scripts/sigHists.py
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse v11dev
+> git rev-parse --symbolic-full-name v11dev@{u}
+> git rev-list --left-right v11dev...refs/remotes/origin/v11dev
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin

@@ -1,0 +1,32 @@
+[2018-10-31 09:17:54.813] [main] [error] SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at e.loadSync (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:294:743)
+    at e.ensureLoaded (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:294:210)
+    at e.getItem (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:294:262)
+    at e.getItem (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:295:175)
+    at e.handleRestarted (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:287:152)
+    at e (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:287:49)
+    at t.create (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:62:770)
+    at e._createInstance (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:213:703)
+    at e._createAndCacheServiceInstance (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:214:644)
+    at e._getOrCreateServiceInstance (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:213:840)
+    at e._createInstance (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:213:213)
+    at e.createInstance (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:212:959)
+    at /usr/share/code/resources/app/out/vs/code/electron-main/main.js:534:501
+    at Object.v [as _notify] (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:96:807)
+    at Object.enter (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:100:85)
+    at n.Class.derive._creator._run (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:101:932)
+    at n.Class.derive._creator._completed (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:101:373)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31 09:17:55.433] [main] [info] update#setState idle
+[2018-10-31 09:18:25.438] [main] [info] update#setState checking for updates
+[2018-10-31 09:18:25.552] [main] [info] update#setState idle
+[2018-10-31 10:18:25.557] [main] [info] update#setState checking for updates
+[2018-10-31 10:18:27.967] [main] [info] update#setState idle
+[2018-10-31 11:18:25.776] [main] [info] update#setState checking for updates
+[2018-10-31 11:18:27.125] [main] [info] update#setState idle
+[2018-10-31 12:18:26.014] [main] [info] update#setState checking for updates
+[2018-10-31 12:18:26.883] [main] [info] update#setState idle
+[2018-10-31 13:18:26.155] [main] [info] update#setState checking for updates
+[2018-10-31 13:18:26.216] [main] [info] update#setState idle

@@ -27,9 +27,22 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-airline/vim-airline'
 Plugin 'nathanaelkane/vim-indent-guides'
 
+Plugin 'airblade/vim-gitgutter'
+
 " Plugin 'scrooloose/syntastic'
 call vundle#end() 
 filetype plugin indent on
+
+"vim-gitgutter
+" let g:gitgutter_map_keys = 0 " to disable all gitgutter mappings
+nnoremap <leader>nh <Plug>GitGutterNextHunk
+nnoremap <leader>ph <Plug>GitGutterPrevHunk
+nnoremap <Leader>ha <Plug>GitGutterStageHunk
+nnoremap <Leader>hr <Plug>GitGutterUndoHunk
+nnoremap <Leader>gghl :GitGutterLineHighlightsToggle<CR>
+nnoremap <Leader>ggt :GitGutterToggle<CR>
+" set updatetime=100 "[ms] default is 4000 ms i.e 4s
+
 " vim-airline
 " let g:airline#extensions#syntastic#enabled = 0
 

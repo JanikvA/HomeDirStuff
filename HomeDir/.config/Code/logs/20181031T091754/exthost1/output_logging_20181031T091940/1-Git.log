@@ -1,0 +1,22 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /mnt/dust/myVBFStats/workspaces/Rel207autoLimitCalc/automatedLimitcalc
+> git status -z -u
+> git show :xmlTemplates/fullSyst/hvbfhi_MET_S1_125_2016.xml
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :xmlTemplates/fullSyst/hvbfhi_WnEV_Low_S3_125_2016.xml
+> git show :xmlTemplates/fullSyst/hvbfhi_MET_S1_125_2016.xml
+> git show :xmlTemplates/fullSyst/hvbfhi_WnMV_S1_125_2016.xml
+> git show :xmlTemplates/fullSyst/hvbfhi_WnEV_S1_125_2016.xml
+> git show :xmlTemplates/fullSyst/hvbfhi_WpEV_Low_S1_125_2016.xml
+> git show :xmlTemplates/fullSyst/hvbfhi_WpEV_Low_S2_125_2016.xml
+> git show :xmlTemplates/fullSyst/hvbfhi_ZEE_S2_125_2016.xml
+> git show :xmlTemplates/fullSyst/hvbfhi_ZEE_S3_125_2016.xml

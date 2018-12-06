@@ -1,0 +1,35 @@
+{
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+    "editor.detectIndentation": true,
+    "vim.leader": ",",
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [ "k", "j" ],
+            "after": [ "<Esc>" ]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "<Space>"],
+            "after": [ "i", "<Space>", "<Esc>", "l" ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "k", "j" ],
+            "after": [ "<Esc>" ]
+        },
+    ],
+    "vim.visualstar": true,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-b>": true,
+    },
+    "files.exclude": {
+        "**/*.pyc": true
+    },
+    "breadcrumbs.enabled": false,
+}
