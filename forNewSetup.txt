@@ -1,0 +1,12 @@
+tmux
+fzf
+i3
+caps to ctrl
+urxvt?
+ranger
+vimium
+thunderbird
+skype
+spotify
+zathura
+sncli

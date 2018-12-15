@@ -22,7 +22,6 @@ find
 find q
 find run
 find systM
-find HFl
 find sa
 find v18
 search makeH
@@ -31,7 +30,6 @@ find V
 find d
 find systm
 find TE
-find so
 cW
 
 find Pi
@@ -40,8 +38,12 @@ rename binnings.png
 touch compEvents.C
 find Q
 touch forNewSetup.txt
-find STPPr
 find v13
 find scr
 open_with 
 find scra
+find fu
+find tes
+find HFl
+find STPPr
+find so

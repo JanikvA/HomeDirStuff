@@ -225,7 +225,7 @@ set nu
 :command Wa wa
 
 :command Pandoc !pandoc -f markdown -t latex -o %:r.pdf %
-:command Pdf !xdg-open %:r.pdf
+:command Pdf !xdg-open %:r.pdf &
 syntax on
 set shiftwidth=4
 
@@ -235,6 +235,9 @@ set hlsearch            " highlight matches
 nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
+" the following allow to change -> and . in c++ code
+nnoremap öp /\D\.\D<CR>ls-><Esc>:nohlsearch<CR>
+nnoremap öo /\D->\D<CR>lc2l.<Esc>:nohlsearch<CR>
 
 nnoremap H :bp<CR>
 nnoremap L :bn<CR>
@@ -243,6 +246,9 @@ nnoremap <space> i<space><Esc>l
 nnoremap <leader>dm %x``x
 nnoremap <leader>sc :setlocal spell spelllang=en_us
 nnoremap <leader>g <C-]>
+
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
 
 
 nnoremap <leader>q :q<CR>
@@ -290,6 +296,8 @@ noremap! <A-j> <Down>
 noremap! <A-k> <Up>
 noremap! <A-l> <Right>
 
+" If pasting in visual mode the default register is not overwritter
+xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>

@@ -7,4 +7,5 @@ cp ~/rootlogon.C rootlogon.C
 cp ~/rootlogoff.C rootlogoff.C  
 cp ~/.rootalias.C .rootalias.C  
 cp ~/.Xmodmap .Xmodmap  
+cp ~/.Xdefaults .Xdefaults  
 cp -r ~/.config .
