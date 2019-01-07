@@ -9,4 +9,4 @@ thunderbird
 skype
 spotify
 zathura
-sncli
+vimiv

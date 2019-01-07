@@ -1,42 +1,9 @@
-find mat
-tabnew
-newtab
-gn
-delete
-rename postFitAsimov.pdf
-find mn
-find atlas
-find te
-rename BayesOptTest
-find .ra
-pwd
-cd 
-mkdir fromValerie
-cd -
-redra
-rename dupli
-find .co
-find ran
-find mo
-find 
-find q
-find run
-find systM
-find sa
-find v18
-search makeH
-find make
-find V
-find d
-find systm
 find TE
 cW
-
 find Pi
 find pa
 rename binnings.png
 touch compEvents.C
-find Q
 touch forNewSetup.txt
 find v13
 find scr
@@ -47,3 +14,37 @@ find tes
 find HFl
 find STPPr
 find so
+search tmp
+rename CR_energy_spectrum.png
+rename Hillas_plot.png
+rename OneShot_and_diffusive.png
+rename firstOrder_secondOrder.png
+find Mas
+find Q
+
+search theoI
+find imp
+execute_console vimiv
+execute vimiv
+vimiv
+rename ballon_result.png
+rename positron_discovery.png
+rename neutralKaon_discovery.png
+rename EAS_cascade.png
+delete
+rename Hyukoh_Gold_Chet_Faker.webm
+shell j
+search bach
+find bach
+find the
+find logoj
+find uhh
+find mas
+find extr
+find thes
+find ba
+find 
+find insp
+rename positronProblem.png
+rename PAO_telescope.png
+rename PAO_map.png

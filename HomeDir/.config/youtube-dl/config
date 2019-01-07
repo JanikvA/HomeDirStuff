@@ -1,0 +1,2 @@
+-o ~/Music/%(title)s.%(ext)s --no-playlist -f m4a --add-metadata --download-archive ~/.config/youtube-dl/downloadArchive
+

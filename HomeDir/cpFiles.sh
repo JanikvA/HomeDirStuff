@@ -8,4 +8,6 @@ cp ~/rootlogoff.C rootlogoff.C
 cp ~/.rootalias.C .rootalias.C  
 cp ~/.Xmodmap .Xmodmap  
 cp ~/.Xdefaults .Xdefaults  
+cp ~/.tmux.conf .tmux.conf  
+cp -r ~/.tmux .
 cp -r ~/.config .

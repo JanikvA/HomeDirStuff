@@ -1,0 +1,13 @@
+a ~/Music
+clear
+load ~/.config/cmus/philoCC.pl
+a ~/Music/*
+add ~/Music
+bind common ^D win-half-page-down
+bind common ^U win-half-page-up
+bind -f common ^U win-half-page-up
+bind common ^D win-half-page-up
+help
+add /home/janik/scratch/youtubeDL
+q
+Add ~/scratch/kjcc

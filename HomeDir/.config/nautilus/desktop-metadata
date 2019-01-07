@@ -1,10 +1,10 @@
 [directory]
 nautilus-icon-view-keep-aligned=false
-nautilus-icon-view-layout-timestamp=1544910467
+nautilus-icon-view-layout-timestamp=1546333369
 nautilus-desktop-icon-size=48
 
 [trash]
-nautilus-icon-position-timestamp=1544910467
+nautilus-icon-position-timestamp=1546333369
 nautilus-icon-position=56,26
 icon-scale=1
 
@@ -26,7 +26,7 @@ nautilus-icon-position-timestamp=1538310300
 [home]
 nautilus-icon-position=56,786
 icon-scale=1
-nautilus-icon-position-timestamp=1544910467
+nautilus-icon-position-timestamp=1546333369
 
 [UBUNTU 18_0.volume]
 nautilus-icon-position=56,786
@@ -37,3 +37,13 @@ nautilus-icon-position-timestamp=1539169419
 nautilus-icon-position=56,786
 icon-scale=1
 nautilus-icon-position-timestamp=1539169603
+
+[Elements.volume]
+nautilus-icon-position=56,146
+icon-scale=1
+nautilus-icon-position-timestamp=1545841563
+
+[INTENSO.volume]
+nautilus-icon-position=56,146
+icon-scale=1
+nautilus-icon-position-timestamp=1545847285

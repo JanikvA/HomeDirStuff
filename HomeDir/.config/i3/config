@@ -160,33 +160,36 @@ bar {
         status_command i3status
 }
 
-assign [class="Spotify"] 4 # TODO this is not working as expected
-assign [class="Thunderbird"] 2
-assign [class="Skype"] 2
-assign [class="Mattermost"] 2
+assign [class="spotify"] 4
+assign [class="Thunderbird"] 3
+assign [class="Skype"] 3
+assign [class="Mattermost"] 3
+assign [class="Zathura"] 2
 
 
 
 bindsym Pause exec import -screen "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m_%y__%H_%M_%S")".png"
 bindsym Shift+Pause exec import "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m_%y__%H_%M_%S")".png"
 
-bindsym $mod+Control+w workspace 2; layout stacking; exec --no-startup-id thunderbird; exec --no-startup-id skype; exec mattermost-desktop
+bindsym $mod+Control+w exec --no-startup-id thunderbird; exec --no-startup-id skype; exec --no-startup-id mattermost-desktop
 
-bindsym $mod+Control+m exec i3lock -n -i ~/Pictures/Wallpapers/forrest.png
+bindsym $mod+Control+l exec i3lock -e -n -i ~/Pictures/Wallpapers/space_test.png
 
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set 'Master' 10%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 10%-
-# bindsym $mod+m exec amixer set 'Master' 10%+ #increase sound volume
-# bindsym $mod+n exec amixer set 'Master' 10%- #decrease sound volume
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
+bindsym $mod+i exec firefox
+
+focus_follows_mouse no
+
 # Background wallpaper 
-exec_always --no-startup-id feh --bg-fill -Z /home/janik/Pictures/Wallpapers/moon.png 
+exec_always --no-startup-id feh --bg-fill -Z /home/janik/Pictures/Wallpapers/flying_whale.jpg 
 
 exec --no-startup-id xset r rate 400 50 # Set initial delay 300ms, repeat 45ms
 

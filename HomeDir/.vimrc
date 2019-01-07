@@ -121,9 +121,6 @@ set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*
 "scrooloose/nerdtree
 map <C-e> :NERDTreeToggle<CR>
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 "garbas/vim-snipmate
 " imap <C-a> <esc>a<Plug>snipMateNextOrTrigger
 " smap <C-a> <Plug>snipMateNextOrTrigger

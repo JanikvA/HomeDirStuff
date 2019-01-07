@@ -122,7 +122,7 @@ alias naf='ssh ahnenjan@naf-atlas.desy.de -X -Y'
 alias teraML='ssh ahnenjan@naf-school03.desy.de -X -Y'
 alias lx='ssh jvonahne@lxplus.cern.ch -X -Y'
 #alias python='python3'
-alias notes='vi ~/Desktop/TODO.md ~/Desktop/NOTES.md'
+alias notes='vi ~/Dropbox/Notes/TODO.md ~/Dropbox/Notes/NOTES.md ~/Dropbox/Notes/Refelctions.md'
 alias talks='cd ~/Dropbox/Master/TEXtalks'
 alias thisroot='source /home/janik/ROOTinstall/root/bin/thisroot.sh'
 alias root='root -l'
@@ -137,6 +137,9 @@ function cl {
 
 alias mntlx='sudo sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,allow_other jvonahne@lxplus.cern.ch:/afs/cern.ch/user/j/jvonahne/ /mnt/lxplus'
 alias mntdust='sudo sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,allow_other ahnenjan@naf-atlas.desy.de:/nfs/dust/atlas/user/ahnenjan /mnt/dust'
+alias unmntdust='sudo fusermount -uz /mnt/dust'
+
+alias scndMonitor='xrandr --output HDMI1 --auto --right-of eDP1'
 
 shopt -s autocd
 
@@ -146,7 +149,7 @@ bind '"kj":vi-movement-mode'
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]>"
+export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
 
 export PATH=~/bin:$PATH
 
@@ -157,6 +160,9 @@ export EDITOR=/usr/bin/vim
 if [[ ! "$PATH" == */home/janik/.fzf/bin* ]]; then
   export PATH="$PATH:/home/janik/.fzf/bin"
 fi
+
+export FZF_ALT_C_COMMAND='fd --type d --follow --exclude .git'
+
 
 # Auto-completion
 # ---------------
