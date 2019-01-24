@@ -10,6 +10,7 @@ image/bmp=feh.desktop;
 image/x-icon=feh.desktop;
 image/x-xpixmap=feh.desktop;
 image/x-xbitmap=feh.desktop;
+image/x-eps=zathura-ps.desktop;
 
 [Default Applications]
 x-scheme-handler/mailto=thunderbird.desktop
@@ -25,3 +26,4 @@ image/bmp=feh.desktop
 image/x-icon=feh.desktop
 image/x-xpixmap=feh.desktop
 image/x-xbitmap=feh.desktop
+image/x-eps=zathura-ps.desktop

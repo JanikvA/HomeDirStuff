@@ -130,6 +130,7 @@ alias v='vi'
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias acmSetup="source ~/acmDev/acm/acmSetup.sh"
 alias getTags="ctags -R"
+alias mail="v ~/scratch/mail.txt"
 
 function cl {
     builtin cd "$@" && ls -F

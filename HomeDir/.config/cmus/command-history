@@ -1,5 +1,6 @@
-a ~/Music
+add ~/Music/Music/
 clear
+a ~/Music
 load ~/.config/cmus/philoCC.pl
 a ~/Music/*
 add ~/Music

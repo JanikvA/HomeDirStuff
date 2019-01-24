@@ -173,7 +173,9 @@ bindsym Shift+Pause exec import "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m
 
 bindsym $mod+Control+w exec --no-startup-id thunderbird; exec --no-startup-id skype; exec --no-startup-id mattermost-desktop
 
-bindsym $mod+Control+l exec i3lock -e -n -i ~/Pictures/Wallpapers/space_test.png
+bindsym $mod+Control+a exec --no-startup-id pavucontrol
+
+bindsym $mod+Control+l exec i3lock -t -e -n -i ~/Pictures/Wallpapers/space_test.png
 
 
 # Pulse Audio controls

@@ -1,28 +1,3 @@
-find TE
-cW
-find Pi
-find pa
-rename binnings.png
-touch compEvents.C
-touch forNewSetup.txt
-find v13
-find scr
-open_with 
-find scra
-find fu
-find tes
-find HFl
-find STPPr
-find so
-search tmp
-rename CR_energy_spectrum.png
-rename Hillas_plot.png
-rename OneShot_and_diffusive.png
-rename firstOrder_secondOrder.png
-find Mas
-find Q
-
-search theoI
 find imp
 execute_console vimiv
 execute vimiv
@@ -31,7 +6,6 @@ rename ballon_result.png
 rename positron_discovery.png
 rename neutralKaon_discovery.png
 rename EAS_cascade.png
-delete
 rename Hyukoh_Gold_Chet_Faker.webm
 shell j
 search bach
@@ -41,10 +15,36 @@ find logoj
 find uhh
 find mas
 find extr
-find thes
 find ba
 find 
 find insp
 rename positronProblem.png
 rename PAO_telescope.png
 rename PAO_map.png
+find thes
+find STPpr
+find v19_
+rename CLscan_NP1.png
+rename CLscan_v13_statOnly.png
+rename CLscan_v13_JET.png
+rename v19_yields.png
+rename v13_yields.png
+rename syst_SR1.png
+rename syst_twoMu1.png
+rename HEphotons.png
+rename neutrinoSources.png
+search STP
+find stppr
+open_with feh
+search atlas
+open_with zathura
+open_with 
+search 
+search W_strong
+search Z_strong
+find Mas
+find TE
+find pi
+find Dr
+rename APP_script.pdf
+delete

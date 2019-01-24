@@ -25,6 +25,7 @@ Plugin 'easymotion/vim-easymotion'
 " Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " Plugin 'airblade/vim-gitgutter'
@@ -35,9 +36,18 @@ Plugin 'junegunn/gv.vim' " :GV will open commit browser
 
 Plugin 'christoomey/vim-tmux-navigator'
 
+Plugin 'lervag/vimtex'
+Plugin 'junegunn/goyo.vim'
 " Plugin 'scrooloose/syntastic'
 call vundle#end() 
 filetype plugin indent on
+
+" goyo
+map ög :Goyo<CR>
+
+" vimtex
+let maplocalleader = ","
+
 " fzf
 " If installed using git
 set rtp+=~/.fzf
@@ -69,6 +79,7 @@ let g:airline_section_c = '%t'
 
 let g:airline_section_error=''
 let g:airline_section_warning=''
+let g:airline_solarized_bg='dark'
 
 "YouCompleteMe
 " uncomment the following to activate syntax checking in c++ files
@@ -166,12 +177,17 @@ set hidden
 
 let g:netrw_liststyle= 2 " Change the default style of netrw
 
-colo slate
+" colo slate
+syntax enable
+set background=dark
+colorscheme solarized
 
 
 " folding stuff. Very nice for python
 set foldmethod=indent
-set foldlevel=9
+set foldlevel=20
+
+
 
 "allows to jump to nearest fold that is closed
 nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
