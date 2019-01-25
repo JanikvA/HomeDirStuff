@@ -119,7 +119,6 @@ fi
 
 
 alias naf='ssh ahnenjan@naf-atlas.desy.de -X -Y'
-alias teraML='ssh ahnenjan@naf-school03.desy.de -X -Y'
 alias lx='ssh jvonahne@lxplus.cern.ch -X -Y'
 #alias python='python3'
 alias notes='vi ~/Dropbox/Notes/TODO.md ~/Dropbox/Notes/NOTES.md ~/Dropbox/Notes/Refelctions.md'
@@ -131,6 +130,7 @@ alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd
 alias acmSetup="source ~/acmDev/acm/acmSetup.sh"
 alias getTags="ctags -R"
 alias mail="v ~/scratch/mail.txt"
+alias gpom="git push origin master"
 
 function cl {
     builtin cd "$@" && ls -F

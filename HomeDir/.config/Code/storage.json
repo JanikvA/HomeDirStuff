@@ -467,7 +467,6 @@
     "pickerWorkingDir": "/mnt/dust/STPProcessing",
     "openedPathsList": {
         "workspaces2": [
-            "file:///mnt/dust/StatsTools/HistFitterCode/HistFitter",
             "file:///mnt/dust/STPProcessing/source",
             "file:///mnt/dust/myVBFStats/workspaces/Rel207autoLimitCalc/automatedLimitcalc/xmlTemplates",
             "file:///mnt/dust/myVBFStats/workspaces/Rel207autoLimitCalc/automatedLimitcalc/xmlTemplates/fullSyst",
@@ -480,20 +479,13 @@
     "windowsState": {
         "openedWindows": [],
         "lastActiveWindow": {
-            "folderUri": {
-                "$mid": 1,
-                "fsPath": "/mnt/dust/StatsTools/HistFitterCode/HistFitter",
-                "external": "file:///mnt/dust/StatsTools/HistFitterCode/HistFitter",
-                "path": "/mnt/dust/StatsTools/HistFitterCode/HistFitter",
-                "scheme": "file"
-            },
-            "backupPath": "/home/janik/.config/Code/Backups/a4b726a2d8f6a9c5b14e8ca4542747e1",
+            "backupPath": "/home/janik/.config/Code/Backups/1548409410002",
             "uiState": {
-                "mode": 0,
-                "x": 67,
-                "y": 55,
-                "width": 1299,
-                "height": 713
+                "mode": 1,
+                "x": 683,
+                "y": 0,
+                "width": 683,
+                "height": 749
             }
         }
     }

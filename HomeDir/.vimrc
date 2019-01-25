@@ -2,7 +2,7 @@
 let mapleader = ","
 set nocompatible
 set statusline=
-" ### remove if not present ###
+" ### Remove if you don't use Vundle ###
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#begin()
@@ -38,12 +38,14 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'lervag/vimtex'
 Plugin 'junegunn/goyo.vim'
+" Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not
+" work
 " Plugin 'scrooloose/syntastic'
 call vundle#end() 
 filetype plugin indent on
 
 " goyo
-map ög :Goyo<CR>
+nnoremap ög :Goyo<CR>
 
 " vimtex
 let maplocalleader = ","
@@ -71,6 +73,7 @@ inoremap <expr> <c-x><c-k> fzf#complete({'source': function('CompletionSource')}
 " vim-airline
 " let g:airline#extensions#syntastic#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#wordcount#enabled = 0 " Makes sometimes problems with Goyo
 
 " Comment out next 2 lines to show current git branch. makes vim slow if
 " working with mount
@@ -119,6 +122,8 @@ set diffopt+=vertical
 
 "tagbar
 nmap <leader>c :TagbarToggle<CR>
+let g:tagbar_map_nexttag = "<C-J>"
+let g:tagbar_map_prevtag = "<C-K>"
 
 "ctrlpvim
 " let g:ctrlp_map = '<c-p>'
@@ -157,30 +162,30 @@ let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 
 "set statusline+=%{FugitiveStatusline()} "Slows stuff down when working on
 "mounted dust
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-"set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\ 
+"set statusline+=%#LineNr#
+"set statusline+=\ %f
+"set statusline+=%m\
+"set statusline+=%=
+"set statusline+=%#CursorColumn#
+"set statusline+=\ %y
+""set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+""set statusline+=\[%{&fileformat}\]
+"set statusline+=\ %p%%
+"set statusline+=\ %l:%c
+"set statusline+=\ 
 
 set laststatus=2
 
 
 set hidden
 
-
-let g:netrw_liststyle= 2 " Change the default style of netrw
+" let g:netrw_liststyle= 2 " Change the default style of netrw
 
 " colo slate
 syntax enable
 set background=dark
 colorscheme solarized
+
 
 
 " folding stuff. Very nice for python
@@ -222,7 +227,7 @@ inoremap <c-y>  {<CR><tab><CR>}<up><right>
 set wildmenu "allows easier use of tab completions, e.g. :e <tab>
 set wildmode=list:longest,full
 
-set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find
+set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find. 
  
 set confirm
 
@@ -324,11 +329,17 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-set tags+=/home/janik/terascale_school/app/solution/tags
+" set tags+=/home/janik/terascale_school/app/solution/tags
 
 " custom colour stuff
-hi Search ctermbg=DarkBlue ctermfg=DarkRed
-hi Folded ctermbg=DarkMagenta ctermfg=DarkRed
+" hi Search ctermbg=DarkBlue ctermfg=DarkRed
+" hi Folded ctermbg=DarkMagenta ctermfg=DarkRed
+
+
+
+" ###############################
+" ########## Snippets ###########
+" ###############################
 
 
 
