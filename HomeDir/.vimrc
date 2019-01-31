@@ -38,6 +38,10 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'lervag/vimtex'
 Plugin 'junegunn/goyo.vim'
+
+
+
+Plugin 'ludovicchabant/vim-gutentags'
 " Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not
 " work
 " Plugin 'scrooloose/syntastic'
@@ -49,16 +53,20 @@ nnoremap ög :Goyo<CR>
 
 " vimtex
 let maplocalleader = ","
+" Disable all warnings
+let g:vimtex_quickfix_latexlog = {'default' : 0}
+" work with youcompleteme
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 
 " fzf
 " If installed using git
 set rtp+=~/.fzf
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-b> :Buffers<CR>
-function! CompletionSource(prefix)
-  return 'git ls-files | xargs cat'
-endfunction
-inoremap <expr> <c-x><c-k> fzf#complete({'source': function('CompletionSource')})
+nnoremap <leader>f :BLines<CR>
 
 "vim-gitgutter
 " let g:gitgutter_map_keys = 0 " to disable all gitgutter mappings
@@ -88,27 +96,31 @@ let g:airline_solarized_bg='dark'
 " uncomment the following to activate syntax checking in c++ files
 " let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 set completeopt-=preview
+" The following is usefull to find doc string for built in python funcitons.
+" Kinda wanna make this work for c++
+nnoremap <leader>doc :YcmCompleter GetDoc<CR>
+
 
 ""syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" nnoremap <leader>cs :SyntasticCheck<CR>
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
-" let g:syntastic_python_pylint_args = '-E'
-" let g:syntastic_quiet_messages = {
-"         \ "!level":  "errors",
-"         \ "type":    "style",
-"         \ "regex":   '.*',
-"         \ "file:p":  '.*' }
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"nnoremap <leader>sc :SyntasticCheck<CR>
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
+"let g:syntastic_python_pylint_args = '-E'
+"let g:syntastic_quiet_messages = {
+"        \ "!level":  "errors",
+"        \ "type":    "style",
+"        \ "regex":   '.*',
+"        \ "file:p":  '.*' }
 
 " easymotion
 let g:EasyMotion_do_mapping = 1 " Disable default mappings
-map <leader> <Plug>(easymotion-prefix)
+map ö <Plug>(easymotion-prefix)
 let g:EasyMotion_smartcase = 1
 
 
@@ -143,8 +155,8 @@ map <C-e> :NERDTreeToggle<CR>
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<C-a>"
-let g:UltiSnipsJumpForwardTrigger="<C-n>"
-let g:UltiSnipsJumpBackwardTrigger="<C-p>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " ### remove if not present ###
 
@@ -176,6 +188,7 @@ let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 
 set laststatus=2
 
+set mouse=a
 
 set hidden
 
@@ -262,7 +275,7 @@ nnoremap L :bn<CR>
 
 nnoremap <space> i<space><Esc>l
 nnoremap <leader>dm %x``x
-nnoremap <leader>sc :setlocal spell spelllang=en_us
+" nnoremap <leader>sc :setlocal spell spelllang=en_us
 nnoremap <leader>g <C-]>
 
 vnoremap <leader>y "+y
