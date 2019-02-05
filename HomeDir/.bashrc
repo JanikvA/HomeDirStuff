@@ -141,6 +141,7 @@ alias mntdust='sudo sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMa
 alias unmntdust='sudo fusermount -uz /mnt/dust'
 
 alias scndMonitor='xrandr --output HDMI1 --auto --right-of eDP1'
+alias thesis='cd /home/janik/Dropbox/Master/thesis && vim -S Session.vim'
 
 shopt -s autocd
 

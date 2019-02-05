@@ -39,9 +39,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'lervag/vimtex'
 Plugin 'junegunn/goyo.vim'
 
-
-
+Plugin 'junegunn/vim-peekaboo'
 Plugin 'ludovicchabant/vim-gutentags'
+
 " Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not
 " work
 " Plugin 'scrooloose/syntastic'
@@ -280,6 +280,8 @@ nnoremap <leader>g <C-]>
 
 vnoremap <leader>y "+y
 nnoremap <leader>p "+p
+" The following doesn't overwrite the register if you paste in visual mode
+vnoremap p "_dP
 
 
 nnoremap <leader>q :q<CR>
