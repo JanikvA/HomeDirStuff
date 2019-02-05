@@ -11,42 +11,58 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-" Plugin 'garbas/vim-snipmate'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 Plugin 'easymotion/vim-easymotion'
-
-" Plugin 'terryma/vim-multiple-cursors'
-
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nathanaelkane/vim-indent-guides'
-
-" Plugin 'airblade/vim-gitgutter'
-
+Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/gv.vim' " :GV will open commit browser
-
 Plugin 'christoomey/vim-tmux-navigator'
-
 Plugin 'lervag/vimtex'
 Plugin 'junegunn/goyo.vim'
-
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'mbbill/undotree'
+Plugin 'tpope/vim-repeat' " only used for surround.vim atm
+Plugin 'junegunn/vim-easy-align'
+Plugin 'bronson/vim-trailing-whitespace'
+
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'raimondi/delimitmate'
+
+Plugin 'w0rp/ale'
+" Plugin 'scrooloose/syntastic'
+
 
 " Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not
 " work
-" Plugin 'scrooloose/syntastic'
-call vundle#end() 
+call vundle#end()
 filetype plugin indent on
+
+" ale
+let g:ale_echo_cursor = 0
+let g:ale_python_pylint_options = '-E'
+nnoremap <leader>ale :ALEToggle<cr>
+
+" vim-easy-align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+" undotree
+nnoremap <leader>u :UndotreeToggle<cr>
+
+" vim-indent-guides
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
 
 " goyo
 nnoremap ög :Goyo<CR>
@@ -69,14 +85,15 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>f :BLines<CR>
 
 "vim-gitgutter
-" let g:gitgutter_map_keys = 0 " to disable all gitgutter mappings
-" nnoremap <leader>hn <Plug>GitGutterNextHunk
-" nnoremap <leader>hp <Plug>GitGutterPrevHunk
-" nnoremap <Leader>ha <Plug>GitGutterStageHunk
-" nnoremap <Leader>hr <Plug>GitGutterUndoHunk
-" nnoremap <Leader>gghl :GitGutterLineHighlightsToggle<CR>
-" nnoremap <Leader>ggt :GitGutterToggle<CR>
-" set updatetime=100 "[ms] default is 4000 ms i.e 4s
+let g:gitgutter_map_keys = 0 " to disable all gitgutter mappings
+let g:gitgutter_enabled = 1 " disabled by default
+nnoremap <leader>hn <Plug>GitGutterNextHunk
+nnoremap <leader>hp <Plug>GitGutterPrevHunk
+nnoremap <Leader>ha <Plug>GitGutterStageHunk
+nnoremap <Leader>hr <Plug>GitGutterUndoHunk
+nnoremap <Leader>gghl :GitGutterLineHighlightsToggle<CR>
+nnoremap <Leader>ggt :GitGutterToggle<CR>
+set updatetime=4000 "[ms] default is 4000 ms i.e 4s
 
 " vim-airline
 " let g:airline#extensions#syntastic#enabled = 0
@@ -190,6 +207,8 @@ set laststatus=2
 
 set mouse=a
 
+set scrolloff=5
+
 set hidden
 
 " let g:netrw_liststyle= 2 " Change the default style of netrw
@@ -236,12 +255,12 @@ noremap <F6> <Esc>:w<Enter>:!pdflatex %<Enter>
 
 
 inoremap <c-y>  {<CR><tab><CR>}<up><right>
-  
+
 set wildmenu "allows easier use of tab completions, e.g. :e <tab>
 set wildmode=list:longest,full
 
-set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find. 
- 
+set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find.
+
 set confirm
 
 set smartindent
@@ -283,6 +302,10 @@ nnoremap <leader>p "+p
 " The following doesn't overwrite the register if you paste in visual mode
 vnoremap p "_dP
 
+" loacation list mappings
+nnoremap <leader>ln :lne<cr>
+nnoremap <leader>lp :lp<cr>
+
 
 nnoremap <leader>q :q<CR>
 nnoremap <leader>x :x<CR>
@@ -302,12 +325,12 @@ cmap kj <Esc>
 
 " German keyboard mappings
 nnoremap ä /
-nnoremap öh :nohlsearch<CR> 
+nnoremap öh :nohlsearch<CR>
 
 "experimental
 nnoremap ön :set nu!<CR>
 nnoremap öq :qa<CR>
-nnoremap öt :tabedit 
+nnoremap öt :tabedit
 " German keyboard mappings
 
 
