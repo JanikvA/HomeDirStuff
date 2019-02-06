@@ -42,14 +42,26 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'w0rp/ale'
 " Plugin 'scrooloose/syntastic'
 
+Plugin 'wellle/targets.vim'
+Plugin 'justinmk/vim-sneak'
+Plugin 'chiel92/vim-autoformat'
 
 " Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not
 " work
 call vundle#end()
 filetype plugin indent on
 
+" :bro ol   <-- is pretty cool
+
+" vim-autoformat
+nnoremap <leader>af :Autoformat<cr>
+
+" vim-sneak
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
+
 " ale
-let g:ale_echo_cursor = 0
+let g:ale_echo_cursor = 0 " makes cursor invisible if on line with error otherwise. Newer vim versions fix this apparently
 let g:ale_python_pylint_options = '-E'
 nnoremap <leader>ale :ALEToggle<cr>
 
@@ -87,10 +99,10 @@ nnoremap <leader>f :BLines<CR>
 "vim-gitgutter
 let g:gitgutter_map_keys = 0 " to disable all gitgutter mappings
 let g:gitgutter_enabled = 1 " disabled by default
-nnoremap <leader>hn <Plug>GitGutterNextHunk
-nnoremap <leader>hp <Plug>GitGutterPrevHunk
-nnoremap <Leader>ha <Plug>GitGutterStageHunk
-nnoremap <Leader>hr <Plug>GitGutterUndoHunk
+nnoremap <leader>hn :GitGutterNextHunk<cr>
+nnoremap <leader>hp :GitGutterPrevHunk<cr>
+" nnoremap <Leader>ha :GitGutterStageHunk<cr>
+" nnoremap <Leader>hr :GitGutterUndoHunk<cr>
 nnoremap <Leader>gghl :GitGutterLineHighlightsToggle<CR>
 nnoremap <Leader>ggt :GitGutterToggle<CR>
 set updatetime=4000 "[ms] default is 4000 ms i.e 4s
@@ -203,14 +215,6 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 "set statusline+=\ %l:%c
 "set statusline+=\ 
 
-set laststatus=2
-
-set mouse=a
-
-set scrolloff=5
-
-set hidden
-
 " let g:netrw_liststyle= 2 " Change the default style of netrw
 
 " colo slate
@@ -258,11 +262,8 @@ inoremap <c-y>  {<CR><tab><CR>}<up><right>
 
 set wildmenu "allows easier use of tab completions, e.g. :e <tab>
 set wildmode=list:longest,full
-
 set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find.
-
 set confirm
-
 set smartindent
 set pastetoggle=<F5>
 set ignorecase
@@ -270,6 +271,14 @@ set smartcase
 set tabstop=4
 set expandtab
 set nu
+set laststatus=2
+set mouse=a
+set scrolloff=5
+set hidden
+set shiftwidth=4
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+
 :command W w
 :command Q q
 :command Wa wa
@@ -277,10 +286,6 @@ set nu
 :command Pandoc !pandoc -f markdown -t latex -o %:r.pdf %
 :command Pdf !xdg-open %:r.pdf &
 syntax on
-set shiftwidth=4
-
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
 
 nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
