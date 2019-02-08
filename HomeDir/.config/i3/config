@@ -77,10 +77,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -89,10 +89,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+g split h
@@ -197,7 +197,8 @@ bar {
 }
 
 
-client.focused          #002b36 #586e75 #fdf6e3 #268bd2
+# client.focused          #002b36 #586e75 #fdf6e3 #268bd2
+client.focused          #002b36 #FFA500 #fdf6e3 #268bd2
 client.focused_inactive #002b36 #073642 #839496 #073642
 client.unfocused        #002b36 #073642 #839496 #073642
 client.urgent #002b36 #dc322f #fdf6e3 #002b36
@@ -222,6 +223,10 @@ bindsym $mod+Control+a exec --no-startup-id pavucontrol
 bindsym $mod+Control+l exec i3lock -t -e -n -i ~/Pictures/Wallpapers/space_test.png
 
 
+bindsym $mod+Shift+Left move workspace to output left
+bindsym $mod+Shift+Right move workspace to output right
+
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set 'Master' 10%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 10%-
@@ -230,7 +235,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 10%-
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-bindsym $mod+i exec firefox
+bindsym $mod+i exec --no-startup-id firefox
 
 focus_follows_mouse no
 
@@ -243,4 +248,4 @@ exec --no-startup-id nm-applet # Network manager
 
 exec --no-startup-id dropbox start # Dropbox
 
-# exec --no-startup-id xmodmap ~/.Xmodmap
+# exec --no-startup-id sleep 1; xmodmap ~/.Xmodmap
