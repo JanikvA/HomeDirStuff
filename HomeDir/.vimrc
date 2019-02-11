@@ -51,17 +51,15 @@ Plugin 'chiel92/vim-autoformat'
 call vundle#end()
 filetype plugin indent on
 
-" :bro ol   <-- is pretty cool
-
 " vim-autoformat
 nnoremap <leader>af :Autoformat<cr>
 
 " vim-sneak
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
+map ö <Plug>Sneak_s
+map Ö <Plug>Sneak_S
 
 " ale
-let g:ale_echo_cursor = 0 " makes cursor invisible if on line with error otherwise. Newer vim versions fix this apparently
+let g:ale_echo_cursor = 0 " 0 makes cursor invisible if on line with error otherwise. Newer vim versions fix this apparently
 let g:ale_python_pylint_options = '-E'
 nnoremap <leader>ale :ALEToggle<cr>
 
@@ -77,7 +75,7 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 
 " goyo
-nnoremap ög :Goyo<CR>
+nnoremap üg :Goyo<CR>
 
 " vimtex
 let maplocalleader = ","
@@ -89,12 +87,43 @@ if !exists('g:ycm_semantic_triggers')
 endif
 let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 
+let g:vimtex_compiler_latexmk = {
+    \ 'backend' : 'process',
+    \ 'background' : 1,
+    \ 'build_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'options' : [
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
+
 " fzf
 " If installed using git
 set rtp+=~/.fzf
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>f :BLines<CR>
+nnoremap <leader>m :Commands<CR>
+
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
+
+" This is now done just with <Enter>
+
+" function! s:build_quickfix_list(lines)
+"   call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+"   copen
+"   cc
+" endfunction
+" let g:fzf_action = {
+"   \ 'ctrl-q': function('s:build_quickfix_list'),
+"   \ 'ctrl-t': 'tab split',
+"   \ 'ctrl-x': 'split',
+"   \ 'ctrl-v': 'vsplit' }
 
 "vim-gitgutter
 let g:gitgutter_map_keys = 0 " to disable all gitgutter mappings
@@ -149,7 +178,7 @@ nnoremap <leader>doc :YcmCompleter GetDoc<CR>
 
 " easymotion
 let g:EasyMotion_do_mapping = 1 " Disable default mappings
-map ö <Plug>(easymotion-prefix)
+map ü <Plug>(easymotion-prefix)
 let g:EasyMotion_smartcase = 1
 
 
@@ -177,6 +206,7 @@ set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*
 
 "scrooloose/nerdtree
 map <C-e> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.swp$','\.root$','\.o$','\.pyc$', '\~$']
 
 "garbas/vim-snipmate
 " imap <C-a> <esc>a<Plug>snipMateNextOrTrigger
@@ -284,15 +314,15 @@ set hlsearch            " highlight matches
 :command Wa wa
 
 :command Pandoc !pandoc -f markdown -t latex -o %:r.pdf %
-:command Pdf !xdg-open %:r.pdf &
+:command Pdf silent !xdg-open %:r.pdf &
 syntax on
 
 nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 " the following allow to change -> and . in c++ code
-nnoremap öp /\D\.\D<CR>ls-><Esc>:nohlsearch<CR>
-nnoremap öo /\D->\D<CR>lc2l.<Esc>:nohlsearch<CR>
+nnoremap üp /\D\.\D<CR>ls-><Esc>:nohlsearch<CR>
+nnoremap üo /\D->\D<CR>lc2l.<Esc>:nohlsearch<CR>
 
 nnoremap H :bp<CR>
 nnoremap L :bn<CR>
@@ -330,12 +360,12 @@ cmap kj <Esc>
 
 " German keyboard mappings
 nnoremap ä /
-nnoremap öh :nohlsearch<CR>
+nnoremap üh :nohlsearch<CR>
 
 "experimental
-nnoremap ön :set nu!<CR>
-nnoremap öq :qa<CR>
-nnoremap öt :tabedit
+nnoremap ün :set nu!<CR>
+nnoremap üq :qa<CR>
+nnoremap üt :tabedit
 " German keyboard mappings
 
 
@@ -378,6 +408,23 @@ vnoremap <silent> # :<C-U>
 " hi Search ctermbg=DarkBlue ctermfg=DarkRed
 " hi Folded ctermbg=DarkMagenta ctermfg=DarkRed
 
+
+" does a quick google search. Only works good if an instance of firefox is
+" already running
+function! GoogleSearch(searchTerm)
+     let tmp = a:searchTerm
+     exec "silent !firefox http://google.com/search?q=\"" . tmp . "\""
+     exec "redraw!"
+endfunction
+nnoremap <leader>j :call GoogleSearch("")<Left><Left>
+
+
+function! GoogleSearchVisual()
+     let searchterm = getreg("g")
+     silent! exec "silent! !firefox \"http://google.com/search?q=" . searchterm . "\" &"
+     exec "redraw!"
+endfunction
+vnoremap <leader>j "gy<Esc>:call GoogleSearchVisual()<CR>
 
 
 " ###############################
