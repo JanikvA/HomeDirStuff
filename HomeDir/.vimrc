@@ -32,9 +32,12 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'mbbill/undotree'
-Plugin 'tpope/vim-repeat' " only used for surround.vim atm
+Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'bronson/vim-trailing-whitespace'
+" Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'wellle/targets.vim'
+Plugin 'chiel92/vim-autoformat'
 
 Plugin 'jiangmiao/auto-pairs'
 " Plugin 'raimondi/delimitmate'
@@ -42,21 +45,25 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'w0rp/ale'
 " Plugin 'scrooloose/syntastic'
 
-Plugin 'wellle/targets.vim'
-Plugin 'justinmk/vim-sneak'
-Plugin 'chiel92/vim-autoformat'
+" Plugin 'justinmk/vim-sneak'
+
+Plugin 'sheerun/vim-polyglot'
 
 " Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not
 " work
 call vundle#end()
 filetype plugin indent on
 
-" vim-autoformat
+" yank stack
+nmap <C-n> <Plug>yankstack_substitute_older_paste
+nmap <C-m> <Plug>yankstack_substitute_newer_paste
+
+"  vim-autoformat
 nnoremap <leader>af :Autoformat<cr>
 
 " vim-sneak
-map ö <Plug>Sneak_s
-map Ö <Plug>Sneak_S
+" map ö <Plug>Sneak_s
+" map Ö <Plug>Sneak_S
 
 " ale
 let g:ale_echo_cursor = 0 " 0 makes cursor invisible if on line with error otherwise. Newer vim versions fix this apparently
@@ -87,6 +94,7 @@ if !exists('g:ycm_semantic_triggers')
 endif
 let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 
+let g:polyglot_disabled = ['latex']
 let g:vimtex_compiler_latexmk = {
     \ 'backend' : 'process',
     \ 'background' : 1,
@@ -133,6 +141,7 @@ nnoremap <leader>hp :GitGutterPrevHunk<cr>
 " nnoremap <Leader>ha :GitGutterStageHunk<cr>
 " nnoremap <Leader>hr :GitGutterUndoHunk<cr>
 nnoremap <Leader>gghl :GitGutterLineHighlightsToggle<CR>
+nnoremap <Leader>ggf :GitGutterFold<CR>
 nnoremap <Leader>ggt :GitGutterToggle<CR>
 set updatetime=4000 "[ms] default is 4000 ms i.e 4s
 
@@ -195,22 +204,11 @@ nmap <leader>c :TagbarToggle<CR>
 let g:tagbar_map_nexttag = "<C-J>"
 let g:tagbar_map_prevtag = "<C-K>"
 
-"ctrlpvim
-" let g:ctrlp_map = '<c-p>'
-" let g:ctrlp_cmd = 'CtrlP'
-" let g:ctrlp_working_path_mode = 'ra'
-" let g:ctrlp_by_filename = 1
-" nnoremap <c-b> :CtrlPBuffer<CR>
-
 set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*
 
 "scrooloose/nerdtree
 map <C-e> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.swp$','\.root$','\.o$','\.pyc$', '\~$']
-
-"garbas/vim-snipmate
-" imap <C-a> <esc>a<Plug>snipMateNextOrTrigger
-" smap <C-a> <Plug>snipMateNextOrTrigger
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<C-a>"
@@ -252,12 +250,9 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-
-
 " folding stuff. Very nice for python
 set foldmethod=indent
-set foldlevel=20
-
+set foldlevel=999
 
 
 "allows to jump to nearest fold that is closed
@@ -276,11 +271,6 @@ function! NextClosedFold(dir)
         call winrestview(view)
     endif
 endfunction
-
-"this saves the folding automatically. only works with foldmethod=manual
-"autocmd BufWinLeave *.* mkview
-"autocmd BufWinEnter *.* silent loadview
-
 
 noremap <F2>  <Esc>:w<Enter>:!root -l %<Enter>
 noremap <F3> <Esc>:w<Enter>:!python %<Enter>
@@ -318,7 +308,7 @@ set hlsearch            " highlight matches
 syntax on
 
 nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
-nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>dd
+nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 " the following allow to change -> and . in c++ code
 nnoremap üp /\D\.\D<CR>ls-><Esc>:nohlsearch<CR>
@@ -359,7 +349,8 @@ inoremap kj <Esc>
 cmap kj <Esc>
 
 " German keyboard mappings
-nnoremap ä /
+nnoremap ä ?
+nnoremap ö /
 nnoremap üh :nohlsearch<CR>
 
 "experimental
@@ -375,17 +366,17 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Needed to be able to properly map the alt key
-execute "set <A-h>=\eh"
-execute "set <A-j>=\ej"
-execute "set <A-k>=\ek"
-execute "set <A-l>=\el"
+" " Needed to be able to properly map the alt key
+" execute "set <A-h>=\eh"
+" execute "set <A-j>=\ej"
+" execute "set <A-k>=\ek"
+" execute "set <A-l>=\el"
 
-" provide hjkl movements in Insert mode and Command-line mode via the <Alt> modifier key
-noremap! <A-h> <Left>
-noremap! <A-j> <Down>
-noremap! <A-k> <Up>
-noremap! <A-l> <Right>
+" " provide hjkl movements in Insert mode and Command-line mode via the <Alt> modifier key
+" noremap! <A-h> <Left>
+" noremap! <A-j> <Down>
+" noremap! <A-k> <Up>
+" noremap! <A-l> <Right>
 
 " If pasting in visual mode the default register is not overwritter
 xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
@@ -402,12 +393,14 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-" set tags+=/home/janik/terascale_school/app/solution/tags
 
 " custom colour stuff
 " hi Search ctermbg=DarkBlue ctermfg=DarkRed
 " hi Folded ctermbg=DarkMagenta ctermfg=DarkRed
 
+" makes stuff super laggy atm
+" nnoremap üc :set cursorline<cr>
+" hi CursorLine   cterm=underline ctermbg=None ctermfg=None
 
 " does a quick google search. Only works good if an instance of firefox is
 " already running
