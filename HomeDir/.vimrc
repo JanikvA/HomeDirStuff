@@ -1,4 +1,4 @@
-"vimrc Janik
+" vimrc Janik
 let mapleader = ","
 set nocompatible
 set statusline=
@@ -8,7 +8,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'maralla/completor.vim' "needs vim 8
+
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'sirver/ultisnips'
@@ -34,27 +36,45 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/vim-easy-align'
-" Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'wellle/targets.vim'
 Plugin 'chiel92/vim-autoformat'
-
 Plugin 'jiangmiao/auto-pairs'
-" Plugin 'raimondi/delimitmate'
 
 Plugin 'w0rp/ale'
 " Plugin 'scrooloose/syntastic'
 
-" Plugin 'justinmk/vim-sneak'
-
 Plugin 'sheerun/vim-polyglot'
+Plugin 'google/vim-searchindex'
+
+Plugin 'junegunn/vim-slash'
+Plugin 'junegunn/rainbow_parentheses.vim'
+Plugin 'junegunn/limelight.vim'
 
 " Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not
 " work
 call vundle#end()
 filetype plugin indent on
+"completor
+let g:completor_clang_binary ='/usr/bin/clang-6.0'
+let g:completor_python_binary = '/usr/bin/python'
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+let g:completor_auto_trigger = 1
+" inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
+
+"RainbowParantheses
+autocmd VimEnter * RainbowParentheses
+
+"vim-slash
+noremap <plug>(slash-after) zz
+
+"vim-peekaboo
+let g:peekaboo_delay = 1000
 
 " yank stack
+let g:yankstack_map_keys = 0
 nmap <C-n> <Plug>yankstack_substitute_older_paste
 nmap <C-m> <Plug>yankstack_substitute_newer_paste
 
@@ -66,7 +86,7 @@ nnoremap <leader>af :Autoformat<cr>
 " map Ö <Plug>Sneak_S
 
 " ale
-let g:ale_echo_cursor = 0 " 0 makes cursor invisible if on line with error otherwise. Newer vim versions fix this apparently
+let g:ale_echo_cursor = 1 " 0 makes cursor invisible if on line with error otherwise. Newer vim versions fix this
 let g:ale_python_pylint_options = '-E'
 nnoremap <leader>ale :ALEToggle<cr>
 
@@ -165,7 +185,7 @@ let g:airline_solarized_bg='dark'
 set completeopt-=preview
 " The following is usefull to find doc string for built in python funcitons.
 " Kinda wanna make this work for c++
-nnoremap <leader>doc :YcmCompleter GetDoc<CR>
+" nnoremap <leader>doc :YcmCompleter GetDoc<CR>
 
 
 ""syntastic
@@ -185,10 +205,10 @@ nnoremap <leader>doc :YcmCompleter GetDoc<CR>
 "        \ "regex":   '.*',
 "        \ "file:p":  '.*' }
 
-" easymotion
-let g:EasyMotion_do_mapping = 1 " Disable default mappings
-map ü <Plug>(easymotion-prefix)
-let g:EasyMotion_smartcase = 1
+" " easymotion
+" let g:EasyMotion_do_mapping = 1 " Disable default mappings
+" map ü <Plug>(easymotion-prefix)
+" let g:EasyMotion_smartcase = 1
 
 
 "fugitive
@@ -278,7 +298,7 @@ noremap <F4> <Esc>:w<Enter>:!./%<Enter>
 noremap <F6> <Esc>:w<Enter>:!pdflatex %<Enter>
 
 
-inoremap <c-y>  {<CR><tab><CR>}<up><right>
+inoremap <c-l>  {<CR><tab><CR>}<up><right>
 
 set wildmenu "allows easier use of tab completions, e.g. :e <tab>
 set wildmode=list:longest,full
@@ -298,6 +318,9 @@ set hidden
 set shiftwidth=4
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+set formatoptions-=cro " see :help fo-table
+
+set backspace=indent,eol,start
 
 :command W w
 :command Q q
