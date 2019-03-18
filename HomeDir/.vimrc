@@ -47,36 +47,49 @@ Plugin 'w0rp/ale'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'google/vim-searchindex'
 
-Plugin 'junegunn/vim-slash'
+" Plugin 'junegunn/vim-slash'
 Plugin 'junegunn/rainbow_parentheses.vim'
-Plugin 'junegunn/limelight.vim'
+" Plugin 'junegunn/limelight.vim'
+
+Plugin 'francoiscabrol/ranger.vim'
+" Plugin 'SearchComplete'
 
 " Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not
 " work
 call vundle#end()
 filetype plugin indent on
+
+
+" ranger.vim
+let g:ranger_map_keys = 0
+" let g:NERDTreeHijackNetrw = 0
+" let g:ranger_replace_netrw = 1
+
 "completor
 let g:completor_clang_binary ='/usr/bin/clang-6.0'
 let g:completor_python_binary = '/usr/bin/python'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 let g:completor_auto_trigger = 1
+let g:completor_complete_options = 'menuone,noselect,preview'
 " inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
 
 "RainbowParantheses
 autocmd VimEnter * RainbowParentheses
 
 "vim-slash
-noremap <plug>(slash-after) zz
+" noremap <plug>(slash-after) zz
+"vim-commentary
+au FileType c,cpp setlocal commentstring=//\ %s
 
 "vim-peekaboo
 let g:peekaboo_delay = 1000
 
 " yank stack
 let g:yankstack_map_keys = 0
-nmap <C-n> <Plug>yankstack_substitute_older_paste
-nmap <C-m> <Plug>yankstack_substitute_newer_paste
+nmap Ö <Plug>yankstack_substitute_older_paste
+nmap Ä <Plug>yankstack_substitute_newer_paste
 
 "  vim-autoformat
 nnoremap <leader>af :Autoformat<cr>
@@ -137,6 +150,7 @@ nnoremap <C-p> :FZF<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>f :BLines<CR>
 nnoremap <leader>m :Commands<CR>
+nnoremap <leader>a :Ag<CR>
 
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
 
@@ -182,7 +196,7 @@ let g:airline_solarized_bg='dark'
 "YouCompleteMe
 " uncomment the following to activate syntax checking in c++ files
 " let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-set completeopt-=preview
+" set completeopt-=preview
 " The following is usefull to find doc string for built in python funcitons.
 " Kinda wanna make this work for c++
 " nnoremap <leader>doc :YcmCompleter GetDoc<CR>
@@ -318,7 +332,8 @@ set hidden
 set shiftwidth=4
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
-set formatoptions-=cro " see :help fo-table
+" set formatoptions-=cro " see :help fo-table
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "don't auto insert comment. Seems to slow vim down a bit? check this
 
 set backspace=indent,eol,start
 
@@ -330,6 +345,9 @@ set backspace=indent,eol,start
 :command Pdf silent !xdg-open %:r.pdf &
 syntax on
 
+"TODO insert mappings: c-e ; c-y; c-a
+
+"make this depending on file type
 nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>
 nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
@@ -340,7 +358,14 @@ nnoremap üo /\D->\D<CR>lc2l.<Esc>:nohlsearch<CR>
 nnoremap H :bp<CR>
 nnoremap L :bn<CR>
 
+nnoremap n nzz
+nnoremap N Nzz
+
+nnoremap <CR> :
+
 nnoremap <space> i<space><Esc>l
+nnoremap <leader>o o<ESC>
+nnoremap <leader>O O<ESC>
 nnoremap <leader>dm %x``x
 " nnoremap <leader>sc :setlocal spell spelllang=en_us
 nnoremap <leader>g <C-]>
@@ -401,6 +426,36 @@ nnoremap <C-H> <C-W><C-H>
 " noremap! <A-k> <Up>
 " noremap! <A-l> <Right>
 
+" Automatic paste mode for terminal
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+
+" Automatic paste mode for terminal using tmux short cuts
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+
 " If pasting in visual mode the default register is not overwritter
 xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
 
@@ -422,8 +477,9 @@ vnoremap <silent> # :<C-U>
 " hi Folded ctermbg=DarkMagenta ctermfg=DarkRed
 
 " makes stuff super laggy atm
-" nnoremap üc :set cursorline<cr>
-" hi CursorLine   cterm=underline ctermbg=None ctermfg=None
+" nnoremap üc :set cursorline!<cr>
+" hi CursorLine   ctermbg=black ctermfg=None
+" hi CursorLine   cterm=underline ctermbg=black ctermfg=None
 
 " does a quick google search. Only works good if an instance of firefox is
 " already running
@@ -441,6 +497,9 @@ function! GoogleSearchVisual()
      exec "redraw!"
 endfunction
 vnoremap <leader>j "gy<Esc>:call GoogleSearchVisual()<CR>
+
+" to make tex files smoother
+au FileType tex :NoMatchParen
 
 
 " ###############################
