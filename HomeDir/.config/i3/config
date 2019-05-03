@@ -210,13 +210,15 @@ assign [class="Thunderbird"] 3
 assign [class="Skype"] 3
 assign [class="Mattermost"] 3
 assign [class="Zathura"] 2
+assign [class="VidyoDesktop"] 5
+assign [class="Gimp"] 6
 
 
 
 bindsym Pause exec import -screen "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m_%y__%H_%M_%S")".png"
 bindsym Shift+Pause exec import "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m_%y__%H_%M_%S")".png"
 
-bindsym $mod+Control+w exec --no-startup-id thunderbird; exec --no-startup-id skype; exec --no-startup-id mattermost-desktop
+bindsym $mod+Control+w exec --no-startup-id thunderbird; exec --no-startup-id skype
 
 bindsym $mod+Control+a exec --no-startup-id pavucontrol
 
@@ -232,8 +234,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set 'Master' 10%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 10%-
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
 bindsym $mod+i exec --no-startup-id firefox
 
@@ -247,5 +249,7 @@ exec --no-startup-id xset r rate 400 50 # Set initial delay 300ms, repeat 45ms
 exec --no-startup-id nm-applet # Network manager
 
 exec --no-startup-id dropbox start # Dropbox
+
+exec --no-startup-id redshift # redshift
 
 # exec --no-startup-id sleep 1; xmodmap ~/.Xmodmap

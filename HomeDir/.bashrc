@@ -121,7 +121,7 @@ fi
 alias naf='ssh ahnenjan@naf-atlas.desy.de -X -Y'
 alias lx='ssh jvonahne@lxplus.cern.ch -X -Y'
 #alias python='python3'
-alias notes='vi ~/Dropbox/Notes/TODO.md ~/Dropbox/Notes/NOTES.md ~/Dropbox/Notes/Refelctions.md'
+alias notes='vi ~/Dropbox/Notes/TODO.md ~/Dropbox/Notes/NOTES.md'
 alias talks='cd ~/Dropbox/Master/TEXtalks'
 alias thisroot='source /home/janik/ROOTinstall/root/bin/thisroot.sh'
 alias root='root -l'
@@ -131,6 +131,7 @@ alias acmSetup="source ~/acmDev/acm/acmSetup.sh"
 alias getTags="ctags -R"
 alias mail="v ~/scratch/mail.txt"
 alias gpom="git push origin master"
+alias TODO='git ls-files | xargs cat | grep TODO'
 
 function cl {
     builtin cd "$@" && ls -F
@@ -155,7 +156,7 @@ export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]$ "
 
 export PATH=~/bin:$PATH
 
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/vim
 
 # Setup fzf
 # ---------

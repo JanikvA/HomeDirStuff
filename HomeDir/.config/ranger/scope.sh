@@ -80,7 +80,7 @@ case "$extension" in
     # PDF documents:
     pdf)
     # try pdftoppm -jpeg -singlefile "$path" "${cached//.jpg}" && exit 6 || exit 1;;
-        # try pdftoppm -f 1 -l 1 -scale-tox 1920 -scale-to-y -1 -singlefile -jpeg -tiffcompression jpeg -- "${FILE_PATH}" "%{IMAGE_CACHE_PATH%.*}" && exit 6 || exit 1;;
+        try pdftoppm -f 1 -l 1 -scale-tox 1920 -scale-to-y -1 -singlefile -jpeg -tiffcompression jpeg -- "${FILE_PATH}" "%{IMAGE_CACHE_PATH%.*}" && exit 6 || exit 1;;
         # try pdftotext -l 10 -nopgbrk -q "$path" - && \
         #     { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
     # BitTorrent Files

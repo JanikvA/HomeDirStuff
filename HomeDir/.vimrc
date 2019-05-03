@@ -40,25 +40,25 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'wellle/targets.vim'
 Plugin 'chiel92/vim-autoformat'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'junegunn/rainbow_parentheses.vim'
+Plugin 'google/vim-searchindex'
+Plugin 'francoiscabrol/ranger.vim'
 
 Plugin 'w0rp/ale'
-" Plugin 'scrooloose/syntastic'
 
-Plugin 'sheerun/vim-polyglot'
-Plugin 'google/vim-searchindex'
-
+" Plugin 'scrooloose/syntastic' "could replace ale
+" Plugin 'sheerun/vim-polyglot' "makes stuff kinda slow
 " Plugin 'junegunn/vim-slash'
-Plugin 'junegunn/rainbow_parentheses.vim'
 " Plugin 'junegunn/limelight.vim'
-
-Plugin 'francoiscabrol/ranger.vim'
 " Plugin 'SearchComplete'
-
-" Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not
-" work
+" Plugin 'vim-scripts/sherlock.vim'
+" Plugin 'skwp/greplace.vim' "not really needed with :Ag from fzf and :cdo/cfdo
+" Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not. highlight cursoline is enough
 call vundle#end()
 filetype plugin indent on
 
+"junegunn/rainbow_parentheses.vim
+" let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 " ranger.vim
 let g:ranger_map_keys = 0
@@ -68,12 +68,47 @@ let g:ranger_map_keys = 0
 "completor
 let g:completor_clang_binary ='/usr/bin/clang-6.0'
 let g:completor_python_binary = '/usr/bin/python'
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-let g:completor_auto_trigger = 1
+
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" let g:completor_auto_trigger = 1
 let g:completor_complete_options = 'menuone,noselect,preview'
 " inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
+
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
+
+" " Use TAB to complete when typing words, else inserts TABs as usual.  Uses
+" " dictionary, source files, and completor to find matching words to complete.
+" " Note: usual completion is on <C-n> but more trouble to press all the time.
+" " Never type the same word twice and maybe learn a new spellings!
+" " Use the Linux dictionary when spelling is in doubt.
+" function! Tab_Or_Complete() abort
+"   " If completor is already open the `tab` cycles through suggested completions.
+"   if pumvisible()
+"     return "\<C-N>"
+"   " If completor is not open and we are in the middle of typing a word then
+"   " `tab` opens completor menu.
+"   elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+"     return "\<C-R>=completor#do('complete')\<CR>"
+"   else
+"     " If we aren't typing a word and we press `tab` simply do the normal `tab`
+"     " action.
+"     return "\<Tab>"
+"   endif
+" endfunction
+
+" Use `tab` key to select completions.  Default is arrow keys.
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" " Use tab to trigger auto completion.  Default suggests completions as you type.
+" let g:completor_auto_trigger = 0
+" inoremap <expr> <Tab> Tab_Or_Complete()
+
+
+
+
 
 "RainbowParantheses
 autocmd VimEnter * RainbowParentheses
@@ -121,6 +156,7 @@ nnoremap üg :Goyo<CR>
 let maplocalleader = ","
 " Disable all warnings
 let g:vimtex_quickfix_latexlog = {'default' : 0}
+let g:matchup_matchparen_deferred = 1
 " work with youcompleteme
 if !exists('g:ycm_semantic_triggers')
   let g:ycm_semantic_triggers = {}
@@ -146,11 +182,13 @@ let g:vimtex_compiler_latexmk = {
 " fzf
 " If installed using git
 set rtp+=~/.fzf
+
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>f :BLines<CR>
 nnoremap <leader>m :Commands<CR>
-nnoremap <leader>a :Ag<CR>
+nnoremap <leader>ag :Ag<CR>
+nnoremap <leader>h :Helptags<CR>
 
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
 
@@ -251,6 +289,16 @@ let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " ### remove if not present ###
 
+" ###################### Non-Plugin stuff ###########################
+" gvim lol
+set guioptions-=M  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=t  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+set guioptions-=m  "remove left-hand scroll bar
+set guioptions-=g  "remove left-hand scroll bar
+set guioptions-=e  "remove left-hand scroll bar
 "function! GitBranch()
 "  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 "endfunction
@@ -308,15 +356,21 @@ endfunction
 
 noremap <F2>  <Esc>:w<Enter>:!root -l %<Enter>
 noremap <F3> <Esc>:w<Enter>:!python %<Enter>
+" noremap <F3> <Esc>:w !python<CR>
+vnoremap <F3> :w !python<CR>
 noremap <F4> <Esc>:w<Enter>:!./%<Enter>
 noremap <F6> <Esc>:w<Enter>:!pdflatex %<Enter>
 
 
 inoremap <c-l>  {<CR><tab><CR>}<up><right>
 
+" maybe use this instead of H,L
+set wcm=<C-z>
+nnoremap <leader><Tab> :buffer<Space><C-z><C-z>
+
 set wildmenu "allows easier use of tab completions, e.g. :e <tab>
 set wildmode=list:longest,full
-set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find.
+" set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find.
 set confirm
 set smartindent
 set pastetoggle=<F5>
@@ -350,7 +404,7 @@ syntax on
 "make this depending on file type
 nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>
-nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
+" nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 " the following allow to change -> and . in c++ code
 nnoremap üp /\D\.\D<CR>ls-><Esc>:nohlsearch<CR>
 nnoremap üo /\D->\D<CR>lc2l.<Esc>:nohlsearch<CR>
@@ -361,11 +415,11 @@ nnoremap L :bn<CR>
 nnoremap n nzz
 nnoremap N Nzz
 
-nnoremap <CR> :
+" nnoremap <CR> :
 
 nnoremap <space> i<space><Esc>l
-nnoremap <leader>o o<ESC>
-nnoremap <leader>O O<ESC>
+nnoremap <leader>o o<ESC> " could remove this
+nnoremap <leader>O O<ESC> " could remove this
 nnoremap <leader>dm %x``x
 " nnoremap <leader>sc :setlocal spell spelllang=en_us
 nnoremap <leader>g <C-]>
@@ -477,9 +531,17 @@ vnoremap <silent> # :<C-U>
 " hi Folded ctermbg=DarkMagenta ctermfg=DarkRed
 
 " makes stuff super laggy atm
-" nnoremap üc :set cursorline!<cr>
+set cursorline
+nnoremap üc :set cursorline!<cr>
 " hi CursorLine   ctermbg=black ctermfg=None
 " hi CursorLine   cterm=underline ctermbg=black ctermfg=None
+
+"make cursorline only in active window visible
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 
 " does a quick google search. Only works good if an instance of firefox is
 " already running
@@ -498,8 +560,9 @@ function! GoogleSearchVisual()
 endfunction
 vnoremap <leader>j "gy<Esc>:call GoogleSearchVisual()<CR>
 
-" to make tex files smoother
+" to make tex files smoother, maybe also turn off syntax. syntax off
 au FileType tex :NoMatchParen
+au FileType tex setlocal nocursorline
 
 
 " ###############################

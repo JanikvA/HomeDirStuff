@@ -1,50 +1,50 @@
-execute_console vimiv
-execute vimiv
-vimiv
-rename ballon_result.png
-rename positron_discovery.png
-rename neutralKaon_discovery.png
-rename EAS_cascade.png
-rename Hyukoh_Gold_Chet_Faker.webm
-shell j
-search bach
-find bach
-find the
-find logoj
-find uhh
-find mas
-find extr
-find ba
-find 
-find insp
-rename positronProblem.png
-rename PAO_telescope.png
-rename PAO_map.png
-find thes
-find STPpr
-find v19_
-rename CLscan_NP1.png
-rename CLscan_v13_statOnly.png
-rename CLscan_v13_JET.png
-rename v19_yields.png
-rename v13_yields.png
-rename syst_SR1.png
-rename syst_twoMu1.png
-rename HEphotons.png
-rename neutrinoSources.png
-search STP
-find stppr
-open_with feh
-search atlas
-open_with zathura
-open_with 
-search 
-search W_strong
-search Z_strong
-find Mas
-find TE
-find pi
-find Dr
+rename fineBinning_scale4.png
+rename Hinv_diagram.png
+rename postFit_VBFpaper18.png
+rename ruiBinning.png
+rename dphiOnly_statonly.png
+rename reference_plot.png
+rename ruiSelection.png
+rename WIMPnucleonXS.png
+rename Z_jets.png
+rename ATLAS18_postFit.png
+rename TOR_MSc_JanikvA.pdf
+rename jj_dphi_upperLimit_TheoBinsDecorr.png
+find tm
+rename Lindert_Vjets_DM.pdf
+
+mkdir kinPlots
+find pdf
+open_with jkj
 rename APP_script.pdf
+find sky
+rename VBFHinv18_Syst.png
+find mer
+rename VBFHinv18_WIMPinterpretation.png
+open_with 
+mkdir tables
+find inter
+find fi
+search best
+rename Hportal_searches.png
+find pro
+find VB
+find tr
+find te
+rename binning_sketch.png
+rename cutCompare.png
+shell 
+rename lowMET_NofJVT.png
+rename lowMET_WithfJVT.png
+find sn
+rename rel21_lessJets.png
+find 
+rename Rel20_dataYields.png
+rename WCR_20vs21.png
+rename ZCR_20vs21.png
+open_with lodraw
+open_with gimp
+rename DM_Hbb_CONF.pdf
+rename DM_Hbb_Internal.pdf
+mkdir papers
 delete
-find mi

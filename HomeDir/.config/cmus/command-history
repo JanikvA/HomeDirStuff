@@ -1,9 +1,12 @@
-add ~/Music/Music/
+add ~/Music
+shuffle 
 clear
+bind -f common ö win-activate
+add ~/Music/longShit/
+add ~/Music/Music/
 a ~/Music
 load ~/.config/cmus/philoCC.pl
 a ~/Music/*
-add ~/Music
 bind common ^D win-half-page-down
 bind common ^U win-half-page-up
 bind -f common ^U win-half-page-up
