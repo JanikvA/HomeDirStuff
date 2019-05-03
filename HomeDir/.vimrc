@@ -414,6 +414,8 @@ nnoremap L :bn<CR>
 
 nnoremap n nzz
 nnoremap N Nzz
+"also centers the first search result
+cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz' : '<CR>' 
 
 " nnoremap <CR> :
 
