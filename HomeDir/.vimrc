@@ -9,8 +9,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugin 'Valloric/YouCompleteMe'
-Plugin 'maralla/completor.vim' "needs vim 8
-
+" Plugin 'maralla/completor.vim' "needs vim 8, checkout CoC
+Plugin 'neoclide/coc.nvim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'sirver/ultisnips'
@@ -20,31 +20,41 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
-Plugin 'easymotion/vim-easymotion'
+" Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/gv.vim' " :GV will open commit browser
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'lervag/vimtex'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/vim-peekaboo'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'wellle/targets.vim'
 Plugin 'chiel92/vim-autoformat'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/rainbow_parentheses.vim'
-Plugin 'google/vim-searchindex'
-Plugin 'francoiscabrol/ranger.vim'
 
 Plugin 'w0rp/ale'
+
+" Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'svermeulen/vim-easyclip'
+
+Plugin 'google/vim-searchindex'
+Plugin 'francoiscabrol/ranger.vim'
+Plugin 'ZoomWin'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/vim-peekaboo'
+
+
+Plugin 'wellle/tmux-complete.vim'
+
+" Plugin 'mhinz/vim-signify' "could replace gitgutter
 
 " Plugin 'scrooloose/syntastic' "could replace ale
 " Plugin 'sheerun/vim-polyglot' "makes stuff kinda slow
@@ -57,22 +67,59 @@ Plugin 'w0rp/ale'
 call vundle#end()
 filetype plugin indent on
 
+"svermeulen/vim-easyclip
+
+let g:EasyClipShareYanks = 1
+let g:EasyClipEnableBlackHoleRedirect = 0
+"easyclip introduces a mapping "m" for cutting
+nnoremap gm m
+
+
+"wellle/tmux-complete.vim
+"with <c-x><c-u> you can doe completion of any text visilbe in any tmux pane
+let g:tmuxcomplete#trigger = 'completefunc'
+
 "junegunn/rainbow_parentheses.vim
-" let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 " ranger.vim
 let g:ranger_map_keys = 0
 " let g:NERDTreeHijackNetrw = 0
 " let g:ranger_replace_netrw = 1
 
+" coc
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+
+
+
 "completor
-let g:completor_clang_binary ='/usr/bin/clang-6.0'
-let g:completor_python_binary = '/usr/bin/python'
+" XXX only uncomment this for completor
+
+" let g:completor_clang_binary ='/usr/bin/clang-6.0'
+" let g:completor_python_binary = '/usr/bin/python'
+" let g:completor_complete_options = 'menuone,noselect,preview'
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" XXX
 
 " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " let g:completor_auto_trigger = 1
-let g:completor_complete_options = 'menuone,noselect,preview'
 " inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
 
 " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
@@ -99,8 +146,6 @@ let g:completor_complete_options = 'menuone,noselect,preview'
 " endfunction
 
 " Use `tab` key to select completions.  Default is arrow keys.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " " Use tab to trigger auto completion.  Default suggests completions as you type.
 " let g:completor_auto_trigger = 0
@@ -122,12 +167,14 @@ au FileType c,cpp setlocal commentstring=//\ %s
 let g:peekaboo_delay = 1000
 
 " yank stack
-let g:yankstack_map_keys = 0
-nmap Ö <Plug>yankstack_substitute_older_paste
-nmap Ä <Plug>yankstack_substitute_newer_paste
+" let g:yankstack_map_keys = 0
+" nmap Ö <Plug>yankstack_substitute_older_paste
+" nmap Ä <Plug>yankstack_substitute_newer_paste
 
 "  vim-autoformat
 nnoremap <leader>af :Autoformat<cr>
+nnoremap <leader>aaf :bufdo Autoformat<cr>
+
 
 " vim-sneak
 " map ö <Plug>Sneak_s
@@ -146,8 +193,13 @@ nmap ga <Plug>(EasyAlign)
 nnoremap <leader>u :UndotreeToggle<cr>
 
 " vim-indent-guides
-let g:indent_guides_guide_size=1
-let g:indent_guides_start_level=2
+" let g:indent_guides_guide_size=1
+" let g:indent_guides_start_level=2
+" let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=26
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=6
+"6,26
 
 " goyo
 nnoremap üg :Goyo<CR>
@@ -189,8 +241,32 @@ nnoremap <leader>f :BLines<CR>
 nnoremap <leader>m :Commands<CR>
 nnoremap <leader>ag :Ag<CR>
 nnoremap <leader>h :Helptags<CR>
+nnoremap <leader>t :Tags<CR>
 
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
+
+function! s:yank_list()
+  redir => ys
+  silent Yanks
+  redir END
+  return split(ys, '\n')[1:]
+endfunction
+
+function! s:yank_handler(reg)
+  if empty(a:reg)
+    echo "aborted register paste"
+  else
+    let token = split(a:reg, ' ')
+    execute 'Paste' . token[0]
+  endif
+endfunction
+
+command! FZFYank call fzf#run({
+\ 'source': <sid>yank_list(),
+\ 'sink': function('<sid>yank_handler'),
+\ 'options': '-m',
+\ 'down': 12
+\ })
 
 " This is now done just with <Enter>
 
@@ -279,8 +355,22 @@ let g:tagbar_map_prevtag = "<C-K>"
 set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*
 
 "scrooloose/nerdtree
-map <C-e> :NERDTreeToggle<CR>
+map <leader>e :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.swp$','\.root$','\.o$','\.pyc$', '\~$']
+
+" nerdtree-git-plugin
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<C-a>"
@@ -381,6 +471,11 @@ set expandtab
 set nu
 set laststatus=2
 set mouse=a
+if has("mouse_sgr")
+  set ttymouse=sgr
+else
+  set ttymouse=xterm2
+end
 set scrolloff=5
 set hidden
 set shiftwidth=4
@@ -399,11 +494,16 @@ set backspace=indent,eol,start
 :command Pdf silent !xdg-open %:r.pdf &
 syntax on
 
-"TODO insert mappings: c-e ; c-y; c-a
+"TODO insert mappings:  c-y
+inoremap <C-e> <Esc>:FZFYank<CR>
+nnoremap <C-e> :FZFYank<CR>
 
-"make this depending on file type
-nnoremap <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
+
+"TODO for some reason this has a slight delay now. it is instant if i do <leader>dk
+autocmd FileType c,cpp      nnoremap <buffer> <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
+autocmd FileType python     nnoremap <buffer> <leader>d o<Esc>0iprint " #### *!*Debug*!* 1 #### "<Esc>0
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>
+
 " nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
 " the following allow to change -> and . in c++ code
 nnoremap üp /\D\.\D<CR>ls-><Esc>:nohlsearch<CR>
@@ -412,10 +512,11 @@ nnoremap üo /\D->\D<CR>lc2l.<Esc>:nohlsearch<CR>
 nnoremap H :bp<CR>
 nnoremap L :bn<CR>
 
-nnoremap n nzz
-nnoremap N Nzz
+" This workaround leads to :SearchIndex being called twice. Maybe i can optimize it somehow
+nmap n nzzg/
+nmap N Nzzg/
 "also centers the first search result
-cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz' : '<CR>' 
+cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz:SearchIndex<CR>' : '<CR>' 
 
 " nnoremap <CR> :
 
