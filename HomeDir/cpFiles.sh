@@ -10,5 +10,6 @@ cp ~/.Xmodmap .Xmodmap
 cp ~/.ctags .ctags  
 cp ~/.Xdefaults .Xdefaults  
 cp ~/.tmux.conf .tmux.conf  
+cp -r ~/bin .
 cp -r ~/.tmux .
 cp -r ~/.config .

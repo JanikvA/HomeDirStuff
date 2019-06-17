@@ -1,50 +1,50 @@
-rename fineBinning_scale4.png
-rename Hinv_diagram.png
-rename postFit_VBFpaper18.png
-rename ruiBinning.png
-rename dphiOnly_statonly.png
-rename reference_plot.png
-rename ruiSelection.png
-rename WIMPnucleonXS.png
-rename Z_jets.png
-rename ATLAS18_postFit.png
-rename TOR_MSc_JanikvA.pdf
-rename jj_dphi_upperLimit_TheoBinsDecorr.png
-find tm
-rename Lindert_Vjets_DM.pdf
-
-mkdir kinPlots
-find pdf
-open_with jkj
-rename APP_script.pdf
-find sky
-rename VBFHinv18_Syst.png
-find mer
-rename VBFHinv18_WIMPinterpretation.png
-open_with 
-mkdir tables
-find inter
-find fi
-search best
-rename Hportal_searches.png
-find pro
-find VB
-find tr
-find te
-rename binning_sketch.png
-rename cutCompare.png
+open_with 0
+rename rawCutflow.png
+rename rawCutflow_tb1.png
 shell 
-rename lowMET_NofJVT.png
-rename lowMET_WithfJVT.png
-find sn
-rename rel21_lessJets.png
+open_with 
+open_with zathura
+rename VR_trk_jet_calib_2018.pdf
+rename calib_improvedMethod_2019.pdf
+rename INT_NOTE_calib_improvedMethod_2019.pdf
 find 
-rename Rel20_dataYields.png
-rename WCR_20vs21.png
-rename ZCR_20vs21.png
-open_with lodraw
-open_with gimp
-rename DM_Hbb_CONF.pdf
-rename DM_Hbb_Internal.pdf
-mkdir papers
+mkdir English
+
+rename BSc
+rename BSc_Cert.pdf
+rename BSC_Examination_Cert.pdf
+rename BSc_Examination_Cert.pdf
+rename BSc_TOR.pdf
+rename BSc_DiplomaSupplement.pdf
+rename MSc_Cert.pdf
+rename MSc_Examination_Ceert.pdf
+rename MSc_DiplomaSupplement.pdf
+rename MSc_TOR.pdf
+rename Abi_p1.jpg
+rename Abi_p2.jpg
+rename Abi_p3.jpg
+rename Abi_p4.jpg
+rename vonAhnen_Janik_Abitur_Zeugniss.pdf
+rename SupervisionAgreement.pdf
+rename Forschungsskizze.pdf
+rename IDcard.pdf
+rename PIER.pdf
+filter 
+f
+rename highLVL_out.png
+rename mj1l.png
+rename ttbar_dileptonic.png
+rename CR_def.png
+rename pre_post_fit_regions.png
+rename 
+rename mj1l_withCut.png
+mkdir interestingTalks
+rename sideBand_c_sf_b_70.png
+rename vfabiani
+rename sideBand_fitProblem.png
 delete
+rename Veronica_weridSyst.png
+rename noDiscriminationLowPt.png
+rename INT_NOTE_VR_track_jet_calib_2019.pdf
+filter png
+filter

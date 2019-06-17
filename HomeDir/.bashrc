@@ -89,7 +89,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -ltr'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -138,11 +138,13 @@ function cl {
     }
 
 alias mntlx='sudo sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,allow_other jvonahne@lxplus.cern.ch:/afs/cern.ch/user/j/jvonahne/ /mnt/lxplus'
-alias mntdust='sudo sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,allow_other ahnenjan@naf-atlas.desy.de:/nfs/dust/atlas/user/ahnenjan /mnt/dust'
+alias mntdust='sudo sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,allow_other ahnenjan@naf-atlas.desy.de:/nfs/dust/atlas/user/ahnenjan/phd /mnt/dust'
 alias unmntdust='sudo fusermount -uz /mnt/dust'
 
 alias scndMonitor='xrandr --output HDMI1 --auto --right-of eDP1'
 alias thesis='cd /home/janik/Dropbox/Master/thesis && vim -S Session.vim'
+alias updatePLaylist='youtube-dl --config-location ~/.config/youtube-dl/downloadPL "https://www.youtube.com/watch?v=TMWXNueRYlg&list=PLtwVsjVoAQEwJ-SpewJUBRU_DvqWceIFG&index=2&t=0s"'
+alias getScratchPlots='scp ahnenjan@naf-atlas.desy.de:/nfs/dust/atlas/user/ahnenjan/scratch/Plots/* /home/janik/cernbox/scratchPlots'
 
 shopt -s autocd
 
@@ -177,5 +179,6 @@ source "/home/janik/.fzf/shell/key-bindings.bash"
 # export FZF_DEFAULT_COMMAND=
 
 
-
 echo ".bashrc has been executed"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

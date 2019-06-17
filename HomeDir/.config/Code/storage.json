@@ -466,7 +466,8 @@
     },
     "pickerWorkingDir": "/mnt/dust/STPProcessing",
     "openedPathsList": {
-        "workspaces2": [
+        "workspaces3": [
+            "file:///mnt/dust/phd/monoH/XAMPPtutorial/xamppexample/source/XAMPPplotting/data/HistoConf/Example",
             "file:///mnt/dust/STPProcessing/source",
             "file:///mnt/dust/myVBFStats/workspaces/Rel207autoLimitCalc/automatedLimitcalc/xmlTemplates",
             "file:///mnt/dust/myVBFStats/workspaces/Rel207autoLimitCalc/automatedLimitcalc/xmlTemplates/fullSyst",
@@ -477,16 +478,17 @@
         "files2": []
     },
     "windowsState": {
-        "openedWindows": [],
         "lastActiveWindow": {
-            "backupPath": "/home/janik/.config/Code/Backups/1548409410002",
+            "folder": "file:///mnt/dust/phd/monoH/XAMPPtutorial/xamppexample/source/XAMPPplotting/data/HistoConf/Example",
+            "backupPath": "/home/janik/.config/Code/Backups/b5c97607a81356db48c79d76cca5d77f",
             "uiState": {
                 "mode": 1,
-                "x": 0,
-                "y": 0,
-                "width": 1366,
-                "height": 749
+                "x": 1368,
+                "y": 54,
+                "width": 1916,
+                "height": 1125
             }
-        }
+        },
+        "openedWindows": []
     }
 }

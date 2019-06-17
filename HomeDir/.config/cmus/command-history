@@ -1,9 +1,12 @@
-add ~/Music
+add ~/Music/Music/
+add ~/Music/Music
+Add ~/Music
+shuffle
 shuffle 
 clear
+add ~/Music
 bind -f common ö win-activate
 add ~/Music/longShit/
-add ~/Music/Music/
 a ~/Music
 load ~/.config/cmus/philoCC.pl
 a ~/Music/*

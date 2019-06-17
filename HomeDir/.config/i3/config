@@ -117,6 +117,10 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# scratch pad 
+bindsym $mod+Shift+o move scratchpad
+bindsym $mod+o scratchpad show 
+
 # focus the child container
 #bindsym $mod+d focus child
 
@@ -214,6 +218,8 @@ assign [class="VidyoDesktop"] 5
 assign [class="Gimp"] 6
 
 
+# for_window [class="Gvim" instance="gvim"] float enable
+for_window [class="Gvim"] floating enable
 
 bindsym Pause exec import -screen "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m_%y__%H_%M_%S")".png"
 bindsym Shift+Pause exec import "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m_%y__%H_%M_%S")".png"
@@ -227,6 +233,10 @@ bindsym $mod+Control+l exec i3lock -t -e -n -i ~/Pictures/Wallpapers/space_test.
 
 bindsym $mod+Shift+Left move workspace to output left
 bindsym $mod+Shift+Right move workspace to output right
+
+bindsym $mod+Control+v exec ~/.vim-anywhere/bin/run
+# bindsym X exec gvim --class floatingVim
+# for_window [class="^floatingVim$"] floating enable
 
 
 # Pulse Audio controls
@@ -250,6 +260,12 @@ exec --no-startup-id nm-applet # Network manager
 
 exec --no-startup-id dropbox start # Dropbox
 
-exec --no-startup-id redshift # redshift
+exec --no-startup-id gnome-terminal
+
+# exec --no-startup-id cernbox start # CERNbox
+
+# exec --no-startup-id redshift # redshift
+
+# exec --no-startup-id thisroot # setup ROOT, not working like this
 
 # exec --no-startup-id sleep 1; xmodmap ~/.Xmodmap
