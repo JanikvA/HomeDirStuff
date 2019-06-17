@@ -1,0 +1,5 @@
+#!/bin/bash
+
+wmctrl -r thunderbird -t 1
+wmctrl -r skype -t 1
+wmctrl -r mattermost -t 1

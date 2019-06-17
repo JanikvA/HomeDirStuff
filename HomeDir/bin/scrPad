@@ -1,0 +1,9 @@
+#!/bin/sh
+tmux new-session -d 'vim ~/scratch/scrPadTMP.txt ~/Dropbox/Notes/TODO.md ~/Dropbox/Notes/NOTES.md'
+# tmux split-window -v 'ipython'
+# tmux split-window -h
+tmux new-window 'ranger'
+tmux new-window 'calcurse'
+tmux new-window 'cmus'
+tmux select-window -t :=1
+tmux -2 attach-session -d
