@@ -53,6 +53,7 @@ Plugin 'junegunn/vim-peekaboo'
 
 
 Plugin 'wellle/tmux-complete.vim'
+Plugin 'thaerkh/vim-workspace'
 
 " Plugin 'mhinz/vim-signify' "could replace gitgutter
 
@@ -66,6 +67,14 @@ Plugin 'wellle/tmux-complete.vim'
 " Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not. highlight cursoline is enough
 call vundle#end()
 filetype plugin indent on
+
+" thaerkh/vim-workspace
+let g:workspace_autosave = 0
+let g:workspace_autosave_untrailspaces = 0
+let g:workspace_session_disable_on_args = 1
+let g:workspace_session_directory = $HOME . '/.vim/sessions/'
+let g:workspace_autosave_ignore = ['gitcommit','nerdtree','tagbar']
+
 
 "svermeulen/vim-easyclip
 
@@ -426,6 +435,9 @@ colorscheme solarized
 set foldmethod=indent
 set foldlevel=999
 
+" set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+" set undodir=~/.vim/undo//
 
 "allows to jump to nearest fold that is closed
 nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
