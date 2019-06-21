@@ -167,6 +167,7 @@ if [[ ! "$PATH" == */home/janik/.fzf/bin* ]]; then
 fi
 
 export FZF_ALT_C_COMMAND='fd --type d --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='fd --follow --exclude .git'
 
 
 # Auto-completion

@@ -224,7 +224,7 @@ for_window [class="Gvim"] floating enable
 bindsym Pause exec import -screen "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m_%y__%H_%M_%S")".png"
 bindsym Shift+Pause exec import "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m_%y__%H_%M_%S")".png"
 
-bindsym $mod+Control+w exec --no-startup-id thunderbird; exec --no-startup-id skype
+bindsym $mod+Control+w exec --no-startup-id thunderbird; exec --no-startup-id skype; exec --no-startup-id firefox
 
 bindsym $mod+Control+a exec --no-startup-id pavucontrol
 
@@ -256,11 +256,15 @@ exec_always --no-startup-id feh --bg-fill -Z /home/janik/Pictures/Wallpapers/sol
 
 exec --no-startup-id xset r rate 400 50 # Set initial delay 300ms, repeat 45ms
 
+exec --no-startup-id gnome-terminal -e tmux
+
 exec --no-startup-id nm-applet # Network manager
 
 exec --no-startup-id dropbox start # Dropbox
 
-exec --no-startup-id gnome-terminal
+exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier' && xcape -e 'Caps_Lock=Escape'
+
+exec --no-startup-id sleep 1; gnome-terminal -e scrPad; i3-msg move scratchpad
 
 # exec --no-startup-id cernbox start # CERNbox
 

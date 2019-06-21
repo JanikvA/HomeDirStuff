@@ -200,6 +200,19 @@ nmap ga <Plug>(EasyAlign)
 
 " undotree
 nnoremap <leader>u :UndotreeToggle<cr>
+let g:undotree_ShortIndicators = 1
+
+" guard for distributions lacking the 'persistent_undo' feature.
+if has('persistent_undo')
+    " define a path to store persistent undo files.
+    let target_path = expand('~/.vim/vim-persisted-undo/')    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call system('mkdir -p ' . target_path)
+    endif    " point Vim to the defined undo directory.
+    let &undodir = target_path    " finally, enable undo persistence.
+    set undofile
+endif
 
 " vim-indent-guides
 " let g:indent_guides_guide_size=1
@@ -360,6 +373,7 @@ set diffopt+=vertical
 nmap <leader>c :TagbarToggle<CR>
 let g:tagbar_map_nexttag = "<C-J>"
 let g:tagbar_map_prevtag = "<C-K>"
+let g:tagbar_show_linenumbers = 1
 
 set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*
 
