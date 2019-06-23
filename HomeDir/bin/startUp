@@ -1,4 +1,4 @@
 #!/bin/bash
 
-xmodmap /home/janik/.Xmodmap
+# xmodmap /home/janik/.Xmodmap
 tmux
