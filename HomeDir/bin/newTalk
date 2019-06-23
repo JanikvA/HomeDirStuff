@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ -z "$1" ]
+then
+    echo "Enter name of directory"
+    read dirName
+else
+    dirName=$1
+fi
+
+if [ -d $dirName ]
+then
+    echo "The Directory already exists!"
+    echo "Exiting..."
+    exit
+fi
+
+mkdir -pv $dirName/pics
+sed s/NEWDIR/$dirName/ ~/bin/skeleton.tex >$dirName/$dirName.tex
