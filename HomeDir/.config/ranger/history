@@ -1,13 +1,11 @@
 open_with 0
 rename rawCutflow.png
 rename rawCutflow_tb1.png
-shell 
 open_with 
 open_with zathura
 rename VR_trk_jet_calib_2018.pdf
 rename calib_improvedMethod_2019.pdf
 rename INT_NOTE_calib_improvedMethod_2019.pdf
-find 
 mkdir English
 
 rename BSc
@@ -48,3 +46,5 @@ rename noDiscriminationLowPt.png
 rename INT_NOTE_VR_track_jet_calib_2019.pdf
 filter png
 filter
+find 
+shell 

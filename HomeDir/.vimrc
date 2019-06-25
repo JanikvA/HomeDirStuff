@@ -80,8 +80,17 @@ let g:workspace_autosave_ignore = ['gitcommit','nerdtree','tagbar']
 
 let g:EasyClipShareYanks = 1
 let g:EasyClipEnableBlackHoleRedirect = 0
-"easyclip introduces a mapping "m" for cutting
-nnoremap gm m
+let g:EasyClipYankHistorySize = 50
+let g:EasyClipShareYanks = 1
+let g:EasyClipShareYanksFile = 'easyclip'
+let g:EasyClipShareYanksDirectory = $HOME . '/.vim/vim-persisted-undo/'
+" let g:EasyClipShareYanksFile = '.vim/vim-persisted-undo/'
+
+let g:EasyClipUseCutDefaults = 0
+" only makes sense if EasyClipEnableBlackHoleRedirect is set to 1
+" nmap x <Plug>MoveMotionPlug
+" xmap x <Plug>MoveMotionXPlug
+" nmap xx <Plug>MoveMotionLinePlug
 
 
 "wellle/tmux-complete.vim
@@ -264,6 +273,7 @@ nnoremap <leader>m :Commands<CR>
 nnoremap <leader>ag :Ag<CR>
 nnoremap <leader>h :Helptags<CR>
 nnoremap <leader>t :Tags<CR>
+nnoremap <leader>k :Marks<CR>
 
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
 
@@ -553,7 +563,8 @@ nnoremap <leader>dm %x``x
 " nnoremap <leader>sc :setlocal spell spelllang=en_us
 nnoremap <leader>g <C-]>
 
-vnoremap <leader>y "+y
+" vnoremap <leader>y "+y
+nnoremap <leader>y :let @+=@"<Cr>
 nnoremap <leader>p "+p
 " The following doesn't overwrite the register if you paste in visual mode
 vnoremap p "_dP

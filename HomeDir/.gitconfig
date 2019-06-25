@@ -1,0 +1,5 @@
+[user]
+	name = JanikvA
+	email = j.v.ahnen@gmx.de
+[core]
+excludesfile = /home/janik/.gitignore

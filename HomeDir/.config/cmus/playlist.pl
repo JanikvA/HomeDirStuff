@@ -127,3 +127,28 @@
 /home/janik/Music/Music/LSD - Audio (Official Video) ft. Labrinth, Sia, Diplo.m4a
 /home/janik/Music/Music/Pham - Movements (feat. Yung Fusion) [Official Music Video].m4a
 /home/janik/Music/Music/로꼬 (Loco), 화사 (마마무) - 주지마 (Above Live) (ENG_CHN).m4a
+/home/janik/Music/Music/Lee Hi (이하이) - 희망고문 (BLUES) [Han_Rom_Eng_FR lyrics].m4a
+/home/janik/Music/Music/Jonas Brothers - Sucker.m4a
+/home/janik/Music/Music/王贰浪​​ - 像鱼 「放下所有梦和烦恼，只剩自己就好。」 ♪ Karendaidai ♪.m4a
+/home/janik/Music/Music/NIKI - urs (Official Visualizer).m4a
+/home/janik/Music/Music/Madcon - Beggin.m4a
+/home/janik/Music/Music/你是不是有點動心 - Julia Wu 吳卓源｜Official Music Visual (HD).m4a
+/home/janik/Music/Music/Duke Dumont - Ocean Drive (Official Music Video).m4a
+/home/janik/Music/Music/John Connor - Horizons (feat. Jogger).m4a
+/home/janik/Music/Music/台北夜空下 - Julia Wu 吳卓源｜Official Music Video.m4a
+/home/janik/Music/Music/Kero One & Julia Wu - 24 Hours (Official Music Video).m4a
+/home/janik/Music/Music/[MV] Lim Kim(김예림) (Togeworl(투개월)) _ Awoo.m4a
+/home/janik/Music/Music/Dennis Lloyd - Breakdown (Lyrics).m4a
+/home/janik/Music/Music/Phony Ppl - Why iii Love the Moon..m4a
+/home/janik/Music/Music/RINI - Aphrodite (Audio).m4a
+/home/janik/Music/Music/Russ - Prosper (Official Audio).m4a
+/home/janik/Music/Music/Trout Fresh _ 呂士軒『誤入奇途』 - 09 98 (Official Music Video).m4a
+/home/janik/Music/Music/수란 (SURAN) - 그놈의 별 (Feat. 헤이즈) _ 가사.m4a
+/home/janik/Music/Music/[MV] SURAN(수란) _ 1+1=0 (Feat. DEAN).m4a
+/home/janik/Music/Music/Usher x Zaytoven - ATA (Audio).m4a
+/home/janik/Music/Music/Wanting 曲婉婷 - 我的歌声里 (You Exist In My Song) [Trad. Chinese] [Official Music Video].m4a
+/home/janik/Music/Music/[龍虎門] 買榜 - 熊仔×Julia Wu 吳卓源×RGRY.m4a
+/home/janik/Music/Music/蔡健雅-红色高跟鞋MV.m4a
+/home/janik/Music/Music/陳雪凝 - 綠色『說不痛苦那是假的，畢竟我的心也是肉做的。』【動態歌詞Lyrics】.m4a
+/home/janik/Music/Music/Sun Rai - San Francisco Street.m4a
+/home/janik/Music/Music/田馥甄 Hebe Tien [我想我不會愛你 I Don't Think I Am In Love With You] Official MV.m4a

@@ -216,6 +216,7 @@ assign [class="Mattermost"] 3
 assign [class="Zathura"] 2
 assign [class="VidyoDesktop"] 5
 assign [class="Gimp"] 6
+assign [class="Firefox"] 2
 
 
 # for_window [class="Gvim" instance="gvim"] float enable
@@ -247,7 +248,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 10%-
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
-bindsym $mod+i exec --no-startup-id firefox
+# bindsym $mod+i exec --no-startup-id firefox
+# bindsym $mod+i [class="Firefox"] focus
+bindsym $mod+i exec ~/.config/i3/scripts/raiseOrRun.sh firefox Firefox
+# bindsym $mod+c exec ~/.config/i3/scripts/raiseOrRun.sh neverFindThis Firefox
 
 focus_follows_mouse no
 
@@ -269,7 +273,5 @@ exec --no-startup-id sleep 1; gnome-terminal -e scrPad; i3-msg move scratchpad
 # exec --no-startup-id cernbox start # CERNbox
 
 # exec --no-startup-id redshift # redshift
-
-# exec --no-startup-id thisroot # setup ROOT, not working like this
 
 # exec --no-startup-id sleep 1; xmodmap ~/.Xmodmap
