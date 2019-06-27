@@ -2,70 +2,56 @@
 let mapleader = ","
 set nocompatible
 set statusline=
-" ### Remove if you don't use Vundle ###
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
- call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+" ### Remove if you don't use Plug ###
+call plug#begin('~/.vim/plugged')
 
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'maralla/completor.vim' "needs vim 8, checkout CoC
-Plugin 'neoclide/coc.nvim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'sirver/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-commentary'
-" Plugin 'easymotion/vim-easymotion'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/gv.vim' " :GV will open commit browser
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'lervag/vimtex'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'mbbill/undotree'
-Plugin 'tpope/vim-repeat'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'wellle/targets.vim'
-Plugin 'chiel92/vim-autoformat'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'junegunn/rainbow_parentheses.vim'
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'maralla/completor.vim' "needs vim 8, checkout CoC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+Plug 'sirver/ultisnips'
+Plug 'JanikvA/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-commentary'
+" Plug 'easymotion/vim-easymotion'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/gv.vim' " :GV will open commit browser
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'lervag/vimtex'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'mbbill/undotree'
+Plug 'tpope/vim-repeat'
+Plug 'junegunn/vim-easy-align'
+Plug 'wellle/targets.vim'
+Plug 'chiel92/vim-autoformat'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/rainbow_parentheses.vim'
+"Plug 'w0rp/ale'
+Plug 'svermeulen/vim-easyclip'
 
-Plugin 'w0rp/ale'
-
-" Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'svermeulen/vim-easyclip'
-
-Plugin 'google/vim-searchindex'
-Plugin 'francoiscabrol/ranger.vim'
-Plugin 'ZoomWin'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/vim-peekaboo'
+Plug 'google/vim-searchindex'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-peekaboo'
 
 
-Plugin 'wellle/tmux-complete.vim'
-Plugin 'thaerkh/vim-workspace'
+Plug 'wellle/tmux-complete.vim'
+Plug 'thaerkh/vim-workspace'
 
-" Plugin 'mhinz/vim-signify' "could replace gitgutter
-
-" Plugin 'scrooloose/syntastic' "could replace ale
-" Plugin 'sheerun/vim-polyglot' "makes stuff kinda slow
-" Plugin 'junegunn/vim-slash'
-" Plugin 'junegunn/limelight.vim'
-" Plugin 'SearchComplete'
-" Plugin 'vim-scripts/sherlock.vim'
-" Plugin 'skwp/greplace.vim' "not really needed with :Ag from fzf and :cdo/cfdo
-" Plugin 'tadaa/vimade' " makes not focused buffer fade. Nice idea but did not. highlight cursoline is enough
-call vundle#end()
+" Plug 'mhinz/vim-signify' "could replace gitgutter
+" Plug 'scrooloose/syntastic' "could replace ale
+" Plug 'sheerun/vim-polyglot' "makes stuff kinda slow
+call plug#end()
 filetype plugin indent on
 
 " thaerkh/vim-workspace
@@ -740,73 +726,4 @@ vnoremap <leader>j "gy<Esc>:call GoogleSearchVisual()<CR>
 au FileType tex :NoMatchParen
 au FileType tex setlocal nocursorline
 
-
-" ###############################
-" ########## Snippets ###########
-" ###############################
-
-
-
-"c++ snippet
-:iab CPPMAIN 
-\#include <iostream><CR>
-\<CR>
-\using namespace std;<CR>
-\<CR>
-\<CR>int main(int argc, char** argv)
-\<CR>{
-\<CR>}<up><tab>
-
-"LaTeX beamer snippet
-:iab BEAMER 
-\<Bslash>documentclass{beamer}
-\<CR><Bslash>usetheme{CambridgeUS}
-\<CR><Bslash>usepackage{graphicx}
-\<CR><Bslash>usepackage{bm}
-\<CR><Bslash>usepackage{subfigure}
-\<CR><Bslash>usepackage{appendixnumberbeamer}
-\<CR><Bslash>graphicspath{{/afs/desy.de/user/a/ahnenjan/public/Plots/}}
-\<CR><Bslash>beamertemplatenavigationsymbolsempty
-\<CR>%<Bslash>setbeamertemplate{footline}[frame number]
-\<CR>
-\<CR><Bslash>title[short title]{Title}
-\<CR>%<Bslash>titlegraphic{<Bslash>includegraphics[scale=0.2]{DESY_logo.png}}
-\<CR><Bslash>author[Janik von Ahnen (DESY)]{Janik von Ahnen}
-\<CR><Bslash>institute[]{Krisztian Peters, Othmane Rifki}
-\<CR><Bslash>date[VBF Hinv, <Bslash>today]{VBF Hinv, <Bslash>today}
-\<CR>
-\<CR><Bslash>begin{document}
-\<CR><Bslash>frame{<Bslash>titlepage}
-\<CR>%<Bslash>section{Outline}
-\<CR>%<Bslash>frame{<Bslash>tableofcontents}
-\<CR>
-\<CR><Bslash>begin{frame}
-\<CR><Bslash>frametitle{<++>}
-\<CR><Bslash>begin{itemize}
-\<CR><Bslash>item <++>
-\<CR><Bslash>end{itemize}
-\<CR><Bslash>begin{figure}
-\<CR><Bslash>subfigure{<Bslash>includegraphics[width=0.45<Bslash>textwidth]{<++>}}
-\<CR><Bslash>subfigure{<Bslash>includegraphics[width=0.45<Bslash>textwidth]{<++>}}
-\<CR><Bslash>end{figure}
-\<CR><Bslash>end{frame}
-\<CR>
-\<CR>
-\<CR><Bslash>appendix
-\<CR><Bslash>begin{frame}
-\<CR><tab><Bslash>frametitle{Backup}
-\<CR><C-w><Bslash>end{frame}
-\<CR><Bslash>end{document}
-
-"Beamer frame snippet
-:iab FRAME 
-\<CR><Bslash>begin{frame}
-\<CR><Bslash>frametitle{<++>}
-\<CR><Bslash>begin{itemize}
-\<CR><Bslash>item <++>
-\<CR><Bslash>end{itemize}
-\<CR><Bslash>begin{figure}
-\<CR><Bslash>subfigure{<Bslash>includegraphics[width=0.45<Bslash>textwidth]{<++>}}
-\<CR><Bslash>subfigure{<Bslash>includegraphics[width=0.45<Bslash>textwidth]{<++>}}
-\<CR><Bslash>end{figure}
-\<CR><Bslash>end{frame}
+nnoremap <leader>vg :vimgrep //g `git ls-files`<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
