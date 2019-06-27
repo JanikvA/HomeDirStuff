@@ -1,0 +1,364 @@
+" vimrc Janik
+let mapleader = ","
+set nocompatible
+set statusline=
+
+"https://github.com/altercation/vim-colors-solarized
+"https://github.com/junegunn/vim-plug
+
+call plug#begin('~/.vim/plugged')
+
+"### TIER 1 ###
+Plug 'sirver/ultisnips'
+Plug 'JanikvA/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'wellle/targets.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+
+"### TIER 2 ###
+"Plug 'tpope/vim-fugitive'
+"Plug 'ludovicchabant/vim-gutentags'
+
+
+"### TIER 3 ###
+"Plug 'mbbill/undotree'
+"Plug 'tpope/vim-repeat'
+
+call plug#end()
+filetype plugin indent on
+
+"### TIER 1 ###
+
+"vim-commentary
+au FileType c,cpp setlocal commentstring=//\ %s
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<C-a>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+
+"### TIER 2 ###
+
+" fzf
+" If installed using git
+set rtp+=~/.fzf
+
+nnoremap <C-p> :FZF<CR>
+nnoremap <C-b> :Buffers<CR>
+nnoremap <leader>f :BLines<CR>
+nnoremap <leader>m :Commands<CR>
+nnoremap <leader>ag :Ag<CR>
+nnoremap <leader>h :Helptags<CR>
+nnoremap <leader>t :Tags<CR>
+nnoremap <leader>k :Marks<CR>
+
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
+
+"fugitive
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>gw :Gwrite<CR><CR>
+set diffopt+=vertical
+"### TIER 3 ###
+
+"junegunn/rainbow_parentheses.vim
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+augroup dummy
+  autocmd!
+  autocmd VimEnter * RainbowParentheses
+augroup END
+
+" undotree
+nnoremap <leader>u :UndotreeToggle<cr>
+let g:undotree_ShortIndicators = 1
+
+" guard for distributions lacking the 'persistent_undo' feature.
+if has('persistent_undo')
+    " define a path to store persistent undo files.
+    let target_path = expand('~/.vim/vim-persisted-undo/')    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call system('mkdir -p ' . target_path)
+    endif    " point Vim to the defined undo directory.
+    let &undodir = target_path    " finally, enable undo persistence.
+    set undofile
+endif
+
+"tagbar
+nmap <leader>c :TagbarToggle<CR>
+let g:tagbar_map_nexttag = "<C-J>"
+let g:tagbar_map_prevtag = "<C-K>"
+let g:tagbar_show_linenumbers = 1
+
+"###############
+
+set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*,*/.o/*
+
+
+"set statusline+=%#LineNr#
+"set statusline+=\ %f
+"set statusline+=%m\
+"set statusline+=%=
+"set statusline+=%#CursorColumn#
+"set statusline+=\ %y
+""set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+""set statusline+=\[%{&fileformat}\]
+"set statusline+=\ %p%%
+"set statusline+=\ %l:%c
+"set statusline+=\ 
+
+" let g:netrw_liststyle= 2 " Change the default style of netrw
+
+" colo slate
+syntax enable
+set background=dark
+colorscheme solarized
+
+" folding stuff. Very nice for python
+set foldmethod=indent
+set foldlevel=999
+
+" set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+" set undodir=~/.vim/undo//
+
+"allows to jump to nearest fold that is closed
+nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
+nnoremap <silent> <leader>zk :call NextClosedFold('k')<cr>
+function! NextClosedFold(dir)
+    let cmd = 'norm!z' . a:dir
+    let view = winsaveview()
+    let [l0, l, open] = [0, view.lnum, 1]
+    while l != l0 && open
+        exe cmd
+        let [l0, l] = [l, line('.')]
+        let open = foldclosed(l) < 0
+    endwhile
+    if open
+        call winrestview(view)
+    endif
+endfunction
+
+noremap <F2>  <Esc>:w<Enter>:!root -l %<Enter>
+noremap <F3> <Esc>:w<Enter>:!python %<Enter>
+" noremap <F3> <Esc>:w !python<CR>
+vnoremap <F3> :w !python<CR>
+noremap <F4> <Esc>:w<Enter>:!./%<Enter>
+noremap <F6> <Esc>:w<Enter>:!pdflatex %<Enter>
+
+inoremap <c-l>  {<CR><tab><CR>}<up><right>
+
+" maybe use this instead of H,L
+set wcm=<C-z>
+" nnoremap <leader><Tab> :buffer<Space><C-z><C-z>
+nnoremap <leader><Tab> :buffer<Space><C-z>
+
+set wildmenu "allows easier use of tab completions, e.g. :e <tab>, :buffer <tab>
+set wildmode=list:longest,full
+" set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find.
+set confirm
+set smartindent
+set pastetoggle=<F5>
+set ignorecase
+set smartcase
+set tabstop=4
+set expandtab
+set nu
+set laststatus=2
+set mouse=a
+if has("mouse_sgr")
+  set ttymouse=sgr
+else
+  set ttymouse=xterm2
+end
+set scrolloff=5
+set hidden
+set shiftwidth=4
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+" set formatoptions-=cro " see :help fo-table
+augroup dummy
+  autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "don't auto insert comment. Seems to slow vim down a bit? check this
+augroup END
+
+set backspace=indent,eol,start
+
+:command W w
+:command Q q
+:command Wa wa
+
+:command Pandoc !pandoc -f markdown -t latex -o %:r.pdf %
+:command Pdf silent !xdg-open %:r.pdf &
+syntax on
+
+"TODO for some reason this has a slight delay now. it is instant if i do <leader>dk
+augroup dummy
+  autocmd FileType c,cpp      nnoremap <buffer> <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
+  autocmd FileType python     nnoremap <buffer> <leader>d o<Esc>0iprint " #### *!*Debug*!* 1 #### "<Esc>0
+augroup END
+nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>
+
+" nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
+" the following allow to change -> and . in c++ code
+nnoremap üp /\D\.\D<CR>ls-><Esc>:nohlsearch<CR>
+nnoremap üo /\D->\D<CR>lc2l.<Esc>:nohlsearch<CR>
+
+nnoremap H :bp<CR>
+nnoremap L :bn<CR>
+
+" This workaround leads to :SearchIndex being called twice. Maybe i can optimize it somehow
+nmap n nzz
+nmap N Nzz
+"also centers the first search result
+cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz<CR>' : '<CR>' 
+
+nnoremap <space> i<space><Esc>l
+nnoremap <leader>o o<ESC>
+nnoremap <leader>O O<ESC>
+nnoremap <leader>dm %x``x
+" nnoremap <leader>sc :setlocal spell spelllang=en_us
+nnoremap <leader>g <C-]>zz
+
+" vnoremap <leader>y "+y
+nnoremap <leader>y :let @+=@"<Cr>
+nnoremap <leader>p "+p
+" set clipboard=unnamedplus
+
+" disables vim from clearing clipboard after leaving/suspending vi session
+if executable("xclip")
+    function! PreserveClipboard()
+      call system("xsel -ib", getreg('+')) "<- if using xsel
+    endfunction
+    augroup dummy
+      autocmd VimLeave * call PreserveClipboard()
+    augroup END
+    noremap <silent> <c-z> <Esc>:call system("xsel -ib", getreg('+'))<cr>:suspend<cr>
+endif
+
+" The following doesn't overwrite the register if you paste in visual mode
+vnoremap p "_dP
+
+" loacation list mappings
+nnoremap <leader>ln :lne<cr>
+nnoremap <leader>lp :lp<cr>
+
+
+nnoremap <leader>q :q<CR>
+nnoremap <leader>x :x<CR>
+nnoremap <leader>s :w<CR>
+nnoremap <leader><space> <Esc>/<++><Enter>c4l
+
+"tab movement
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+
+" <Esc> mappings
+inoremap kj <Esc>
+cmap kj <Esc>
+
+" German keyboard mappings
+nnoremap ä ?
+nnoremap ö /
+nnoremap üh :nohlsearch<CR>
+
+"experimental
+nnoremap ün :set nu!<CR>
+nnoremap üq :qa<CR>
+nnoremap üt :tabedit
+" German keyboard mappings
+
+
+"easier window movement
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" " Needed to be able to properly map the alt key
+" execute "set <A-h>=\eh"
+" execute "set <A-j>=\ej"
+" execute "set <A-k>=\ek"
+" execute "set <A-l>=\el"
+
+" " provide hjkl movements in Insert mode and Command-line mode via the <Alt> modifier key
+" noremap! <A-h> <Left>
+" noremap! <A-j> <Down>
+" noremap! <A-k> <Up>
+" noremap! <A-l> <Right>
+
+" Automatic paste mode for terminal
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+
+" Automatic paste mode for terminal using tmux short cuts
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+
+" If pasting in visual mode the default register is not overwritter
+xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+
+" custom colour stuff
+" hi Search ctermbg=DarkBlue ctermfg=DarkRed
+" hi Folded ctermbg=DarkMagenta ctermfg=DarkRed
+
+" makes stuff super laggy atm
+set cursorline
+nnoremap üc :set cursorline!<cr>
+" hi CursorLine   ctermbg=black ctermfg=None
+" hi CursorLine   cterm=underline ctermbg=black ctermfg=None
+
+"make cursorline only in active window visible
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+
+" to make tex files smoother, maybe also turn off syntax. syntax off
+au FileType tex :NoMatchParen
+au FileType tex setlocal nocursorline
