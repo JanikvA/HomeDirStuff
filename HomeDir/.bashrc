@@ -140,6 +140,8 @@ function cl {
 alias mntlx='sudo sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,allow_other jvonahne@lxplus.cern.ch:/afs/cern.ch/user/j/jvonahne/ /mnt/lxplus'
 alias mntdust='sudo sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,allow_other ahnenjan@naf-atlas.desy.de:/nfs/dust/atlas/user/ahnenjan/phd /mnt/dust'
 alias unmntdust='sudo fusermount -uz /mnt/dust'
+alias mntafs='sudo sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,allow_other ahnenjan@naf-atlas.desy.de:/afs/desy.de/user/a/ahnenjan/Code /mnt/code'
+alias unmntafs='sudo fusermount -uz /mnt/code'
 
 alias scndMonitor='xrandr --output HDMI1 --auto --right-of eDP1'
 alias thesis='cd /home/janik/Dropbox/Master/thesis && vim -S Session.vim'

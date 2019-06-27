@@ -1,10 +1,14 @@
 #!/bin/sh
 redshift -t 5000:1000 &
-tmux new-session -d 'vim -n ~/scratch/scrPadTMP.txt ~/Dropbox/Notes/TODO.md ~/Dropbox/Notes/NOTES.md'
-tmux split-window -v
+# tmux new-session -d 'vim -n ~/scratch/scrPadTMP.txt ~/Dropbox/Notes/TODO.md ~/Dropbox/Notes/NOTES.md'
+# tmux new-session -d 'bash --init-file ~/bin/vimBash.sh'
+tmux new-session -d 'bash'
+tmux send-keys "vim -n ~/scratch/scrPadTMP.txt ~/Dropbox/Notes/TODO.md ~/Dropbox/Notes/NOTES.md" C-m
+# tmux split-window -v
 # tmux split-window -v 'ipython'
 # tmux split-window -h
-tmux new-window 'bash --init-file ~/bin/rangerROOT.sh'
+tmux new-window 'bash'
+tmux send-keys "ranger" C-m
 tmux new-window 'calcurse'
 tmux new-window 'cmus'
 tmux select-window -t :=1

@@ -152,3 +152,4 @@
 /home/janik/Music/Music/陳雪凝 - 綠色『說不痛苦那是假的，畢竟我的心也是肉做的。』【動態歌詞Lyrics】.m4a
 /home/janik/Music/Music/Sun Rai - San Francisco Street.m4a
 /home/janik/Music/Music/田馥甄 Hebe Tien [我想我不會愛你 I Don't Think I Am In Love With You] Official MV.m4a
+/home/janik/Music/Music/Jeremy Zucker - comethru.m4a

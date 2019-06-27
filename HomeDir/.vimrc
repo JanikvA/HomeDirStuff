@@ -74,6 +74,8 @@ let g:workspace_autosave_untrailspaces = 0
 let g:workspace_session_disable_on_args = 1
 let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 let g:workspace_autosave_ignore = ['gitcommit','nerdtree','tagbar']
+let g:workspace_persist_undo_history = 0  " enabled = 1 (default), disabled = 0
+" let g:workspace_undodir=expand('~/.vim/vim-persisted-undo/')
 
 
 "svermeulen/vim-easyclip
@@ -174,7 +176,10 @@ endfunction
 
 
 "RainbowParantheses
-autocmd VimEnter * RainbowParentheses
+augroup dummy
+  autocmd!
+  autocmd VimEnter * RainbowParentheses
+augroup END
 
 "vim-slash
 " noremap <plug>(slash-after) zz
@@ -228,8 +233,10 @@ endif
 " let g:indent_guides_start_level=2
 " let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=26
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=6
+augroup dummy
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=26
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=6
+augroup END
 "6,26
 
 " goyo
@@ -492,9 +499,10 @@ inoremap <c-l>  {<CR><tab><CR>}<up><right>
 
 " maybe use this instead of H,L
 set wcm=<C-z>
-nnoremap <leader><Tab> :buffer<Space><C-z><C-z>
+" nnoremap <leader><Tab> :buffer<Space><C-z><C-z>
+nnoremap <leader><Tab> :buffer<Space><C-z>
 
-set wildmenu "allows easier use of tab completions, e.g. :e <tab>
+set wildmenu "allows easier use of tab completions, e.g. :e <tab>, :buffer <tab>
 set wildmode=list:longest,full
 " set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find.
 set confirm
@@ -518,7 +526,9 @@ set shiftwidth=4
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 " set formatoptions-=cro " see :help fo-table
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "don't auto insert comment. Seems to slow vim down a bit? check this
+augroup dummy
+  autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "don't auto insert comment. Seems to slow vim down a bit? check this
+augroup END
 
 set backspace=indent,eol,start
 
@@ -536,8 +546,10 @@ nnoremap <C-e> :FZFYank<CR>
 
 
 "TODO for some reason this has a slight delay now. it is instant if i do <leader>dk
-autocmd FileType c,cpp      nnoremap <buffer> <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
-autocmd FileType python     nnoremap <buffer> <leader>d o<Esc>0iprint " #### *!*Debug*!* 1 #### "<Esc>0
+augroup dummy
+  autocmd FileType c,cpp      nnoremap <buffer> <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
+  autocmd FileType python     nnoremap <buffer> <leader>d o<Esc>0iprint " #### *!*Debug*!* 1 #### "<Esc>0
+augroup END
 nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>
 
 " nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
@@ -557,15 +569,39 @@ cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz:SearchIndex<CR>' : '<CR>'
 " nnoremap <CR> :
 
 nnoremap <space> i<space><Esc>l
-nnoremap <leader>o o<ESC> " could remove this
-nnoremap <leader>O O<ESC> " could remove this
+nnoremap <leader>o o<ESC>
+nnoremap <leader>O O<ESC>
 nnoremap <leader>dm %x``x
 " nnoremap <leader>sc :setlocal spell spelllang=en_us
-nnoremap <leader>g <C-]>
+nnoremap <leader>g <C-]>zz
 
 " vnoremap <leader>y "+y
 nnoremap <leader>y :let @+=@"<Cr>
 nnoremap <leader>p "+p
+" set clipboard=unnamedplus
+
+" disables vim from clearing clipboard after leaving/suspending vi session
+" if executable("xclip")
+function! PreserveClipboard()
+  call system("xsel -ib", getreg('+')) "<- if using xsel
+  " call system('echo ' . shellescape(getreg('+')) . 
+  "         \ ' | xclip -selection clipboard')
+  " call system("xclip -selection clipboard -i", getreg('+'))
+endfunction
+" function! PreserveClipboadAndSuspend()
+"   " call PreserveClipboard()
+"   call system("xsel -ib", getreg('+')) "<- if using xsel
+"   suspend
+" endfunction
+augroup dummy
+  autocmd VimLeave * call PreserveClipboard()
+augroup END
+" nnoremap <silent> <c-z> :call PreserveClipboadAndSuspend()<cr>
+" noremap <silent> <c-z> :call system("xsel -ib", getreg('+'))<cr>:suspend<cr>
+noremap <silent> <c-z> <Esc>:call system("xsel -ib", getreg('+'))<cr>:suspend<cr>
+" vnoremap <silent> <c-z> :<c-u>call PreserveClipboadAndSuspend()<cr>
+" endif
+
 " The following doesn't overwrite the register if you paste in visual mode
 vnoremap p "_dP
 
