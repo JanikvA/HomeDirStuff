@@ -47,6 +47,7 @@ Plug 'junegunn/vim-peekaboo'
 
 Plug 'wellle/tmux-complete.vim'
 Plug 'thaerkh/vim-workspace'
+" Plug 'tpope/vim-obsession'
 
 " Plug 'mhinz/vim-signify' "could replace gitgutter
 " Plug 'scrooloose/syntastic' "could replace ale
@@ -181,8 +182,8 @@ let g:peekaboo_delay = 1000
 " nmap Ä <Plug>yankstack_substitute_newer_paste
 
 "  vim-autoformat
-nnoremap <leader>af :Autoformat<cr>
-nnoremap <leader>aaf :bufdo Autoformat<cr>
+nnoremap <leader>af :Autoformat
+nnoremap <leader>aaf :bufdo Autoformat
 
 
 " vim-sneak
@@ -201,6 +202,7 @@ nmap ga <Plug>(EasyAlign)
 " undotree
 nnoremap <leader>u :UndotreeToggle<cr>
 let g:undotree_ShortIndicators = 1
+let g:undotree_SetFocusWhenToggle = 1
 
 " guard for distributions lacking the 'persistent_undo' feature.
 if has('persistent_undo')
@@ -727,3 +729,5 @@ au FileType tex :NoMatchParen
 au FileType tex setlocal nocursorline
 
 nnoremap <leader>vg :vimgrep //g `git ls-files`<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+
+set complete=.,w,b,u,t

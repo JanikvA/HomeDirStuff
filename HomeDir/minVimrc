@@ -18,21 +18,41 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
 
 
 "### TIER 2 ###
-"Plug 'tpope/vim-fugitive'
+"Plug 'majutsushi/tagbar'
 "Plug 'ludovicchabant/vim-gutentags'
 
 
 "### TIER 3 ###
 "Plug 'mbbill/undotree'
 "Plug 'tpope/vim-repeat'
+"Plug 'thaerkh/vim-workspace'
+"Plug 'scrooloose/nerdtree'
+"Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 filetype plugin indent on
 
 "### TIER 1 ###
+
+" vim-airline
+" let g:airline#extensions#syntastic#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#wordcount#enabled = 0
+
+" Comment out next 2 lines to show current git branch. makes vim slow if
+" working with mount
+let g:airline_section_b = '%-0.10{getcwd()}'
+let g:airline_section_c = '%t'
+
+let g:airline_section_error=''
+let g:airline_section_warning=''
+let g:airline_solarized_bg='dark'
 
 "vim-commentary
 au FileType c,cpp setlocal commentstring=//\ %s
@@ -75,9 +95,28 @@ augroup dummy
   autocmd VimEnter * RainbowParentheses
 augroup END
 
+"tagbar
+nmap <leader>c :TagbarToggle<CR>
+let g:tagbar_map_nexttag = "<C-J>"
+let g:tagbar_map_prevtag = "<C-K>"
+let g:tagbar_show_linenumbers = 1
+
+"scrooloose/nerdtree
+map <leader>e :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.swp$','\.root$','\.o$','\.pyc$', '\~$']
+
+" thaerkh/vim-workspace
+let g:workspace_autosave = 0
+let g:workspace_autosave_untrailspaces = 0
+let g:workspace_session_disable_on_args = 1
+let g:workspace_session_directory = $HOME . '/.vim/sessions/'
+let g:workspace_autosave_ignore = ['gitcommit','nerdtree','tagbar']
+let g:workspace_persist_undo_history = 0  " enabled = 1 (default), disabled = 0
+
 " undotree
 nnoremap <leader>u :UndotreeToggle<cr>
 let g:undotree_ShortIndicators = 1
+let g:undotree_SetFocusWhenToggle = 1
 
 " guard for distributions lacking the 'persistent_undo' feature.
 if has('persistent_undo')
@@ -362,3 +401,6 @@ augroup END
 " to make tex files smoother, maybe also turn off syntax. syntax off
 au FileType tex :NoMatchParen
 au FileType tex setlocal nocursorline
+
+set complete=.,w,b,u,t
+nnoremap <leader>vg :vimgrep //g `git ls-files`<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
