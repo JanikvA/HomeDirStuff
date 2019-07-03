@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=CERNBox
+GenericName=File Synchronizer
+Exec=/opt/ownCloud/cernbox/bin/cernbox
+Terminal=false
+Icon=cernbox
+Categories=Network
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-enabled=true

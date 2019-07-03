@@ -1,0 +1,631 @@
+[
+  {
+    "id": "7f5603c0-820d-11e9-a06a-edbfe535f5b2",
+    "content": [
+      "Plugin 'nathanaelkane/vim-indent-guides'",
+      "Plugin 'junegunn/goyo.vim'",
+      "Plugin 'junegunn/vim-peekaboo'",
+      ""
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t43\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "8f14ffc0-820b-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\"easyclip introduces a mapping \"m\" for cutting"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t74\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "8b4a3c20-820b-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\"easyclip introduces a mapping \"m\" for cutting"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t75\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "892f4b60-820b-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\"easyclip introduces a mapping \"m\" for cutting"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t75\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "f2218e40-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "svermeulen/vim-easyclip"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t48\t9",
+    "filetype": "vim"
+  },
+  {
+    "id": "e8d99c10-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\" Plugin 'maxbrunsfeld/vim-yankstack'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t47\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "d389ad50-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "Plugin 'svermeulen/vim-easyclip'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t48\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "d331f060-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "Plugin 'svermeulen/vim-easyclip'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t48\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "d2b74220-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "Plugin 'google/vim-searchindex'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t50\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "cb0420c0-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "Plugin 'ZoomWin'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t52\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "caa1b570-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "Plugin 'Xuyuanp/nerdtree-git-plugin'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t53\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "ca2f4490-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "Plugin 'wellle/tmux-complete.vim'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t55\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c9b077a0-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\" Plugin 'mhinz/vim-signify' \"could replace gitgutter"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t57\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c90f7cb0-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\" Plugin 'scrooloose/syntastic' \"could replace ale"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t59\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c8d1fe80-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\" Plugin 'scrooloose/syntastic' \"could replace ale",
+      "\" Plugin 'sheerun/vim-polyglot' \"makes stuff kinda slow"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t59\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c86fba40-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\" Plugin 'junegunn/vim-slash'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t61\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c82088d0-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\" Plugin 'junegunn/limelight.vim'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t62\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c7daa630-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\" Plugin 'SearchComplete'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t63\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c786b9d0-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\" Plugin 'vim-scripts/sherlock.vim'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t64\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c73e3f20-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\" Plugin 'skwp/greplace.vim' \"not really needed with :Ag from fzf and :cdo/cfdo"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t65\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c6ee4a60-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "\" Plugin 'tadaa/vimade' \" makes not focused buffer fade. Nice idea but did not. highlight cursoline is enough"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t66\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c6a0c6a0-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "call vundle#end()"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t67\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c65035a0-820a-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "filetype plugin indent on"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t68\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "2a53a740-820a-11e9-a51a-d101e2a55159",
+    "content": [
+      "function! s:yank_list()",
+      "  redir => ys",
+      "  silent Yanks",
+      "  redir END",
+      "  return split(ys, '\\n')[1:]",
+      "endfunction",
+      "",
+      "function! s:yank_handler(reg)",
+      "  if empty(a:reg)",
+      "    echo \"aborted register paste\"",
+      "  else",
+      "    let token = split(a:reg, ' ')",
+      "    execute 'Paste' . token[0]",
+      "  endif",
+      "endfunction",
+      "",
+      "command! FZFYank call fzf#run({",
+      "\\ 'source': <sid>yank_list(),",
+      "\\ 'sink': function('<sid>yank_handler'),",
+      "\\ 'options': '-m',",
+      "\\ 'down': 12",
+      "\\ })"
+    ],
+    "regtype": "V",
+    "path": "file:///tmp/vim-anywhere/doc-190529140601\t3\t1",
+    "filetype": ""
+  },
+  {
+    "id": "d6d23e10-8209-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "svermeulen/vim-easyclip"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t48\t9",
+    "filetype": "vim"
+  },
+  {
+    "id": "d60243e0-8209-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "e"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t48\t9",
+    "filetype": "vim"
+  },
+  {
+    "id": "d4893871-8209-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "svermeulen/vim-easyclip"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t48\t9",
+    "filetype": "vim"
+  },
+  {
+    "id": "d3426090-8209-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "-"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t241\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "90ba8450-8209-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "function! s:yank_list()",
+      "  redir => ys",
+      "  silent Yanks",
+      "  redir END",
+      "  return split(ys, '\\n')[1:]",
+      "endfunction",
+      "",
+      "function! s:yank_handler(reg)",
+      "  if empty(a:reg)",
+      "    echo \"aborted register paste\"",
+      "  else",
+      "    let token = split(a:reg, ' ')",
+      "    execute 'Paste' . token[0]",
+      "  endif",
+      "endfunction",
+      "",
+      "command! FZFYank call fzf#run({",
+      "\\ 'source': <sid>yank_list(),",
+      "\\ 'sink': function('<sid>yank_handler'),",
+      "\\ 'options': '-m',",
+      "\\ 'down': 12",
+      "\\ })"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t241\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "8da30b20-8209-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "function! s:yank_list()",
+      "  redir => ys",
+      "  silent Yanks",
+      "  redir END",
+      "  return split(ys, '\\n')[1:]",
+      "endfunction",
+      "",
+      "function! s:yank_handler(reg)",
+      "  if empty(a:reg)",
+      "    echo \"aborted register paste\"",
+      "  else",
+      "    let token = split(a:reg, ' ')",
+      "    execute 'Paste' . token[0]",
+      "  endif",
+      "endfunction",
+      "",
+      "command! FZFYank call fzf#run({",
+      "\\ 'source': <sid>yank_list(),",
+      "\\ 'sink': function('<sid>yank_handler'),",
+      "\\ 'options': '-m',",
+      "\\ 'down': 12",
+      "\\ })"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t241\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "47e5cd70-8209-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "nnoremap <leader>t :Tags<CR>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t237\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "4776b7f0-8209-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "nnoremap <leader>h :Helptags<CR>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t236\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "4707c980-8209-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "nnoremap <leader>ag :Ag<CR>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t235\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "8876b120-8208-11e9-bbbd-4f9d0d49cf02",
+    "content": [
+      "Plugin 'neoclide/coc.nvim'",
+      "Plugin 'MarcWeber/vim-addon-mw-utils'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t13\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "7b38f3b0-8208-11e9-a7d3-a3ecbedd58d1",
+    "content": [
+      "<Esc>o"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t492\t16",
+    "filetype": "vim"
+  },
+  {
+    "id": "799fb610-8208-11e9-a7d3-a3ecbedd58d1",
+    "content": [
+      "<Esc>:FZFYank<CR>"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t491\t16",
+    "filetype": "vim"
+  },
+  {
+    "id": "78682070-8208-11e9-a7d3-a3ecbedd58d1",
+    "content": [
+      "inoremap <C-e> <Esc>:FZFYank<CR>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t491\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "67c60250-8208-11e9-a7d3-a3ecbedd58d1",
+    "content": [
+      "inoremap <C-e> <Esc>o"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t491\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "1b368d60-8208-11e9-a7d3-a3ecbedd58d1",
+    "content": [
+      "Plugin 'tpope/vim-surround'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t18\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "1ac88950-8208-11e9-a7d3-a3ecbedd58d1",
+    "content": [
+      "Plugin 'honza/vim-snippets'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t17\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "1a4db400-8208-11e9-a7d3-a3ecbedd58d1",
+    "content": [
+      "Plugin 'sirver/ultisnips'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t16\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "19e46ae0-8208-11e9-a7d3-a3ecbedd58d1",
+    "content": [
+      "Plugin 'tomtom/tlib_vim'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t15\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "197925f0-8208-11e9-a7d3-a3ecbedd58d1",
+    "content": [
+      "Plugin 'MarcWeber/vim-addon-mw-utils'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t14\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "18f57700-8208-11e9-a7d3-a3ecbedd58d1",
+    "content": [
+      "Plugin 'neoclide/coc.nvim'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t13\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "eea60370-8207-11e9-b49d-a334837cbc6f",
+    "content": [
+      "svermeulen/vim-easyclip"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t48\t8",
+    "filetype": "vim"
+  },
+  {
+    "id": "b91dca30-8207-11e9-b49d-a334837cbc6f",
+    "content": [
+      "let g:yankstack_map_keys = 0",
+      "nmap Ö <Plug>yankstack_substitute_older_paste",
+      "nmap Ä <Plug>yankstack_substitute_newer_paste"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t159\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c06ee050-8205-11e9-9cb1-a75f5fcf5f5b",
+    "content": [
+      "acmDev"
+    ],
+    "regtype": "v",
+    "path": "file:///tmp/vim-anywhere/doc-190529133419\t1\t20",
+    "filetype": ""
+  },
+  {
+    "id": "0fe6ddf0-8200-11e9-abbe-bd747749c6e2",
+    "content": [
+      "supdaigsd"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t14\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "09af3900-8200-11e9-abbe-bd747749c6e2",
+    "content": [
+      "sumhf",
+      "supdaigsd"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t13\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "f3ca0f20-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "SumHF_BaselineCuts_ZeroPhoton_AllSyst_v26c"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t7\t17",
+    "filetype": "python"
+  },
+  {
+    "id": "e4035ce0-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t17\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "e0ffe0e0-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import os"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t9\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "df3c8600-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import math"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t17\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "de241120-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import VBFAnalysis.ATLAS as ATLAS"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t18\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "dca4eb30-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import sys"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t10\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "dbc3b2f0-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import ROOT"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t11\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "da391b50-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import os"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t9\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "d8bdc5f0-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import os"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t9\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "d7c3fca0-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import os"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t9\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "d679c960-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import os"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t9\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "d5cfa6b0-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import sys"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t10\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "d55c9990-81ff-11e9-abbe-bd747749c6e2",
+    "content": [
+      "import ROOT"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t11\t1",
+    "filetype": "python"
+  }
+]

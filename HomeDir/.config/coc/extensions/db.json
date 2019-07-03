@@ -1,0 +1,17 @@
+{
+  "lastUpdate": 1562137919391,
+  "extension": {
+    "coc-pyls": {
+      "disabled": true
+    },
+    "coc-git": {
+      "disabled": false
+    },
+    "coc-yank": {
+      "disabled": true
+    },
+    "coc-calc": {
+      "disabled": true
+    }
+  }
+}

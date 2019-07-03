@@ -15,7 +15,6 @@ Plug 'JanikvA/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
-Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-commentary'
 " Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
@@ -23,32 +22,32 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/gv.vim' " :GV will open commit browser
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'lervag/vimtex'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-repeat'
-Plug 'junegunn/vim-easy-align'
 Plug 'wellle/targets.vim'
-Plug 'chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/rainbow_parentheses.vim'
-"Plug 'w0rp/ale'
-Plug 'svermeulen/vim-easyclip'
 
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+
+Plug 'chiel92/vim-autoformat'
+Plug 'junegunn/vim-easy-align'
+Plug 'svermeulen/vim-easyclip'
+Plug 'lervag/vimtex'
+Plug 'junegunn/gv.vim' " :GV will open commit browser
 Plug 'google/vim-searchindex'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
-
-
 Plug 'wellle/tmux-complete.vim'
 Plug 'thaerkh/vim-workspace'
-" Plug 'tpope/vim-obsession'
+Plug 'w0rp/ale'
 
+" Plug 'tpope/vim-obsession'
 " Plug 'mhinz/vim-signify' "could replace gitgutter
 " Plug 'scrooloose/syntastic' "could replace ale
 " Plug 'sheerun/vim-polyglot' "makes stuff kinda slow
@@ -171,7 +170,10 @@ augroup END
 "vim-slash
 " noremap <plug>(slash-after) zz
 "vim-commentary
-au FileType c,cpp setlocal commentstring=//\ %s
+augroup dummy
+    au FileType c,cpp setlocal commentstring=//\ %s
+    au FileType text setlocal commentstring=#\ %s
+augroup END
 
 "vim-peekaboo
 let g:peekaboo_delay = 1000
@@ -725,8 +727,10 @@ endfunction
 vnoremap <leader>j "gy<Esc>:call GoogleSearchVisual()<CR>
 
 " to make tex files smoother, maybe also turn off syntax. syntax off
-au FileType tex :NoMatchParen
-au FileType tex setlocal nocursorline
+augroup dummy
+    au FileType tex :NoMatchParen
+    au FileType tex setlocal nocursorline
+augroup END
 
 nnoremap <leader>vg :vimgrep //g `git ls-files`<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 

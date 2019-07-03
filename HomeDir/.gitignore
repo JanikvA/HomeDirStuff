@@ -3,3 +3,12 @@
 *.o
 .gitignore
 tags
+.config/Code
+.config/libreoffice
+.config/onedrive
+.config/polybar
+.config/totem
+.config/kdeconnect
+.config/configstore
+.config/Vidyo
+.config/Trolltech.conf

@@ -1,8 +1,9 @@
+shuffle 
+kj
 add ~/Music/Music/
 add ~/Music/Music
 Add ~/Music
 shuffle
-shuffle 
 clear
 add ~/Music
 bind -f common ö win-activate

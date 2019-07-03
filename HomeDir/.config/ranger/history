@@ -1,5 +1,3 @@
-open_with 0
-rename rawCutflow.png
 rename rawCutflow_tb1.png
 open_with 
 open_with zathura
@@ -40,7 +38,6 @@ mkdir interestingTalks
 rename sideBand_c_sf_b_70.png
 rename vfabiani
 rename sideBand_fitProblem.png
-delete
 rename Veronica_weridSyst.png
 rename noDiscriminationLowPt.png
 rename INT_NOTE_VR_track_jet_calib_2019.pdf
@@ -48,3 +45,6 @@ filter png
 filter
 find 
 shell 
+rename vonAhnenJanik_visaData.odt
+delete
+rename vonAhnenJanik.jpg
