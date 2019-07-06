@@ -5,18 +5,19 @@ set statusline=
 " ### Remove if you don't use Plug ###
 call plug#begin('~/.vim/plugged')
 
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'maralla/completor.vim' "needs vim 8, checkout CoC
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
+" Plug 'Valloric/YouCompleteMe' " for vim <8
+Plug 'maralla/completor.vim' "needs vim 8
+
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} "needs vim 8
+" Plug 'wellle/tmux-complete.vim'
+
+
 Plug 'sirver/ultisnips'
 Plug 'JanikvA/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-" Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -32,9 +33,12 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 
+" Plug 'svermeulen/vim-easyclip'
+Plug 'JanikvA/vim-yankstack'
+" Plug 'maxbrunsfeld/vim-yankstack'
+
 Plug 'chiel92/vim-autoformat'
 Plug 'junegunn/vim-easy-align'
-Plug 'svermeulen/vim-easyclip'
 Plug 'lervag/vimtex'
 Plug 'junegunn/gv.vim' " :GV will open commit browser
 Plug 'google/vim-searchindex'
@@ -43,14 +47,16 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'wellle/tmux-complete.vim'
-Plug 'thaerkh/vim-workspace'
-Plug 'w0rp/ale'
+Plug 'sheerun/vim-polyglot'
+
+" Plug 'w0rp/ale'
+" Plug 'thaerkh/vim-workspace'
 
 " Plug 'tpope/vim-obsession'
 " Plug 'mhinz/vim-signify' "could replace gitgutter
 " Plug 'scrooloose/syntastic' "could replace ale
-" Plug 'sheerun/vim-polyglot' "makes stuff kinda slow
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
 call plug#end()
 filetype plugin indent on
 
@@ -64,17 +70,22 @@ let g:workspace_persist_undo_history = 0  " enabled = 1 (default), disabled = 0
 " let g:workspace_undodir=expand('~/.vim/vim-persisted-undo/')
 
 
+"maxbrunsfeld/vim-yankstack
+
+let g:yankstack_map_keys = 0
+nmap Ö <Plug>yankstack_substitute_older_paste
+nmap Ä <Plug>yankstack_substitute_newer_paste
+
 "svermeulen/vim-easyclip
 
-let g:EasyClipShareYanks = 1
-let g:EasyClipEnableBlackHoleRedirect = 0
-let g:EasyClipYankHistorySize = 50
-let g:EasyClipShareYanks = 1
-let g:EasyClipShareYanksFile = 'easyclip'
-let g:EasyClipShareYanksDirectory = $HOME . '/.vim/vim-persisted-undo/'
-" let g:EasyClipShareYanksFile = '.vim/vim-persisted-undo/'
+" let g:EasyClipShareYanks = 1
+" let g:EasyClipEnableBlackHoleRedirect = 0
+" let g:EasyClipYankHistorySize = 50
+" let g:EasyClipShareYanksFile = 'easyclip'
+" let g:EasyClipShareYanksDirectory = $HOME . '/.vim/vim-persisted-undo/'
+" let g:EasyClipUseCutDefaults = 0
 
-let g:EasyClipUseCutDefaults = 0
+
 " only makes sense if EasyClipEnableBlackHoleRedirect is set to 1
 " nmap x <Plug>MoveMotionPlug
 " xmap x <Plug>MoveMotionXPlug
@@ -95,15 +106,15 @@ let g:ranger_map_keys = 0
 
 " coc
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
 " nmap <silent> gd <Plug>(coc-definition)
 " nmap <silent> gy <Plug>(coc-type-definition)
@@ -115,11 +126,11 @@ endfunction
 "completor
 " XXX only uncomment this for completor
 
-" let g:completor_clang_binary ='/usr/bin/clang-6.0'
-" let g:completor_python_binary = '/usr/bin/python'
-" let g:completor_complete_options = 'menuone,noselect,preview'
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+let g:completor_clang_binary ='/usr/bin/clang-6.0'
+let g:completor_python_binary = '/usr/bin/python'
+let g:completor_complete_options = 'menuone,noselect,preview'
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " XXX
 
@@ -178,19 +189,10 @@ augroup END
 "vim-peekaboo
 let g:peekaboo_delay = 1000
 
-" yank stack
-" let g:yankstack_map_keys = 0
-" nmap Ö <Plug>yankstack_substitute_older_paste
-" nmap Ä <Plug>yankstack_substitute_newer_paste
-
 "  vim-autoformat
 nnoremap <leader>af :Autoformat
 nnoremap <leader>aaf :bufdo Autoformat
 
-
-" vim-sneak
-" map ö <Plug>Sneak_s
-" map Ö <Plug>Sneak_S
 
 " ale
 let g:ale_echo_cursor = 1 " 0 makes cursor invisible if on line with error otherwise. Newer vim versions fix this
@@ -274,28 +276,27 @@ nnoremap <leader>k :Marks<CR>
 
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
 
-function! s:yank_list()
-  redir => ys
-  silent Yanks
-  redir END
-  return split(ys, '\n')[1:]
-endfunction
-
-function! s:yank_handler(reg)
-  if empty(a:reg)
-    echo "aborted register paste"
-  else
-    let token = split(a:reg, ' ')
-    execute 'Paste' . token[0]
-  endif
-endfunction
-
-command! FZFYank call fzf#run({
-\ 'source': <sid>yank_list(),
-\ 'sink': function('<sid>yank_handler'),
-\ 'options': '-m',
-\ 'down': 12
-\ })
+""works only with the easyclip plugin
+"function! s:yank_list()
+"  redir => ys
+"  silent Yanks
+"  redir END
+"  return split(ys, '\n')[1:]
+"endfunction
+"function! s:yank_handler(reg)
+"  if empty(a:reg)
+"    echo "aborted register paste"
+"  else
+"    let token = split(a:reg, ' ')
+"    execute 'Paste' . token[0]
+"  endif
+"endfunction
+"command! FZFYank call fzf#run({
+"\ 'source': <sid>yank_list(),
+"\ 'sink': function('<sid>yank_handler'),
+"\ 'options': '-m',
+"\ 'down': 12
+"\ })
 
 " This is now done just with <Enter>
 
@@ -510,7 +511,10 @@ if has("mouse_sgr")
 else
   set ttymouse=xterm2
 end
+set spelllang=en_us   "type '=z' after ':set spell' with cursor on misspelled word
 set scrolloff=5
+set sidescrolloff=7         " Start scrolling n chars before end of screen.
+set sidescroll=1            " The minimal number of columns to scroll horizontally
 set hidden
 set shiftwidth=4
 set incsearch           " search as characters are entered
@@ -519,6 +523,12 @@ set hlsearch            " highlight matches
 augroup dummy
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "don't auto insert comment. Seems to slow vim down a bit? check this
 augroup END
+
+set lazyredraw              " don't update the display while executing macros
+set ttyfast                 " Send more characters at a given time.
+set nobackup
+set nowritebackup
+set magic "enables extended regex"
 
 set backspace=indent,eol,start
 
@@ -562,8 +572,8 @@ nnoremap <space> i<space><Esc>l
 nnoremap <leader>o o<ESC>
 nnoremap <leader>O O<ESC>
 nnoremap <leader>dm %x``x
-" nnoremap <leader>sc :setlocal spell spelllang=en_us
 nnoremap <leader>g <C-]>zz
+nnoremap cm *N:s///gc<left><left><left>
 
 " vnoremap <leader>y "+y
 nnoremap <leader>y :let @+=@"<Cr>
@@ -734,4 +744,5 @@ augroup END
 
 nnoremap <leader>vg :vimgrep //g `git ls-files`<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 
-set complete=.,w,b,u,t
+" inoremap <C-d> <C-n>
+set complete=.,t
