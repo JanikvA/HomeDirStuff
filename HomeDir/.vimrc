@@ -37,11 +37,11 @@ Plug 'majutsushi/tagbar'
 Plug 'JanikvA/vim-yankstack'
 " Plug 'maxbrunsfeld/vim-yankstack'
 
+Plug 'google/vim-searchindex'
 Plug 'chiel92/vim-autoformat'
 Plug 'junegunn/vim-easy-align'
 Plug 'lervag/vimtex'
 Plug 'junegunn/gv.vim' " :GV will open commit browser
-Plug 'google/vim-searchindex'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -49,9 +49,13 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'sheerun/vim-polyglot'
 
+Plug 'mhinz/vim-startify'
+
+
 " Plug 'w0rp/ale'
 " Plug 'thaerkh/vim-workspace'
 
+" Plug 'tpope/vim-unimpaired'
 " Plug 'tpope/vim-obsession'
 " Plug 'mhinz/vim-signify' "could replace gitgutter
 " Plug 'scrooloose/syntastic' "could replace ale
@@ -59,6 +63,31 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'tomtom/tlib_vim'
 call plug#end()
 filetype plugin indent on
+
+" vim-startify
+
+    let g:startify_custom_header = []
+    let g:startify_session_dir = '~/.vim/session'
+    let g:startify_session_autoload = 1
+    let g:startify_session_persistence = 1
+    let g:startify_change_to_dir = 1
+    let g:startify_change_to_vcs_root = 1
+    let g:startify_session_number = 20
+    let g:startify_session_sort = 1
+
+    let g:startify_bookmarks = [ '~/.vimrc', '~/.bashrc', '~/.config/i3/config', '~/.vim/plugged/vim-snippets/UltiSnips/' ]
+    let g:startify_lists = [
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'files',     'header': ['   MRU']            },
+          \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
+
+    let g:startify_session_before_save = [
+        \ 'echo "Cleaning up before saving.."',
+        \ 'silent! NERDTreeTabsClose'
+        \ ]
 
 " thaerkh/vim-workspace
 let g:workspace_autosave = 0
@@ -483,7 +512,8 @@ noremap <F3> <Esc>:w<Enter>:!python %<Enter>
 " noremap <F3> <Esc>:w !python<CR>
 vnoremap <F3> :w !python<CR>
 noremap <F4> <Esc>:w<Enter>:!./%<Enter>
-noremap <F6> <Esc>:w<Enter>:!pdflatex %<Enter>
+noremap <F5> <Esc>:w<Enter>:!./% 
+noremap <F7> <Esc>:w<Enter>:!pdflatex %<Enter>
 
 
 inoremap <c-l>  {<CR><tab><CR>}<up><right>
@@ -498,7 +528,7 @@ set wildmode=list:longest,full
 " set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find.
 set confirm
 set smartindent
-set pastetoggle=<F5>
+set pastetoggle=<F6>
 set ignorecase
 set smartcase
 set tabstop=4
@@ -541,9 +571,7 @@ set backspace=indent,eol,start
 syntax on
 
 "TODO insert mappings:  c-y
-inoremap <C-e> <Esc>:FZFYank<CR>
-nnoremap <C-e> :FZFYank<CR>
-
+inoremap <C-e> <C-x><C-p>
 
 "TODO for some reason this has a slight delay now. it is instant if i do <leader>dk
 augroup dummy
@@ -563,7 +591,7 @@ nnoremap L :bn<CR>
 " This workaround leads to :SearchIndex being called twice. Maybe i can optimize it somehow
 nmap n nzzg/
 nmap N Nzzg/
-"also centers the first search result
+"also centers the first search result. TODO gives annoying error msg if no match is found
 cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz:SearchIndex<CR>' : '<CR>' 
 
 " nnoremap <CR> :
@@ -573,11 +601,13 @@ nnoremap <leader>o o<ESC>
 nnoremap <leader>O O<ESC>
 nnoremap <leader>dm %x``x
 nnoremap <leader>g <C-]>zz
-nnoremap cm *N:s///gc<left><left><left>
+nnoremap cm :%s///g<left><left>
 
 " vnoremap <leader>y "+y
 nnoremap <leader>y :let @+=@"<Cr>
 nnoremap <leader>p "+p
+nnoremap <leader>n gny:let @+=@"<Cr>
+
 " set clipboard=unnamedplus
 
 " disables vim from clearing clipboard after leaving/suspending vi session
@@ -744,5 +774,7 @@ augroup END
 
 nnoremap <leader>vg :vimgrep //g `git ls-files`<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 
-" inoremap <C-d> <C-n>
 set complete=.,t
+set completeopt=menuone,noselect,preview
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
