@@ -37,7 +37,6 @@ Plug 'majutsushi/tagbar'
 Plug 'JanikvA/vim-yankstack'
 " Plug 'maxbrunsfeld/vim-yankstack'
 
-Plug 'google/vim-searchindex'
 Plug 'chiel92/vim-autoformat'
 Plug 'junegunn/vim-easy-align'
 Plug 'lervag/vimtex'
@@ -47,10 +46,21 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'sheerun/vim-polyglot'
-
 Plug 'mhinz/vim-startify'
+Plug 'sheerun/vim-polyglot'
+Plug 'zirrostig/vim-schlepp'
+Plug 'google/vim-searchindex'
+Plug 'AndrewRadev/switch.vim'
 
+
+" Pretty much all i want from these is the highlighting of the current search match. Should really try to replace these
+" Plug 'qxxxb/vim-searchhi'
+" Plug 'osyo-manga/vim-anzu'
+
+
+" Plug 'junegunn/vim-after-object'
+
+" Plug 'junegunn/vim-online-thesaurus'
 
 " Plug 'w0rp/ale'
 " Plug 'thaerkh/vim-workspace'
@@ -64,6 +74,54 @@ Plug 'mhinz/vim-startify'
 call plug#end()
 filetype plugin indent on
 
+"junegunn/vim-after-object
+
+augroup dummy
+    autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
+augroup END
+
+" qxxxb/vim-searchhi
+
+" nmap n <Plug>(searchhi-n)
+" nmap N <Plug>(searchhi-N)
+" nmap * <Plug>(searchhi-*)
+" nmap g* <Plug>(searchhi-g*)
+" nmap # <Plug>(searchhi-#)
+" nmap g# <Plug>(searchhi-g#)
+" nmap gd <Plug>(searchhi-gd)
+" nmap gD <Plug>(searchhi-gD)
+
+" vmap n <Plug>(searchhi-v-n)
+" vmap N <Plug>(searchhi-v-N)
+" vmap * <Plug>(searchhi-v-*)
+" vmap g* <Plug>(searchhi-v-g*)
+" vmap # <Plug>(searchhi-v-#)
+" vmap g# <Plug>(searchhi-v-g#)
+" vmap gd <Plug>(searchhi-v-gd)
+" vmap gD <Plug>(searchhi-v-gD)
+
+" nmap <silent> <C-L> <Plug>(searchhi-clear-all)
+" vmap <silent> <C-L> <Plug>(searchhi-v-clear-all)
+
+
+" let g:searchhi_user_autocmds_enabled = 1
+" let g:searchhi_redraw_before_on = 1
+
+" augroup searchhi
+"     autocmd!
+"     autocmd User SearchHiOn AnzuUpdateSearchStatusOutput
+"     autocmd User SearchHiOff echo g:anzu_no_match_word
+" augroup END
+
+
+
+" zirrostig/vim-schlepp
+
+vmap <unique> <up>    <Plug>SchleppUp
+vmap <unique> <down>  <Plug>SchleppDown
+vmap <unique> <left>  <Plug>SchleppLeft
+vmap <unique> <right> <Plug>SchleppRight
+
 " vim-startify
 
     let g:startify_custom_header = []
@@ -72,8 +130,8 @@ filetype plugin indent on
     let g:startify_session_persistence = 1
     let g:startify_change_to_dir = 1
     let g:startify_change_to_vcs_root = 1
-    let g:startify_session_number = 20
-    let g:startify_session_sort = 1
+    let g:startify_session_number = 99
+    let g:startify_session_sort = 0
 
     let g:startify_bookmarks = [ '~/.vimrc', '~/.bashrc', '~/.config/i3/config', '~/.vim/plugged/vim-snippets/UltiSnips/' ]
     let g:startify_lists = [
@@ -302,6 +360,13 @@ nnoremap <leader>ag :Ag<CR>
 nnoremap <leader>h :Helptags<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>k :Marks<CR>
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-t> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
 
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
 
@@ -566,6 +631,7 @@ set backspace=indent,eol,start
 :command Q q
 :command Wa wa
 
+:command Exe !chmod +x %
 :command Pandoc !pandoc -f markdown -t latex -o %:r.pdf %
 :command Pdf silent !xdg-open %:r.pdf &
 syntax on
@@ -589,8 +655,8 @@ nnoremap H :bp<CR>
 nnoremap L :bn<CR>
 
 " This workaround leads to :SearchIndex being called twice. Maybe i can optimize it somehow
-nmap n nzzg/
-nmap N Nzzg/
+nmap <silent> n nzzg/
+nmap <silent> N Nzzg/
 "also centers the first search result. TODO gives annoying error msg if no match is found
 cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz:SearchIndex<CR>' : '<CR>' 
 
@@ -778,3 +844,64 @@ set complete=.,t
 set completeopt=menuone,noselect,preview
 " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" nice idea doesn't work
+" vnoremap <right>  xpgvlolo
+" vnoremap <left>   xhPgvhoho
+" vnoremap <down>   xjPgvjojo
+" vnoremap <up>     xkPgvkoko
+
+" Make Y behave like other capitals
+nnoremap Y y$
+
+" qq to record, Q to replay
+nnoremap Q @q
+
+" ----------------------------------------------------------------------------
+" #gi / #gpi | go to next/previous indentation level
+" ----------------------------------------------------------------------------
+function! s:indent_len(str)
+  return type(a:str) == 1 ? len(matchstr(a:str, '^\s*')) : 0
+endfunction
+function! s:go_indent(times, dir)
+  for _ in range(a:times)
+    let l = line('.')
+    let x = line('$')
+    let i = s:indent_len(getline(l))
+    let e = empty(getline(l))
+
+    while l >= 1 && l <= x
+      let line = getline(l + a:dir)
+      let l += a:dir
+      if s:indent_len(line) != i || empty(line) != e
+        break
+      endif
+    endwhile
+    let l = min([max([1, l]), x])
+    execute 'normal! '. l .'G^'
+  endfor
+endfunction
+nnoremap <silent> gi :<c-u>call <SID>go_indent(v:count1, 1)<cr>
+nnoremap <silent> gpi :<c-u>call <SID>go_indent(v:count1, -1)<cr>
+
+
+
+function! s:todo() abort
+  let entries = []
+  for cmd in ['git grep -niI -e TODO -e FIXME -e XXX 2> /dev/null',
+            \ 'grep -rniI -e TODO -e FIXME -e XXX * 2> /dev/null']
+    let lines = split(system(cmd), '\n')
+    if v:shell_error != 0 | continue | endif
+    for line in lines
+      let [fname, lno, text] = matchlist(line, '^\([^:]*\):\([^:]*\):\(.*\)')[1:3]
+      call add(entries, { 'filename': fname, 'lnum': lno, 'text': text })
+    endfor
+    break
+  endfor
+
+  if !empty(entries)
+    call setqflist(entries)
+    copen
+  endif
+endfunction
+command! Todo call s:todo()
