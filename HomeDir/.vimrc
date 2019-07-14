@@ -71,6 +71,10 @@ Plug 'AndrewRadev/switch.vim'
 call plug#end()
 filetype plugin indent on
 
+augroup vimrc
+  autocmd!
+augroup END
+
 " zirrostig/vim-schlepp
 
 vmap <unique> <up>    <Plug>SchleppUp
@@ -113,15 +117,12 @@ nmap Ä <Plug>yankstack_substitute_newer_paste
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 "completor
-" XXX only uncomment this for completor
 
 let g:completor_clang_binary ='/usr/bin/clang-6.0'
 let g:completor_python_binary = '/usr/bin/python'
 let g:completor_complete_options = 'menuone,noselect,preview'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" XXX
 
 "RainbowParantheses
 augroup dummy
@@ -260,6 +261,8 @@ nmap <leader>c :TagbarToggle<CR>
 let g:tagbar_map_nexttag = "<C-J>"
 let g:tagbar_map_prevtag = "<C-K>"
 let g:tagbar_show_linenumbers = 1
+let g:tagbar_sort = 0
+let g:tagbar_compact = 1
 
 set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*
 
@@ -299,7 +302,7 @@ colorscheme solarized
 "Very nice for python
 set foldmethod=indent
 set foldlevel=999
-nnoremap <leader>z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0<CR>
+nnoremap <silent> <leader>z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr<CR>zM
 
 " set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
@@ -392,17 +395,17 @@ inoremap <C-e> <C-x><C-p>
 
 "TODO for some reason this has a slight delay now. it is instant if i do <leader>dk
 augroup dummy
-  autocmd FileType c,cpp      nnoremap <buffer> <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
-  autocmd FileType python     nnoremap <buffer> <leader>d o<Esc>0iprint " #### *!*Debug*!* 1 #### "<Esc>0
+  autocmd FileType c,cpp      nnoremap <buffer> <leader>d ostd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>
+  autocmd FileType python     nnoremap <buffer> <leader>d oprint " #### *!*Debug*!* 1 #### "<Esc>
 augroup END
-nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>
+nnoremap <leader>r /\*\!\*Debug\*\!\*<CR>
 
 nnoremap H :bp<CR>
 nnoremap L :bn<CR>
 
 " This workaround leads to :SearchIndex being called twice. Maybe i can optimize it somehow
-nmap <silent> n nzzg/
-nmap <silent> N Nzzg/
+nmap n nzzg/
+nmap N Nzzg/
 "also centers the first search result. TODO gives annoying error msg if no match is found
 cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz:SearchIndex<CR>' : '<CR>' 
 
@@ -628,3 +631,21 @@ function! s:todo() abort
   endif
 endfunction
 command! Todo call s:todo()
+
+
+"TODO <c-e>,<c-space>,<c-l>,<BS>,<s-u> normal mode mapping
+"maybe also: <C-t>
+
+nnoremap m }
+nnoremap M {
+nnoremap gm m
+map 0 ^
+
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+cnoremap <C-K> <C-U>
+cnoremap <C-P> <Up>
+cnoremap <C-N> <Down>
+
+nnoremap <PageUp> <c-u>
+nnoremap <Home> <c-d>
