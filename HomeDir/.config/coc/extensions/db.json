@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1562137919391,
+  "lastUpdate": 1563269409615,
   "extension": {
     "coc-pyls": {
       "disabled": true
@@ -8,9 +8,12 @@
       "disabled": false
     },
     "coc-yank": {
-      "disabled": true
+      "disabled": false
     },
     "coc-calc": {
+      "disabled": true
+    },
+    "coc-sh": {
       "disabled": true
     }
   }

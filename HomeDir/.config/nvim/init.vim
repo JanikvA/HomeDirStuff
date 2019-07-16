@@ -1,0 +1,1 @@
+/home/janik/.vimrc

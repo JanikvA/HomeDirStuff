@@ -1,21 +1,3 @@
-rename rawCutflow_tb1.png
-open_with 
-open_with zathura
-rename VR_trk_jet_calib_2018.pdf
-rename calib_improvedMethod_2019.pdf
-rename INT_NOTE_calib_improvedMethod_2019.pdf
-mkdir English
-
-rename BSc
-rename BSc_Cert.pdf
-rename BSC_Examination_Cert.pdf
-rename BSc_Examination_Cert.pdf
-rename BSc_TOR.pdf
-rename BSc_DiplomaSupplement.pdf
-rename MSc_Cert.pdf
-rename MSc_Examination_Ceert.pdf
-rename MSc_DiplomaSupplement.pdf
-rename MSc_TOR.pdf
 rename Abi_p1.jpg
 rename Abi_p2.jpg
 rename Abi_p3.jpg
@@ -41,10 +23,28 @@ rename sideBand_fitProblem.png
 rename Veronica_weridSyst.png
 rename noDiscriminationLowPt.png
 rename INT_NOTE_VR_track_jet_calib_2019.pdf
-filter png
-filter
 find 
 shell 
 rename vonAhnenJanik_visaData.odt
-delete
 rename vonAhnenJanik.jpg
+search desy
+find scr
+mkdir sigPlots
+cd sigPlots/
+delete
+filter
+
+filter p
+rename monoH_feyDig.png
+rename merged_resolved.png
+filter png
+filter True_True
+rename merged_MH.png
+rename resolved_MH.png
+rename yieldTable.png
+rename yieldTable_merged.png
+filter True_True*.png
+rename new_merged_SoverB.png
+rename new_merged_SoverSqrtB.png
+rename new_resolved_SoverSqrtB.png
+rename new_resolved_SoverB.png

@@ -1,5 +1,1205 @@
 [
   {
+    "id": "754894a0-a7de-11e9-a23a-49d0129a8de1",
+    "content": [
+      "tmp.txt"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t38\t23",
+    "filetype": "python"
+  },
+  {
+    "id": "44ff4870-a7de-11e9-a23a-49d0129a8de1",
+    "content": [
+      "os.path.join(args.outDir,outName)"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t11\t52",
+    "filetype": "python"
+  },
+  {
+    "id": "38034ef0-a7de-11e9-a23a-49d0129a8de1",
+    "content": [
+      "os.path.join(args.outDir,outName)"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t47\t52",
+    "filetype": "python"
+  },
+  {
+    "id": "916bde00-a7dc-11e9-80e3-95bb5087bea6",
+    "content": [
+      "response.text"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t13\t23",
+    "filetype": "python"
+  },
+  {
+    "id": "38efe3c0-a7dc-11e9-80e3-95bb5087bea6",
+    "content": [
+      "https://indico.desy.de/indico/event/21278/timetable/#20181022"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t12\t10",
+    "filetype": "python"
+  },
+  {
+    "id": "c5b71fe0-a7db-11e9-a098-ab05d4401d3d",
+    "content": [
+      "    for outName,url in lToDl.items():"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t30\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "a19c4400-a7db-11e9-b099-abd9d176398f",
+    "content": [
+      "os.path.join(args.outDir,outName)"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t36\t19",
+    "filetype": "python"
+  },
+  {
+    "id": "f5ae49e0-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "j.replace(\"\\\\\",\"\")"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t25\t23",
+    "filetype": "python"
+  },
+  {
+    "id": "92436430-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-1] \",qsplit[n-1])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-2] \",qsplit[n-2])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-3] \",qsplit[n-3])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-4] \",qsplit[n-4])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-5] \",qsplit[n-5])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-6] \",qsplit[n-6])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-7] \",qsplit[n-7])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-8] \",qsplit[n-8])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-9] \",qsplit[n-9])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-10] \",qsplit[n-10])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-11] \",qsplit[n-11])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-12] \",qsplit[n-12])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-13] \",qsplit[n-13])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-14] \",qsplit[n-14])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-15] \",qsplit[n-15])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-16] \",qsplit[n-16])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-17] \",qsplit[n-17])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-18] \",qsplit[n-18])",
+      "                print(\" #### *!*Debug*!* #### qsplit[n-19] \",qsplit[n-19])",
+      ""
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t24\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "7e32d340-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-18] \",qsplit[n-18])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t41\t70",
+    "filetype": "python"
+  },
+  {
+    "id": "7e149ce0-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-17] \",qsplit[n-17])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t40\t70",
+    "filetype": "python"
+  },
+  {
+    "id": "7df7c610-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-16] \",qsplit[n-16])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t39\t70",
+    "filetype": "python"
+  },
+  {
+    "id": "7ddb8b80-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-15] \",qsplit[n-15])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t38\t70",
+    "filetype": "python"
+  },
+  {
+    "id": "7dc125b0-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-14] \",qsplit[n-14])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t37\t70",
+    "filetype": "python"
+  },
+  {
+    "id": "7da5ae70-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-13] \",qsplit[n-13])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t36\t70",
+    "filetype": "python"
+  },
+  {
+    "id": "7d8be4e0-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-12] \",qsplit[n-12])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t35\t70",
+    "filetype": "python"
+  },
+  {
+    "id": "7d6ee700-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-11] \",qsplit[n-11])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t34\t70",
+    "filetype": "python"
+  },
+  {
+    "id": "7d56a410-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-10] \",qsplit[n-10])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t33\t70",
+    "filetype": "python"
+  },
+  {
+    "id": "7d3c6550-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-9] \",qsplit[n-9])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t32\t70",
+    "filetype": "python"
+  },
+  {
+    "id": "7d218a50-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-8] \",qsplit[n-8])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t31\t69",
+    "filetype": "python"
+  },
+  {
+    "id": "7d0aa6f0-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-7] \",qsplit[n-7])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t30\t69",
+    "filetype": "python"
+  },
+  {
+    "id": "7cece5c0-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-6] \",qsplit[n-6])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t29\t69",
+    "filetype": "python"
+  },
+  {
+    "id": "7cd27ff0-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-5] \",qsplit[n-5])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t28\t69",
+    "filetype": "python"
+  },
+  {
+    "id": "7caa5e80-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-4] \",qsplit[n-4])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t27\t69",
+    "filetype": "python"
+  },
+  {
+    "id": "7c62a720-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-3] \",qsplit[n-3])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t26\t69",
+    "filetype": "python"
+  },
+  {
+    "id": "7bc22160-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-2] \",qsplit[n-2])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t25\t69",
+    "filetype": "python"
+  },
+  {
+    "id": "76b3ba30-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-1] \",qsplit[n-1])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t23\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "70000770-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(\" #### *!*Debug*!* #### qsplit[n-1] \",qsplit[n-1])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t23\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "6c348080-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "\" #### *!*Debug*!* #### qsplit[n-1] \",qsplit[n-1]"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t23\t23",
+    "filetype": "python"
+  },
+  {
+    "id": "685c2850-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "\" #### *!*Debug*!* #### qsplit[n-1] \",qsplit[n-1]",
+      ""
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t23\t17",
+    "filetype": "python"
+  },
+  {
+    "id": "5223fc70-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(qsplit[n-4])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t26\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "352fb960-a7da-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "                print(qsplit[n-1])"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t23\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "c2469c20-a7d9-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "args.outDir,outName"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t26\t15",
+    "filetype": "python"
+  },
+  {
+    "id": "26d277a0-a7d9-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "https://indico.desy.de/indico/event/21278/contribution/0/material/slides/0.pdf"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t46\t20",
+    "filetype": "python"
+  },
+  {
+    "id": "93be0830-a7d8-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "~/Downloads/test.pdf"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t47\t46",
+    "filetype": "python"
+  },
+  {
+    "id": "4802a190-a7d7-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "\""
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t45\t17",
+    "filetype": "python"
+  },
+  {
+    "id": "dab4b7a0-a7d5-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "https://indico.desy.de/indico/event/21278/timetable/#20181022"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t33\t10",
+    "filetype": "python"
+  },
+  {
+    "id": "d731d270-a7d5-11e9-82e0-1b5e664b72d1",
+    "content": [
+      "    print(links)"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t45\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "b2d77c90-a7d5-11e9-b100-3b55aaafe10b",
+    "content": [
+      "https://indico.desy.de/indico/event/21278/timetable/#20181022"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t33\t10",
+    "filetype": "python"
+  },
+  {
+    "id": "aa76b610-a7d5-11e9-b100-3b55aaafe10b",
+    "content": [
+      "https://indico.desy.de/indico/event/21278/timetable/#20181022"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/projects/webscraping/scrapeIndico.py\t33\t10",
+    "filetype": "python"
+  },
+  {
+    "id": "2d455f90-a7d3-11e9-a36b-bfc80b35002d",
+    "content": [
+      "simnalamburt/vim-mundo"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t49\t7",
+    "filetype": "vim"
+  },
+  {
+    "id": "29821600-a7d3-11e9-84bb-f92e9880cf38",
+    "content": [
+      "    nnoremap <F5> :MundoToggle<CR>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/plugged/vim-mundo/doc/mundo.txt\t59\t1",
+    "filetype": "help"
+  },
+  {
+    "id": "849c9ad0-a7d1-11e9-a36b-bfc80b35002d",
+    "content": [
+      "nmap <buffer> K <plug>UndotreePreviousState"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vim/plugged/undotree/doc/undotree.txt\t364\t5",
+    "filetype": "help"
+  },
+  {
+    "id": "cd513c00-a7d0-11e9-a36b-bfc80b35002d",
+    "content": [
+      "nmap U <plug>UndotreePreviousSavedState"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t200\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "a176e2b0-a7d0-11e9-a36b-bfc80b35002d",
+    "content": [
+      "nnoremap <S-u> <plug>UndotreePreviousSavedState"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t199\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "8fd57d00-a7d0-11e9-a36b-bfc80b35002d",
+    "content": [
+      "<plug>UndotreePreviousSavedState"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vim/plugged/undotree/doc/undotree.txt\t386\t5",
+    "filetype": "help"
+  },
+  {
+    "id": "8ec397d0-a7d0-11e9-a36b-bfc80b35002d",
+    "content": [
+      "    <plug>UndotreePreviousSavedState"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/plugged/undotree/doc/undotree.txt\t386\t1",
+    "filetype": "help"
+  },
+  {
+    "id": "73db2a50-a7d0-11e9-a36b-bfc80b35002d",
+    "content": [
+      "nnoremap <leader>u :UndotreeToggle<cr>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t198\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "22e01de0-a7d0-11e9-a36b-bfc80b35002d",
+    "content": [
+      "let g:airline_section_c = '%t'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t286\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "17299cb0-a7d0-11e9-9470-49dddaed4e40",
+    "content": [
+      "`%{coc#status()}`"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vim/plugged/coc.nvim/doc/coc.txt\t2206\t24",
+    "filetype": "help"
+  },
+  {
+    "id": "eea74f60-a7cc-11e9-9258-0135d10f5d97",
+    "content": [
+      "    rfile = ROOT.TFile(options.input)",
+      "    if not rfile.cd(options.significance):",
+      "        print \"ERROR: could not find {directory} in {rfileName}\".format(",
+      "            directory=options.significance, rfileName=options.input)",
+      "        print \"possible valuse are:\"",
+      "        for k in rfile.GetListOfKeys():",
+      "            print k.GetName()",
+      "        exit()"
+    ],
+    "regtype": "V",
+    "path": "file:///mnt/dust/monoH/forkMonoHbbNtuple/source/python/evalSignificances.py\t63\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "4eeac840-a7cb-11e9-83ed-17db1bf91552",
+    "content": [
+      "Notes"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/bin/scrPad\t11\t81",
+    "filetype": "sh"
+  },
+  {
+    "id": "4d7c9240-a7cb-11e9-83ed-17db1bf91552",
+    "content": [
+      "Notes"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/bin/scrPad\t11\t59",
+    "filetype": "sh"
+  },
+  {
+    "id": "f8ec7830-a7ca-11e9-83ed-17db1bf91552",
+    "content": [
+      "tmux new-window 'bash'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/bin/scrPad\t9\t1",
+    "filetype": "sh"
+  },
+  {
+    "id": "59f8a2d0-a7ca-11e9-b439-316f46e8ef88",
+    "content": [
+      "/mnt/dust/qualiTask/fork_ttbardilepton_PDF"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vim/session/bjet-calib-ttbar-pdf\t45\t5",
+    "filetype": "vim"
+  },
+  {
+    "id": "535fa400-a7ca-11e9-b439-316f46e8ef88",
+    "content": [
+      "/mnt/dus"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vim/session/bjet-calib-ttbar-pdf\t5\t4",
+    "filetype": "vim"
+  },
+  {
+    "id": "4a3c29c0-a7ca-11e9-b439-316f46e8ef88",
+    "content": [
+      "/mnt/dust/monoH/forkMonoHbbNtuple/source"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vim/session/bjet-calib-ttbar-pdf\t5\t4",
+    "filetype": "vim"
+  },
+  {
+    "id": "bf51cb50-a7c7-11e9-b9ee-7febe524df41",
+    "content": [
+      "# alias v='vi'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.bashrc\t128\t1",
+    "filetype": "sh"
+  },
+  {
+    "id": "e5d27910-a7c6-11e9-b027-356a2e004266",
+    "content": [
+      "Total time:"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/scratch/profile.log\t1285\t1",
+    "filetype": "log"
+  },
+  {
+    "id": "d22df060-a7c6-11e9-b027-356a2e004266",
+    "content": [
+      "0.0"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/scratch/profile.log\t691\t20",
+    "filetype": "log"
+  },
+  {
+    "id": "05561660-a7c3-11e9-8c5a-edf2b3f24af5",
+    "content": [
+      "smartf.wordJump"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.config/nvim/coc-settings.json\t7\t5",
+    "filetype": "jsonc"
+  },
+  {
+    "id": "0520ae80-a7c3-11e9-8c5a-edf2b3f24af5",
+    "content": [
+      "smartf.jumpOnTrigger"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.config/nvim/coc-settings.json\t6\t5",
+    "filetype": "jsonc"
+  },
+  {
+    "id": "04510270-a7c3-11e9-8c5a-edf2b3f24af5",
+    "content": [
+      "smartf.timeout"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.config/nvim/coc-settings.json\t5\t5",
+    "filetype": "jsonc"
+  },
+  {
+    "id": "022d1100-a7c3-11e9-8c5a-edf2b3f24af5",
+    "content": [
+      "smartf.timeout"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.config/nvim/coc-settings.json\t5\t5",
+    "filetype": "jsonc"
+  },
+  {
+    "id": "e5093270-a7c2-11e9-bfa4-a3cccf2db255",
+    "content": [
+      "{",
+      "    \"suggest.timeout\":500,",
+      "    \"suggest.maxCompleteItemCount\": 20,",
+      "    \"suggest.minTriggerInputLength\":2",
+      "}"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/coc-settings.json\t1\t1",
+    "filetype": "jsonc"
+  },
+  {
+    "id": "e3c65230-a7c2-11e9-bfa4-a3cccf2db255",
+    "content": [
+      "{",
+      "    \"suggest.timeout\":500,",
+      "    \"suggest.maxCompleteItemCount\": 20,",
+      "    \"suggest.minTriggerInputLength\":2",
+      "}"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/coc-settings.json\t1\t1",
+    "filetype": "jsonc"
+  },
+  {
+    "id": "e221a2e0-a7c2-11e9-bfa4-a3cccf2db255",
+    "content": [
+      "    \"suggest.timeout\":500,"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/coc-settings.json\t2\t1",
+    "filetype": "jsonc"
+  },
+  {
+    "id": "df5fc3c0-a7c2-11e9-bfa4-a3cccf2db255",
+    "content": [
+      "{",
+      "    \"suggest.timeout\":500,",
+      "    \"suggest.maxCompleteItemCount\": 20,",
+      "    \"suggest.minTriggerInputLength\":2",
+      "}"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/coc-settings.json\t1\t1",
+    "filetype": "jsonc"
+  },
+  {
+    "id": "7a7e91c0-a7c2-11e9-b288-85a007ae1b4c",
+    "content": [
+      "guifg"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t112\t52",
+    "filetype": "vim"
+  },
+  {
+    "id": "7961b010-a7c2-11e9-b288-85a007ae1b4c",
+    "content": [
+      "ctermbg=white"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t111\t52",
+    "filetype": "vim"
+  },
+  {
+    "id": "77c95cd0-a7c2-11e9-b288-85a007ae1b4c",
+    "content": [
+      "ctermbg=white"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t111\t52",
+    "filetype": "vim"
+  },
+  {
+    "id": "75dafa50-a7c2-11e9-b288-85a007ae1b4c",
+    "content": [
+      "guifg"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t111\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "749dbf60-a7c2-11e9-b288-85a007ae1b4c",
+    "content": [
+      "  autocmd User SmartfEnter :hi Conceal ctermfg=red ctermbg=white"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t111\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c8079e60-a7c1-11e9-b288-85a007ae1b4c",
+    "content": [
+      "red"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t112\t48",
+    "filetype": "vim"
+  },
+  {
+    "id": "c6aeec30-a7c1-11e9-b288-85a007ae1b4c",
+    "content": [
+      "red"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t111\t48",
+    "filetype": "vim"
+  },
+  {
+    "id": "97069af0-a7c1-11e9-8e7c-ab9f20268fd8",
+    "content": [
+      "def addContent(hist, nbin, content, error):",
+      "    newE=math.sqrt(hist.GetBinError(nbin)**2+error**2)",
+      "    newC=hist.GetBinContent(nbin)+content",
+      "    hist.SetBinContent(nbin, newC)",
+      "    hist.SetBinError(nbin, newE)"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t25\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "961b9eb0-a7c1-11e9-8e7c-ab9f20268fd8",
+    "content": [
+      "    newE=math.sqrt(hist.GetBinError(nbin)**2+error**2)",
+      "    newC=hist.GetBinContent(nbin)+content"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t26\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "94ee4240-a7c1-11e9-8e7c-ab9f20268fd8",
+    "content": [
+      "    newC=hist.GetBinContent(nbin)+content"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t27\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "92f8dae0-a7c1-11e9-b288-85a007ae1b4c",
+    "content": [
+      "    Plug 'wellle/tmux-complete.vim'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t10\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "91e9b4d0-a7c1-11e9-b288-85a007ae1b4c",
+    "content": [
+      "\" endif"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t11\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "906b0410-a7c1-11e9-8e7c-ab9f20268fd8",
+    "content": [
+      "    newC=hist.GetBinContent(nbin)+content"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t27\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "8f6d1c10-a7c1-11e9-8e7c-ab9f20268fd8",
+    "content": [
+      "    newE=math.sqrt(hist.GetBinError(nbin)**2+error**2)"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t26\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "8ea49bf0-a7c1-11e9-8e7c-ab9f20268fd8",
+    "content": [
+      "def addContent(hist, nbin, content, error):"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t25\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "8dc2c770-a7c1-11e9-8e7c-ab9f20268fd8",
+    "content": [
+      "def addContent(hist, nbin, content, error):"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t25\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "8c64be10-a7c1-11e9-8e7c-ab9f20268fd8",
+    "content": [
+      "def addContent(hist, nbin, content, error):"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t25\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "73bacee0-a7c1-11e9-8e7c-ab9f20268fd8",
+    "content": [
+      "# fitPlot.py -i SumHF_BaselineCuts_ZeroPhoton_AllSyst_v26c.root --yieldTable -q --saveAs png --texTables --data --ratio"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t8\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "ad6c1530-a7bd-11e9-a189-63850fae2b1e",
+    "content": [
+      "let g:deoplete#enable_at_startup = 1"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t22\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "ac6c7f80-a7bd-11e9-a189-63850fae2b1e",
+    "content": [
+      "Shougo/deoplete.nvim"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t18\t9",
+    "filetype": "vim"
+  },
+  {
+    "id": "a475c570-a7bd-11e9-a189-63850fae2b1e",
+    "content": [
+      "  Plug 'Shougo/deoplete.nvim'"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t18\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "9ca53100-a7bd-11e9-a189-63850fae2b1e",
+    "content": [
+      "call deoplete#custom#var('tabnine', {",
+      "\\ 'line_limit': 100,",
+      "\\ 'max_num_results': 10,",
+      "\\ })"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t713\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "d4b458b0-a7bc-11e9-a189-63850fae2b1e",
+    "content": [
+      "m",
+      "m"
+    ],
+    "regtype": "^v",
+    "path": "file:///home/janik/.vimrc\t694\t2",
+    "filetype": "vim"
+  },
+  {
+    "id": "c6ca0790-a7bc-11e9-a189-63850fae2b1e",
+    "content": [
+      "nore",
+      "nore"
+    ],
+    "regtype": "^v",
+    "path": "file:///home/janik/.vimrc\t696\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "c225faf0-a7bc-11e9-a189-63850fae2b1e",
+    "content": [
+      "norem",
+      "norem"
+    ],
+    "regtype": "^v",
+    "path": "file:///home/janik/.vimrc\t696\t2",
+    "filetype": "vim"
+  },
+  {
+    "id": "bed6cff0-a7bc-11e9-a189-63850fae2b1e",
+    "content": [
+      "nore",
+      "nore"
+    ],
+    "regtype": "^v",
+    "path": "file:///home/janik/.vimrc\t694\t2",
+    "filetype": "vim"
+  },
+  {
+    "id": "41f5d170-a7bc-11e9-a189-63850fae2b1e",
+    "content": [
+      "Shougo/deoplete.nvim"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t14\t6",
+    "filetype": "vim"
+  },
+  {
+    "id": "68703da0-a7bb-11e9-91e1-65f4c1744d0f",
+    "content": [
+      "    \"suggest.minTriggerInputLength\":2",
+      "    \"tabnine.shortcut\":<C-l>",
+      "}"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/coc-settings.json\t1\t1",
+    "filetype": "jsonc"
+  },
+  {
+    "id": "e042a350-a7ba-11e9-a189-63850fae2b1e",
+    "content": [
+      "  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0",
+      "  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t89\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "86c93da0-a7b7-11e9-9024-03a0eb79c1b3",
+    "content": [
+      "class texTable(object):"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t39\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "859159e0-a7b7-11e9-9024-03a0eb79c1b3",
+    "content": [
+      "def is_in_list(name, li):"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/GitLabRepos/STPostProcessing/VBFAnalysis/scripts/fitPlot.py\t32\t1",
+    "filetype": "python"
+  },
+  {
+    "id": "5c7c3b10-a7b7-11e9-a189-63850fae2b1e",
+    "content": [
+      "line  Plugin 'sirver/ultisnips'"
+    ],
+    "regtype": "V",
+    "path": "list:/yank\t62\t1",
+    "filetype": "list"
+  },
+  {
+    "id": "47df6fb0-a7b7-11e9-a189-63850fae2b1e",
+    "content": [
+      "\" function! s:check_back_space() abort",
+      "\"     let col = col('.') - 1",
+      "\"     return !col || getline('.')[col - 1]  =~ '\\s'",
+      "\" endfunction",
+      "\" inoremap <silent><expr> <TAB>",
+      "\"         \\ pumvisible() ? \"\\<C-n>\" :",
+      "\"         \\ <SID>check_back_space() ? \"\\<TAB>\" :",
+      "\"         \\ coc#refresh()"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t83\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "fecbb400-a7b6-11e9-a189-63850fae2b1e",
+    "content": [
+      "\" function! s:check_back_space() abort",
+      "\"     let col = col('.') - 1",
+      "\"     return !col || getline('.')[col - 1]  =~ '\\s'",
+      "\" endfunction",
+      "\" inoremap <silent><expr> <TAB>",
+      "\"         \\ pumvisible() ? \"\\<C-n>\" :",
+      "\"         \\ <SID>check_back_space() ? \"\\<TAB>\" :",
+      "\"         \\ coc#refresh()",
+      ""
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t83\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "e5764290-a7b6-11e9-a189-63850fae2b1e",
+    "content": [
+      "nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>",
+      ""
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t81\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "e3aa8340-a7b6-11e9-a189-63850fae2b1e",
+    "content": [
+      "nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>",
+      ""
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t81\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "dffa9aa0-a7b6-11e9-a189-63850fae2b1e",
+    "content": [
+      "nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t81\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "de4151e0-a7b6-11e9-a189-63850fae2b1e",
+    "content": [
+      "nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t81\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "dc09ff80-a7b6-11e9-a189-63850fae2b1e",
+    "content": [
+      "nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t81\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "dab4f6d0-a7b6-11e9-a189-63850fae2b1e",
+    "content": [
+      "nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t81\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "d9012c50-a7b6-11e9-a189-63850fae2b1e",
+    "content": [
+      "nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t81\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "094f4ff0-a7b6-11e9-8721-d55f01ec348b",
+    "content": [
+      "$include /etc/inputrc",
+      "set colored-stats on",
+      "set colored-completion-prefix on",
+      "set show-mode-in-prompt on",
+      "set completion-ignore-case on"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.inputrc\t1\t1",
+    "filetype": "readline"
+  },
+  {
+    "id": "0ee47780-a7af-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "<Plug>(coc-fix-current)"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vim/plugged/coc.nvim/doc/coc.txt\t744\t1",
+    "filetype": "help"
+  },
+  {
+    "id": "e97ef330-a7ae-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "\tvmap <leader>p  <Plug>(coc-format-selected)",
+      "\tnmap <leader>p  <Plug>(coc-format-selected)"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/plugged/coc.nvim/doc/coc.txt\t706\t1",
+    "filetype": "help"
+  },
+  {
+    "id": "b42a9b30-a7ae-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "    function! s:check_back_space() abort",
+      "      let col = col('.') - 1",
+      "      return !col || getline('.')[col - 1]  =~ '\\s'",
+      "    endfunction",
+      "",
+      "    inoremap <silent><expr> <TAB>",
+      "\t\t  \\ pumvisible() ? \"\\<C-n>\" :",
+      "\t\t  \\ <SID>check_back_space() ? \"\\<TAB>\" :",
+      "\t\t  \\ coc#refresh()",
+      ""
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vimrc\t81\t1",
+    "filetype": "vim"
+  },
+  {
+    "id": "b019cde0-a7ae-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "    function! s:check_back_space() abort",
+      "      let col = col('.') - 1",
+      "      return !col || getline('.')[col - 1]  =~ '\\s'",
+      "    endfunction",
+      "",
+      "    inoremap <silent><expr> <TAB>",
+      "\t\t  \\ pumvisible() ? \"\\<C-n>\" :",
+      "\t\t  \\ <SID>check_back_space() ? \"\\<TAB>\" :",
+      "\t\t  \\ coc#refresh()",
+      ""
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/plugged/coc.nvim/doc/coc.txt\t600\t1",
+    "filetype": "help"
+  },
+  {
+    "id": "a3c16760-a7ae-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "neoclide/coc.nvim"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vimrc\t8\t11",
+    "filetype": "vim"
+  },
+  {
+    "id": "95981170-a7ae-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "    function! s:check_back_space() abort",
+      "      let col = col('.') - 1",
+      "      return !col || getline('.')[col - 1]  =~ '\\s'",
+      "    endfunction",
+      "",
+      "    inoremap <silent><expr> <TAB>",
+      "\t\t  \\ pumvisible() ? \"\\<C-n>\" :",
+      "\t\t  \\ <SID>check_back_space() ? \"\\<TAB>\" :",
+      "\t\t  \\ coc#refresh()",
+      ""
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/plugged/coc.nvim/doc/coc.txt\t600\t1",
+    "filetype": "help"
+  },
+  {
+    "id": "8e9be400-a7ae-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "    function! s:check_back_space() abort",
+      "      let col = col('.') - 1",
+      "      return !col || getline('.')[col - 1]  =~ '\\s'",
+      "    endfunction",
+      "",
+      "    inoremap <silent><expr> <TAB>",
+      "\t\t  \\ pumvisible() ? \"\\<C-n>\" :",
+      "\t\t  \\ <SID>check_back_space() ? \"\\<TAB>\" :",
+      "\t\t  \\ coc#refresh()"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/plugged/coc.nvim/doc/coc.txt\t209\t1",
+    "filetype": "help"
+  },
+  {
+    "id": "d4609130-a7ad-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "\"suggest.minTriggerInputLength\":~"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/plugged/coc.nvim/doc/coc.txt\t209\t1",
+    "filetype": "help"
+  },
+  {
+    "id": "9ab00b00-a7ad-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "\"suggest.maxCompleteItemCount\":~"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/plugged/coc.nvim/doc/coc.txt\t181\t1",
+    "filetype": "help"
+  },
+  {
+    "id": "80464360-a7ad-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "\"suggest.timeout\":~"
+    ],
+    "regtype": "V",
+    "path": "file:///home/janik/.vim/plugged/coc.nvim/doc/coc.txt\t205\t1",
+    "filetype": "help"
+  },
+  {
+    "id": "cb78dce0-a7ac-11e9-9334-bd1282a6f9b9",
+    "content": [
+      "https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file"
+    ],
+    "regtype": "v",
+    "path": "file:///home/janik/.vim/plugged/coc.nvim/doc/coc.txt\t108\t11",
+    "filetype": "help"
+  },
+  {
     "id": "7f5603c0-820d-11e9-a06a-edbfe535f5b2",
     "content": [
       "Plugin 'nathanaelkane/vim-indent-guides'",

@@ -125,7 +125,8 @@ alias notes='vi ~/Dropbox/Notes/TODO.md ~/Dropbox/Notes/NOTES.md'
 alias talks='cd ~/Dropbox/Master/TEXtalks'
 alias thisroot='source /home/janik/ROOTinstall/root/bin/thisroot.sh'
 alias root='root -l'
-alias v='vi'
+# alias v='vi'
+alias v='nvim'
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias acmSetup="source ~/acmDev/acm/acmSetup.sh"
 alias getTags="ctags -R"

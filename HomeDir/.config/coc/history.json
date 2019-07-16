@@ -1,22 +1,68 @@
 {
   "lists": {
     "%2Fhome%2Fjanik%2FGitLabRepos%2FSTPostProcessing": [
-      "ex"
+      "extion",
+      "source",
+      "ex",
+      "market",
+      "grep",
+      "outlin",
+      "links",
+      "marks",
+      "sear"
     ],
     "%2Fmnt%2Fdust%2Fphd%2FmonoH%2FmyFramework%2Fsource": [
       "exte"
+    ],
+    "%2Fhome%2Fjanik%2F": {
+      "config%2Fnvim": [
+        "ex"
+      ]
+    },
+    "%2Fhome%2Fjanik": [
+      "sourc",
+      "ext"
+    ],
+    "%2Fmnt%2Fdust%2FmonoH%2FforkMonoHbbNtuple%2Fsource": [
+      "ex"
     ]
   },
   "extensions": {
     "%2Fhome%2Fjanik%2FGitLabRepos%2FSTPostProcessing": [
-      ":?"
+      ":?",
+      "git"
     ],
     "%2Fhome%2Fjanik": [
       "python",
-      "pytho"
+      "pytho",
+      "cocs"
     ],
     "%2Fhome%2Fjanik%2Fscratch": [
       "kj"
+    ],
+    "%2Fmnt%2Fdust%2FmonoH%2FforkMonoHbbNtuple%2Fsource": [
+      "git"
+    ],
+    "%2Fhome%2Fjanik%2Fprojects%2Fwebscraping": [
+      "tabni"
+    ]
+  },
+  "marketplace": {
+    "%2Fhome%2Fjanik%2FGitLabRepos%2FSTPostProcessing": [
+      "vimtex",
+      "smartf",
+      "coc-sh",
+      "search"
+    ]
+  },
+  "marks": {
+    "%2Fhome%2Fjanik%2FGitLabRepos%2FSTPostProcessing": [
+      "kj"
+    ]
+  },
+  "commands": {
+    "%2Fmnt%2Fdust%2FmonoH%2FforkMonoHbbNtuple%2Fsource": [
+      "pythoninte"
     ]
   }
 }

@@ -258,7 +258,7 @@ focus_follows_mouse no
 # Background wallpaper 
 exec_always --no-startup-id feh --bg-fill -Z /home/janik/Pictures/Wallpapers/solarized-wallpaper-root.png
 
-exec --no-startup-id xset r rate 400 50 # Set initial delay 300ms, repeat 45ms
+# exec --no-startup-id xset r rate 400 50 # Set initial delay 300ms, repeat 45ms
 
 exec --no-startup-id gnome-terminal -e tmux
 

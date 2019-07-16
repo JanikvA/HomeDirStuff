@@ -5,30 +5,47 @@ set statusline=
 " ### Remove if you don't use Plug ###
 call plug#begin('~/.vim/plugged')
 
+" if has('nvim')
+    Plug 'neoclide/coc.nvim', {'branch': 'release'} "needs vim 8
+    Plug 'wellle/tmux-complete.vim'
+" endif
+
 " Plug 'maralla/completor.vim' "needs vim 8
+
+""for petter performance but less features than coc
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 Plug 'sirver/ultisnips'
 Plug 'JanikvA/vim-snippets'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'mbbill/undotree'
 Plug 'tpope/vim-repeat'
 Plug 'wellle/targets.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'mhinz/vim-startify'
-Plug 'JanikvA/vim-yankstack'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'AndrewRadev/switch.vim'
+Plug 'simnalamburt/vim-mundo'
 
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+" Plug 'airblade/vim-gitgutter'
+Plug 'christoomey/vim-tmux-navigator'
+
 
 Plug 'chiel92/vim-autoformat'
 Plug 'junegunn/vim-easy-align'
@@ -37,12 +54,12 @@ Plug 'junegunn/gv.vim' " :GV will open commit browser
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/vim-peekaboo'
 Plug 'sheerun/vim-polyglot'
 Plug 'zirrostig/vim-schlepp'
 Plug 'google/vim-searchindex'
-Plug 'AndrewRadev/switch.vim'
+" Plug 'junegunn/vim-peekaboo'
 
+" Plug 'JanikvA/vim-yankstack'
 " Plug 'svermeulen/vim-easyclip'
 " Plug 'maxbrunsfeld/vim-yankstack'
 
@@ -51,8 +68,6 @@ Plug 'AndrewRadev/switch.vim'
 " Plug 'osyo-manga/vim-anzu'
 
 " Plug 'Valloric/YouCompleteMe' " for vim <8
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} "needs vim 8
-" Plug 'wellle/tmux-complete.vim'
 
 " Plug 'junegunn/vim-after-object'
 
@@ -75,12 +90,41 @@ augroup vimrc
   autocmd!
 augroup END
 
+" Shougo/deoplete.nvim
+
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#var('tabnine', {
+" \ 'line_limit': 100,
+" \ 'max_num_results': 10,
+" \ })
+
+" neoclide/coc.nvim
+
+" press <esc> to cancel.
+nmap f <Plug>(coc-smartf-forward)
+nmap F <Plug>(coc-smartf-backward)
+nmap ; <Plug>(coc-smartf-repeat)
+nmap , <Plug>(coc-smartf-repeat-opposite)
+ 
+augroup Smartf
+  " autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
+  " autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
+  autocmd User SmartfEnter :hi Conceal ctermfg=red ctermbg=white
+  autocmd User SmartfLeave :hi Conceal ctermfg=red ctermbg=white
+augroup end
+
+nnoremap <silent> <space>y  :<C-u>CocList --normal yank<cr>
+
+vmap <leader>p  <Plug>(coc-format-selected)
+nmap <leader>p  <Plug>(coc-format-selected)
+
 " zirrostig/vim-schlepp
 
 vmap <unique> <up>    <Plug>SchleppUp
 vmap <unique> <down>  <Plug>SchleppDown
 vmap <unique> <left>  <Plug>SchleppLeft
 vmap <unique> <right> <Plug>SchleppRight
+vmap <unique> <space> <Plug>SchleppDup
 
 " vim-startify
 
@@ -93,7 +137,7 @@ vmap <unique> <right> <Plug>SchleppRight
     let g:startify_session_number = 99
     let g:startify_session_sort = 0
 
-    let g:startify_bookmarks = [ '~/.vimrc', '~/.bashrc', '~/.config/i3/config', '~/.vim/plugged/vim-snippets/UltiSnips/' ]
+    let g:startify_bookmarks = ['~/.vim/plugged/vim-snippets/UltiSnips/', '~/.vim/session/', '~/projects/' ]
     let g:startify_lists = [
           \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
@@ -107,22 +151,13 @@ vmap <unique> <right> <Plug>SchleppRight
         \ 'silent! NERDTreeTabsClose'
         \ ]
 
-"maxbrunsfeld/vim-yankstack
-
-let g:yankstack_map_keys = 0
-nmap Ö <Plug>yankstack_substitute_older_paste
-nmap Ä <Plug>yankstack_substitute_newer_paste
-
 "junegunn/rainbow_parentheses.vim
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 "completor
-
-let g:completor_clang_binary ='/usr/bin/clang-6.0'
-let g:completor_python_binary = '/usr/bin/python'
-let g:completor_complete_options = 'menuone,noselect,preview'
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" let g:completor_clang_binary ='/usr/bin/clang-6.0'
+" let g:completor_python_binary = '/usr/bin/python'
+" let g:completor_complete_options = 'menuone,noselect,preview'
 
 "RainbowParantheses
 augroup dummy
@@ -136,8 +171,8 @@ augroup dummy
     au FileType text setlocal commentstring=#\ %s
 augroup END
 
-"vim-peekaboo
-let g:peekaboo_delay = 1000
+""vim-peekaboo
+"let g:peekaboo_delay = 1000
 
 "  vim-autoformat
 nnoremap <leader>af :Autoformat
@@ -153,22 +188,8 @@ nnoremap <leader>aaf :bufdo Autoformat
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" undotree
-nnoremap <leader>u :UndotreeToggle<cr>
-let g:undotree_ShortIndicators = 1
-let g:undotree_SetFocusWhenToggle = 1
-
-" guard for distributions lacking the 'persistent_undo' feature.
-if has('persistent_undo')
-    " define a path to store persistent undo files.
-    let target_path = expand('~/.vim/vim-persisted-undo/')    " create the directory and any parent directories
-    " if the location does not exist.
-    if !isdirectory(target_path)
-        call system('mkdir -p ' . target_path)
-    endif    " point Vim to the defined undo directory.
-    let &undodir = target_path    " finally, enable undo persistence.
-    set undofile
-endif
+" simnalamburt/vim-mundo
+nnoremap <leader>u :MundoToggle<CR>
 
 " vim-indent-guides
 let g:indent_guides_auto_colors = 0
@@ -243,6 +264,7 @@ let g:airline#extensions#wordcount#enabled = 0 " Makes sometimes problems with G
 " working with mount
 let g:airline_section_b = '%-0.10{getcwd()}'
 let g:airline_section_c = '%t'
+let g:airline_section_c = '%{coc#status()}'
 
 let g:airline_section_error=''
 let g:airline_section_warning=''
@@ -286,7 +308,7 @@ let g:NERDTreeIndicatorMapCustom = {
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<C-a>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpForwardTrigger="<C-k>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " ### remove if not present ###
@@ -355,17 +377,20 @@ set nu
 set rnu
 set laststatus=2
 set mouse=a
-if has("mouse_sgr")
-  set ttymouse=sgr
-else
-  set ttymouse=xterm2
-end
+if !has('nvim')
+    if has("mouse_sgr")
+        set ttymouse=sgr
+    else
+        set ttymouse=xterm2
+    end
+endif
 set spelllang=en_us   "type '=z' after ':set spell' with cursor on misspelled word
 set scrolloff=5
 set sidescrolloff=7         " Start scrolling n chars before end of screen.
 set sidescroll=2            " The minimal number of columns to scroll horizontally
 set hidden
 set shiftwidth=4
+set shiftround
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 " set formatoptions-=cro " see :help fo-table
@@ -380,6 +405,10 @@ set nowritebackup
 set magic "enables extended regex"
 
 set backspace=indent,eol,start
+set ruler
+set noerrorbells
+set title
+set formatoptions+=j
 
 :command W w
 :command Q q
@@ -393,21 +422,21 @@ syntax on
 "TODO insert mappings:  c-y
 inoremap <C-e> <C-x><C-p>
 
-"TODO for some reason this has a slight delay now. it is instant if i do <leader>dk
+"TODO for some reason this has a slight delay now. it is instant if i do <leader>dk. And make the number dependen on the number of occurrences. That would be awesome
 augroup dummy
-  autocmd FileType c,cpp      nnoremap <buffer> <leader>d ostd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>
-  autocmd FileType python     nnoremap <buffer> <leader>d oprint " #### *!*Debug*!* 1 #### "<Esc>
+  autocmd FileType c,cpp      nnoremap <buffer> <leader>d ostd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
+  autocmd FileType python     nnoremap <buffer> <leader>d oprint " #### *!*Debug*!* 1 #### "<Esc>0
 augroup END
 nnoremap <leader>r /\*\!\*Debug\*\!\*<CR>
 
 nnoremap H :bp<CR>
 nnoremap L :bn<CR>
 
-" This workaround leads to :SearchIndex being called twice. Maybe i can optimize it somehow
-nmap n nzzg/
-nmap N Nzzg/
-"also centers the first search result. TODO gives annoying error msg if no match is found
-cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz:SearchIndex<CR>' : '<CR>' 
+"" This workaround leads to :SearchIndex being called twice. Maybe i can optimize it somehow
+"nmap n nzzg/
+"nmap N Nzzg/
+""also centers the first search result. TODO gives annoying error msg if no match is found
+"cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz:SearchIndex<CR>' : '<CR>' 
 
 
 nnoremap <space> i<space><Esc>l
@@ -422,7 +451,7 @@ nnoremap <leader>y :let @+=@"<Cr>
 nnoremap <leader>p "+p
 nnoremap <leader>n gny:let @+=@"<Cr>
 
-" set clipboard=unnamedplus
+set clipboard=unnamedplus
 
 " disables vim from clearing clipboard after leaving/suspending vi session
 " if executable("xclip")
@@ -638,6 +667,8 @@ command! Todo call s:todo()
 
 nnoremap m }
 nnoremap M {
+vnoremap m }
+vnoremap M {
 nnoremap gm m
 map 0 ^
 
@@ -649,3 +680,26 @@ cnoremap <C-N> <Down>
 
 nnoremap <PageUp> <c-u>
 nnoremap <Home> <c-d>
+
+nnoremap <C-e> <C-w>w
+nnoremap <BS> <C-w>W
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+let g:matchparen_timeout = 20
+let g:matchparen_insert_timeout = 20
+highlight clear SignColumn
+
+" guard for distributions lacking the 'persistent_undo' feature.
+if has('persistent_undo')
+    " define a path to store persistent undo files.
+    let target_path = expand('~/.vim/vim-persisted-undo/')    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call system('mkdir -p ' . target_path)
+    endif    " point Vim to the defined undo directory.
+    let &undodir = target_path    " finally, enable undo persistence.
+    set undofile
+endif
+
