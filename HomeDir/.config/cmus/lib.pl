@@ -32,6 +32,7 @@
 /home/janik/Music/Music/Akon - Smack That ft. Eminem.m4a
 /home/janik/Music/Music/Alan Walker - Faded.m4a
 /home/janik/Music/Music/Alec Benjamin - Let Me Down Slowly [Official Music Video].m4a
+/home/janik/Music/Music/Alessia Cara - Here.m4a
 /home/janik/Music/Music/Alex Clare - Too Close.m4a
 /home/janik/Music/Music/Alice Merton - No Roots.m4a
 /home/janik/Music/Music/Alicia Keys - Fallin_ (Official Music Video).m4a
@@ -56,6 +57,7 @@
 /home/janik/Music/Music/Bahari -  -( [Official Lyric Video].m4a
 /home/janik/Music/Music/EXID - Up & Down (Chinese Version) Official Music Video.m4a
 /home/janik/Music/Music/孟佳 Meng Jia - 她是誰（Who's That Girl）Official Music Video.m4a
+/home/janik/Music/Music/BANKS - Propaganda (Visualizer).m4a
 /home/janik/Music/Music/Bazzi feat. Camila Cabello - Beautiful (Official Video).m4a
 /home/janik/Music/Music/Bazzi - Mine (Official Video).m4a
 /home/janik/Music/Music/Bazzi - Myself (Official Video).m4a
@@ -204,25 +206,30 @@
 /home/janik/Music/Music/Favorite - Alle Scheiße (16BARS.TV Videopremiere).m4a
 /home/janik/Music/Music/Felix Jaehn - Bonfire (feat. ALMA) [Offizielles Video].m4a
 /home/janik/Music/Music/Fergie - Glamorous ft. Ludacris (Official Music Video).m4a
+/home/janik/Music/Music/FINNEAS - Let's Fall In Love For The Night (lyrics).m4a
 /home/janik/Music/Music/Fkj - Vibin_ Out with ((( O ))).m4a
 /home/janik/Music/Music/Flight Facilities - Crave you feat. Giselle (Official Video).m4a
 /home/janik/Music/Music/Flo-Rida - Right Round HQ _ Letra.m4a
 /home/janik/Music/Music/Flume _ Chet Faker - Drop the Game [Official Music Video].m4a
+/home/janik/Music/Music/Flume - Let You Know (feat. London Grammar).m4a
 /home/janik/Music/Music/Remember The Name (Official Video) - Fort Minor.m4a
 /home/janik/Music/Music/Here Comes The Boom - Nelly.m4a
 /home/janik/Music/Music/Shindy - Nautilus (prod. by Nico Chiara, Shindy & OZ).m4a
 /home/janik/Music/Music/Future - Mask Off (Lyrics _ Lyric Video).m4a
 /home/janik/Music/Music/f(x) 에프엑스 '4 Walls' MV.m4a
+/home/janik/Music/Music/Consequences  _ Akira ✘ Hijiri (中学聖日記).m4a
 /home/janik/Music/Music/Galantis - No Money (Official Video).m4a
 /home/janik/Music/Music/G-Eazy - I Mean It (Official Music Video) ft. Remo.m4a
 /home/janik/Music/Music/G-Eazy - No Limit (Remix) ft. A$AP Rocky, Cardi B, French Montana, Juicy J, Belly.m4a
 /home/janik/Music/Music/G-Eazy _ Halsey - Him _ I (Official Music Video).m4a
 /home/janik/Music/Music/경리(나인뮤지스) GYEONG REE(9MUSES) - BLUE MOON Official M_V.m4a
+/home/janik/Music/Music/Gert Taberner - Fallen.m4a
 /home/janik/Music/Music/[MV] (G)I-DLE((여자)아이들) _ Senorita.m4a
 /home/janik/Music/Music/(여자)아이들((G)I-DLE) - _한(一)(HANN(Alone))_ Official Music Video.m4a
 /home/janik/Music/Music/Dynoro, Gigi D_Agostino - In My Mind (Official Audio).m4a
 /home/janik/Music/Music/Glasperlenspiel - Geiles Leben.m4a
 /home/janik/Music/Music/Gnarls Barkley - Crazy.m4a
+/home/janik/Music/Music/gnash - i hate u, i love u ft. olivia o'brien (music video).m4a
 /home/janik/Music/Music/GOLDA - NsfW (DRKTMS Remix).m4a
 /home/janik/Music/Music/Grace - You Don't Own Me ft. G-Eazy (Official Music Video).m4a
 /home/janik/Music/Music/John Connor - Horizons (feat. Jogger).m4a
@@ -243,6 +250,7 @@
 /home/janik/Music/Music/헤이즈(Heize) - 그러니까(So, it ends)(feat.Colde) Live clip.m4a
 /home/janik/Music/Music/헤이즈 (Heize) - Jenga (Feat. Gaeko) MV.m4a
 /home/janik/Music/Music/Hollywood Undead - Everywhere I Go [Lyrics].m4a
+/home/janik/Music/Music/Hozier - Take Me To Church (Official Video).m4a
 /home/janik/Music/Music/[MV] 효린(HYOLYN)X창모(CHANGMO) - BLUE MOON (Prod. GroovyRoom).m4a
 /home/janik/Music/Music/HYOYEON 효연 'Wannabe (Feat. San E)' MV.m4a
 /home/janik/Music/Music/[MV] hyukoh(혁오) _ Comes And Goes(와리가리).m4a
@@ -259,6 +267,7 @@
 /home/janik/Music/Music/Imagine Dragons - Thunder.m4a
 /home/janik/Music/Music/Imagine Dragons - Whatever It Takes.m4a
 /home/janik/Music/Music/[MV] IU(아이유) _ BBIBBI(삐삐).m4a
+/home/janik/Music/Music/Jaden - On My Own ft. Kid Cudi (Official Audio).m4a
 /home/janik/Music/Music/Ja Rule - Always On Time ft. Ashanti.m4a
 /home/janik/Music/Music/Ja Rule - Wonderful ft. R. Kelly, Ashanti.m4a
 /home/janik/Music/Music/Jason Derulo - Swalla (feat. Nicki Minaj _ Ty Dolla $ign) (Official Music Video).m4a
@@ -336,7 +345,9 @@
 /home/janik/Music/Music/Kontra K - Alles was sie will (Official Video).m4a
 /home/janik/Music/Music/Two Feet - Her Life LYRICS.m4a
 /home/janik/Music/Music/KWAYE - Sweetest Life [Official Music Video].m4a
+/home/janik/Music/Music/KWAYE - Lost In My Boots [Official Music Video].m4a
 /home/janik/Music/Music/Lady Gaga - Telephone (Audio) ft. Beyoncé.m4a
+/home/janik/Music/Music/Lana Del Rey - Summertime Sadness (Official Music Video).m4a
 /home/janik/Music/Music/Lauv - I Like Me Better (Miro Remix).m4a
 /home/janik/Music/Music/K_DA - POP_STARS (ft Madison Beer, (G)I-DLE, Jaira Burns) _ Official Music Video - League of Legends.m4a
 /home/janik/Music/Music/Legends Never Die (ft. Against The Current) [OFFICIAL AUDIO] _ Worlds 2017 - League of Legends.m4a
@@ -366,6 +377,7 @@
 /home/janik/Music/Music/Logic - Wu Tang Forever ft. Wu Tang Clan (Official Audio).m4a
 /home/janik/Music/Music/Isis.m4a
 /home/janik/Music/Music/Everyday Normal Guy.m4a
+/home/janik/Music/Music/LP - Lost On You [Official Video].m4a
 /home/janik/Music/Music/LSD - Audio (Official Video) ft. Labrinth, Sia, Diplo.m4a
 /home/janik/Music/Music/Ludacris - Act A Fool (MTV Version).m4a
 /home/janik/Music/Music/Ludacris - Area Codes (feat. Nate Dogg).m4a
@@ -438,6 +450,7 @@
 /home/janik/Music/Music/P. Diddy - 'Shake Ya Tailfeather' (feat. Nelly & Murphy Lee).m4a
 /home/janik/Music/Music/Peter Fox - Alles neu (offizielles Video).m4a
 /home/janik/Music/Music/Peter Manos - In My Head.m4a
+/home/janik/Music/Music/Two Feet - You're So Cold (Subtitulos al Español).m4a
 /home/janik/Music/Music/Phony Ppl - Why iii Love the Moon..m4a
 /home/janik/Music/Music/Tuxedo - Do It.m4a
 /home/janik/Music/Music/Post Malone - Better Now.m4a
@@ -477,6 +490,8 @@
 /home/janik/Music/Music/Russ - Goodbye (Official Video).m4a
 /home/janik/Music/Music/Russ - Yung God.m4a
 /home/janik/Music/Music/Russ - AINT GOIN BACK (Official Video).m4a
+/home/janik/Music/Music/SAMRA & CAPITAL BRA - WIEDER LILA (PROD. BY BEATZARRE & DJORKAEFF).m4a
+/home/janik/Music/Music/Wieder Lila.m4a
 /home/janik/Music/Music/Sasha Sloan - Chasing Parties (Lyric Video).m4a
 /home/janik/Music/Music/Sean Kingston - Beautiful Girls (Official Music Video).m4a
 /home/janik/Music/Music/Sean Paul - No Lie ft. Dua Lipa.m4a
@@ -504,6 +519,7 @@
 /home/janik/Music/Music/Snoop Dogg - _Sweat_ Snoop Dogg vs David Guetta (Remix).m4a
 /home/janik/Music/Music/청하 (CHUNG HA) - 'Snapping' MV.m4a
 /home/janik/Music/Music/헤이즈 (Heize) - MIANHAE (Sorry) MV.m4a
+/home/janik/Music/Music/헤이즈 (Heize) - We don't talk together (Feat. 기리보이 (Giriboy)) (Prod. SUGA) MV.m4a
 /home/janik/Music/Music/Tech N9ne - Am I A Psycho (Feat. B.o.B and Hopsin) - Official Music Video.m4a
 /home/janik/Music/Music/Tech N9ne - On The Bible (Feat. T.I. _ Zuse) - Official Music Video.m4a
 /home/janik/Music/Music/Stray Kids _Get Cool_ M_V.m4a
@@ -548,6 +564,7 @@
 /home/janik/Music/Music/The Wanted - Glad You Came.m4a
 /home/janik/Music/Music/The Weeknd - Call Out My Name (Official Audio).m4a
 /home/janik/Music/Music/The Weeknd - Starboy (official) ft. Daft Punk.m4a
+/home/janik/Music/Music/The Weeknd - Often (NSFW).m4a
 /home/janik/Music/Music/The White Stripes - _Seven Nation Army_.m4a
 /home/janik/Music/Music/T.I. - Dead _ Gone ft. Justin Timberlake [Official Video].m4a
 /home/janik/Music/Music/T.I. - That_s All She Wrote (feat. Eminem) (Explicit).m4a
@@ -556,6 +573,7 @@
 /home/janik/Music/Music/胡彥斌 Tiger Hu 【你要的全拿走 Take Everything You Want】 HD 官方高清完整版 MV.m4a
 /home/janik/Music/Music/Timbaland - Apologize ft. OneRepublic (Official Music Video).m4a
 /home/janik/Music/Music/Timbaland - The Way I Are ft. Keri Hilson, D.O.E., Sebastian (Official Music Video).m4a
+/home/janik/Music/Music/Linkin Park - In The End (Mellen Gi & Tommee Profitt Remix).m4a
 /home/janik/Music/Music/Tom Misch - Movie (Official Video).m4a
 /home/janik/Music/Music/Tom Misch - It Runs Through Me (feat. De La Soul) [Official Video].m4a
 /home/janik/Music/Music/Tove Lo - Habits (Stay High) - Hippie Sabotage Remix.m4a
@@ -596,14 +614,23 @@
 /home/janik/Music/Music/제시 쎈언니 (Jessi SSENUNNI) MV.m4a
 /home/janik/Music/Music/8 Ball - hands in the air.m4a
 /home/janik/Music/Music/Zak Abel - Love Song [Official Video].m4a
+/home/janik/Music/Music/Zedd, Elley Duhé - Happy Now (Official Music Video).m4a
 /home/janik/Music/Music/Zhavia - Deep Down (Official Video).m4a
 /home/janik/Music/Music/Italobrothers - Stamp On The Ground (Official HD Video).m4a
 /home/janik/Music/Music/Roy Jones Jr. - Can_t Be Touched.m4a
 /home/janik/Music/Music/萬妮達 -《Vinida萬妮達》- Queendom MV.m4a
 /home/janik/Music/Music/Vinida 万妮达 - 场上称霸(Run This).m4a
+/home/janik/Music/Music/珊瑚海 周杰伦 & 梁心颐 (歌词版).m4a
 /home/janik/Music/Music/[龍虎門] 買榜 - 熊仔×Julia Wu 吳卓源×RGRY.m4a
+/home/janik/Music/Music/林俊傑 JJ Lin【她說 She Says】官方完整版 MV（孫燕姿作詞）.m4a
+/home/janik/Music/Music/林俊傑 JJ Lin - 《江南》(歌詞).m4a
 /home/janik/Music/Music/水 SUI：Julia Wu 吳卓源 - 撥接 (Dial Up)  _  SUI sessions.m4a
+/home/janik/Music/Music/田馥甄 Hebe Tien [ 無用 Useless ] Official Music Video.m4a
+/home/janik/Music/Music/田馥甄 Hebe Tien [MY LOVE] Official MV HD.m4a
 /home/janik/Music/Music/田馥甄 Hebe Tien [我想我不會愛你 I Don't Think I Am In Love With You] Official MV.m4a
+/home/janik/Music/Music/田馥甄 Hebe Tien [寂寞寂寞就好 Leave Me Alone] Official MV.m4a
+/home/janik/Music/Music/HEBE TIEN 田馥甄 [不醉不會 Learning From Drunk ] Official MV HD.m4a
+/home/janik/Music/Music/HEBE TIEN 田馥甄 [ 渺小 INSIGNIFICANCE ] Official MV HD.m4a
 /home/janik/Music/Music/Mariya Takeuchi Plastic Love  竹内 まりや.m4a
 /home/janik/Music/Music/蔡健雅-红色高跟鞋MV.m4a
 /home/janik/Music/Music/Vinida 萬妮達 - 牛仔很忙 低音強化.m4a

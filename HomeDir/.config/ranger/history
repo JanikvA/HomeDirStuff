@@ -43,8 +43,8 @@ rename merged_MH.png
 rename resolved_MH.png
 rename yieldTable.png
 rename yieldTable_merged.png
-filter True_True*.png
 rename new_merged_SoverB.png
 rename new_merged_SoverSqrtB.png
 rename new_resolved_SoverSqrtB.png
 rename new_resolved_SoverB.png
+filter True_True*.png

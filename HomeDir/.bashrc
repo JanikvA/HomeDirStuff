@@ -17,8 +17,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=100000
-HISTFILESIZE=200000
+HISTSIZE=1000000
+HISTFILESIZE=2000000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -127,6 +127,7 @@ alias thisroot='source /home/janik/ROOTinstall/root/bin/thisroot.sh'
 alias root='root -l'
 # alias v='vi'
 alias v='nvim'
+alias sv='vim -u ~/.minvimrc' # No vimrc ar plugins. very fast
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias acmSetup="source ~/acmDev/acm/acmSetup.sh"
 alias getTags="ctags -R"

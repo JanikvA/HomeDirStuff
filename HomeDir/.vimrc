@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'} "needs vim 8
     Plug 'wellle/tmux-complete.vim'
 " endif
-
+" endif
 " Plug 'maralla/completor.vim' "needs vim 8
 
 ""for petter performance but less features than coc
@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'cloudhead/neovim-fuzzy'
 Plug 'tpope/vim-repeat'
 Plug 'wellle/targets.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -36,6 +37,7 @@ Plug 'mhinz/vim-startify'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'simnalamburt/vim-mundo'
+Plug 'iCyMind/NeoSolarized'
 
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
@@ -43,8 +45,7 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-" Plug 'airblade/vim-gitgutter'
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 
 
 Plug 'chiel92/vim-autoformat'
@@ -57,8 +58,26 @@ Plug 'junegunn/goyo.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'zirrostig/vim-schlepp'
 Plug 'google/vim-searchindex'
-" Plug 'junegunn/vim-peekaboo'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'kkoomen/vim-doge'
+"Does this f up my undo?
+Plug 'cyansprite/Extract'
 
+"interesting but super slow
+" Plug 'philip-karlsson/aerojump.nvim', { 'do': ':UpdateRemotePlugins' } 
+" Plug 'huawenyu/neogdb.vim'
+" Plug 'sakhnik/nvim-gdb'
+" Plug 'Vigemus/nvimux'
+
+
+" Plug 'liuchengxu/vista.vim' "TODO not working atm. Wait for dev
+
+" Plug 'airblade/vim-gitgutter'
+" Plug 'Shougo/echodoc.vim'
+
+" Plug 'davidhalter/jedi-vim'
+
+" Plug 'junegunn/vim-peekaboo'
 " Plug 'JanikvA/vim-yankstack'
 " Plug 'svermeulen/vim-easyclip'
 " Plug 'maxbrunsfeld/vim-yankstack'
@@ -90,25 +109,77 @@ augroup vimrc
   autocmd!
 augroup END
 
+" 'cyansprite/Extract'
+let g:extract_maxCount=20
+let g:extract_useDefaultMapping=0
+imap <c-v> <Plug>(extract-completeList)
+
+" " 'philip-karlsson/aerojump.nvim'
+" nmap <leader><leader> <Plug>(AerojumpSpace)
+
+" 'kkoomen/vim-doge'
+let g:doge_comment_interactive=1
+let g:doge_mapping_comment_jump_forward="<C-k>"
+let g:doge_mapping_comment_jump_backward="<C-b>"
+
+"cloudhead/neovim-fuzzy
+nnoremap <leader><space> :FuzzyGrep<CR>
+
+" liuchengxu/vista.vim
+" nnoremap <leader>v :Vista!! ctags<CR>
+
 " Shougo/deoplete.nvim
 
 " let g:deoplete#enable_at_startup = 1
 " call deoplete#custom#var('tabnine', {
-" \ 'line_limit': 100,
+" \ 'line_limit': 500,
 " \ 'max_num_results': 10,
 " \ })
 
 " neoclide/coc.nvim
 
+" Use K for show documentation in preview window
+" nnoremap <silent> K :call <SID>show_documentation()<CR>, TODO not working atm
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" trigger completion
+" inoremap <silent><expr> <C-n> coc#refresh()
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+
+
+
+nmap <leader>cd <Plug>(coc-definition)
+nmap <leader>cl <Plug>(coc-declaration)
+nmap <leader>ci <Plug>(coc-implementation)
+nmap <leader>ct <Plug>(coc-type-definition)
+" nmap <leader>cr <Plug>(coc-references)
+nmap <leader>cr <Plug>(coc-rename)
+nmap <leader>cf <Plug>(coc-fix-current)
+nmap <leader>cc <Plug>(coc-refactor)
+
 " press <esc> to cancel.
-nmap f <Plug>(coc-smartf-forward)
-nmap F <Plug>(coc-smartf-backward)
-nmap ; <Plug>(coc-smartf-repeat)
-nmap , <Plug>(coc-smartf-repeat-opposite)
- 
+nmap <C-j> <Plug>(coc-smartf-forward)
+nmap <C-k> <Plug>(coc-smartf-backward)
+nmap <C-l> <Plug>(coc-smartf-repeat)
+nmap <C-h> <Plug>(coc-smartf-repeat-opposite)
+
 augroup Smartf
-  " autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
-  " autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
   autocmd User SmartfEnter :hi Conceal ctermfg=red ctermbg=white
   autocmd User SmartfLeave :hi Conceal ctermfg=red ctermbg=white
 augroup end
@@ -118,7 +189,17 @@ nnoremap <silent> <space>y  :<C-u>CocList --normal yank<cr>
 vmap <leader>p  <Plug>(coc-format-selected)
 nmap <leader>p  <Plug>(coc-format-selected)
 
+
+
+
+
+
 " zirrostig/vim-schlepp
+
+
+
+
+
 
 vmap <unique> <up>    <Plug>SchleppUp
 vmap <unique> <down>  <Plug>SchleppDown
@@ -232,6 +313,7 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>f :BLines<CR>
 nnoremap <leader>m :Commands<CR>
 nnoremap <leader>ag :Ag<CR>
+nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>h :Helptags<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>k :Marks<CR>
@@ -244,6 +326,14 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
+  command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%','?'),
+  \   <bang>0)
 
 "vim-gitgutter
 let g:gitgutter_map_keys = 0 " to disable all gitgutter mappings
@@ -253,7 +343,7 @@ nnoremap <leader>hp :GitGutterPrevHunk<cr>
 nnoremap <Leader>gghl :GitGutterLineHighlightsToggle<CR>
 nnoremap <Leader>ggf :GitGutterFold<CR>
 nnoremap <Leader>ggt :GitGutterToggle<CR>
-set updatetime=4000 "[ms] default is 4000 ms i.e 4s
+set updatetime=300 "[ms] default is 4000 ms i.e 4s
 
 " vim-airline
 " let g:airline#extensions#syntastic#enabled = 0
@@ -286,11 +376,11 @@ let g:tagbar_show_linenumbers = 1
 let g:tagbar_sort = 0
 let g:tagbar_compact = 1
 
-set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*
+set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*,*/.pdf*/,*/.o*/
 
 "scrooloose/nerdtree
 map <leader>e :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.swp$','\.root$','\.o$','\.pyc$', '\~$']
+let NERDTreeIgnore=['\.swp$','\.root$','\.so$','\.o$','\.pyc$', '\~$']
 
 " nerdtree-git-plugin
 let g:NERDTreeIndicatorMapCustom = {
@@ -309,7 +399,7 @@ let g:NERDTreeIndicatorMapCustom = {
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<C-a>"
 let g:UltiSnipsJumpForwardTrigger="<C-k>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 
 " ### remove if not present ###
 
@@ -319,6 +409,10 @@ let g:netrw_liststyle= 2 " Change the default style of netrw
 syntax enable
 set background=dark
 colorscheme solarized
+"TODO make ifelse
+if has('nvim')
+    colorscheme NeoSolarized
+endif
 
 " folding stuff
 "Very nice for python
@@ -352,7 +446,7 @@ noremap <F3> <Esc>:w<Enter>:!python %<Enter>
 " noremap <F3> <Esc>:w !python<CR>
 vnoremap <F3> :w !python<CR>
 noremap <F4> <Esc>:w<Enter>:!./%<Enter>
-noremap <F5> <Esc>:w<Enter>:!./% 
+noremap <F5> <Esc>:w<Enter>:!./%
 noremap <F7> <Esc>:w<Enter>:!pdflatex %<Enter>
 
 
@@ -422,21 +516,21 @@ syntax on
 "TODO insert mappings:  c-y
 inoremap <C-e> <C-x><C-p>
 
-"TODO for some reason this has a slight delay now. it is instant if i do <leader>dk. And make the number dependen on the number of occurrences. That would be awesome
-augroup dummy
-  autocmd FileType c,cpp      nnoremap <buffer> <leader>d ostd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
-  autocmd FileType python     nnoremap <buffer> <leader>d oprint " #### *!*Debug*!* 1 #### "<Esc>0
-augroup END
+""TODO for some reason this has a slight delay now. it is instant if i do <leader>dk. And make the number dependen on the number of occurrences. That would be awesome
+"augroup dummy
+"  autocmd FileType c,cpp      nnoremap <buffer> <leader>d ostd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
+"  autocmd FileType python     nnoremap <buffer> <leader>d oprint " #### *!*Debug*!* 1 #### "<Esc>0
+"augroup END
+
 nnoremap <leader>r /\*\!\*Debug\*\!\*<CR>
 
 nnoremap H :bp<CR>
 nnoremap L :bn<CR>
 
 "" This workaround leads to :SearchIndex being called twice. Maybe i can optimize it somehow
-"nmap n nzzg/
-"nmap N Nzzg/
-""also centers the first search result. TODO gives annoying error msg if no match is found
-"cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz:SearchIndex<CR>' : '<CR>' 
+nmap n nzzg/
+nmap N Nzzg/
+cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz:SearchIndex<CR>' : '<CR>'
 
 
 nnoremap <space> i<space><Esc>l
@@ -444,20 +538,22 @@ nnoremap <leader>o o<ESC>
 nnoremap <leader>O O<ESC>
 nnoremap <leader>dm %x``x
 nnoremap <leader>g <C-]>zz
+nnoremap <leader>G <C-W>}zz
 nnoremap cm :%s///g<left><left>
+vnoremap cm :s///g<left><left>
 
 " vnoremap <leader>y "+y
 nnoremap <leader>y :let @+=@"<Cr>
 nnoremap <leader>p "+p
 nnoremap <leader>n gny:let @+=@"<Cr>
 
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " disables vim from clearing clipboard after leaving/suspending vi session
 " if executable("xclip")
 function! PreserveClipboard()
   call system("xsel -ib", getreg('+')) "<- if using xsel
-  " call system('echo ' . shellescape(getreg('+')) . 
+  " call system('echo ' . shellescape(getreg('+')) .
   "         \ ' | xclip -selection clipboard')
   " call system("xclip -selection clipboard -i", getreg('+'))
 endfunction
@@ -482,11 +578,14 @@ vnoremap p "_dP
 nnoremap <leader>cn :cnext<cr>
 nnoremap <leader>cp :cp<cr>
 
+nnoremap <leader>ln :lnext<cr>
+nnoremap <leader>lp :lprevious<cr>
 
 nnoremap <leader>q :q<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>s :w<CR>
-nnoremap <leader><space> <Esc>/<++><Enter>c4l
+"TODO not needed
+" nnoremap <leader><space> <Esc>/<++><Enter>c4l
 
 "tab movement
 nnoremap <leader>1 1gt
@@ -511,11 +610,11 @@ nnoremap üt :tabedit
 " German keyboard mappings
 
 
-"easier window movement
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+""easier window movement
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 
 " Automatic paste mode for terminal
 let &t_SI .= "\<Esc>[?2004h"
@@ -548,7 +647,7 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 
 " If pasting in visual mode the default register is not overwritter
-xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
+" xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -601,7 +700,7 @@ augroup END
 nnoremap <leader>vg :noautocmd vimgrep //gj `git ls-files`<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 nnoremap <leader>lv :vimgrep /<C-r>//g %<CR> \| !:copen <Enter>
 
-set complete=.,t
+set complete=.,w,b,u
 set completeopt=menuone,noselect,preview,longest
 " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -624,7 +723,6 @@ function! s:go_indent(times, dir)
     let x = line('$')
     let i = s:indent_len(getline(l))
     let e = empty(getline(l))
-
     while l >= 1 && l <= x
       let line = getline(l + a:dir)
       let l += a:dir
@@ -662,7 +760,7 @@ endfunction
 command! Todo call s:todo()
 
 
-"TODO <c-e>,<c-space>,<c-l>,<BS>,<s-u> normal mode mapping
+"TODO <c-e>,<c-space>,<c-l>,<BS>,<s-u>,-,_,<c-q> normal mode mapping
 "maybe also: <C-t>
 
 nnoremap m }
@@ -682,14 +780,14 @@ nnoremap <PageUp> <c-u>
 nnoremap <Home> <c-d>
 
 nnoremap <C-e> <C-w>w
-nnoremap <BS> <C-w>W
+nnoremap <C-q> <C-w>W
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 let g:matchparen_timeout = 20
 let g:matchparen_insert_timeout = 20
-highlight clear SignColumn
+" highlight clear SignColumn
 
 " guard for distributions lacking the 'persistent_undo' feature.
 if has('persistent_undo')
@@ -702,4 +800,7 @@ if has('persistent_undo')
     let &undodir = target_path    " finally, enable undo persistence.
     set undofile
 endif
+
+" make buffer a scratch buffer
+:command MakeScratch setlocal buftype=nofile |setlocal bufhidden=hide |setlocal noswapfile
 

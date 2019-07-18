@@ -1,9 +1,21 @@
 {
-    "suggest.timeout":500,
-    "suggest.maxCompleteItemCount": 20,
-    "suggest.minTriggerInputLength":2,
-    "smartf.timeout":700,
-    "smartf.jumpOnTrigger":true,
-    "smartf.wordJump":false
+    "suggest.autoTrigger":"trigger",
+    "suggest.enablePreview":true,
+    "suggest.timeout":2000,
+    "suggest.triggerCompletionWait":60,
+    "suggest.maxCompleteItemCount": 30,
+    "suggest.minTriggerInputLength":3,
+    "smartf.timeout":2000,
+    "smartf.jumpOnTrigger":false,
+    "smartf.wordJump":false,
+    "languageserver": {
+        "ccls": {
+            "command": "/home/janik/ccls/Release/ccls",
+            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "rootPatterns": ["compile_commands.json", ".ccls", ".root", ".git/"],
+            "initializationOptions": {
+                "cacheDirectory": "/tmp/ccls"
+            }
+        }
+    }
 }
-

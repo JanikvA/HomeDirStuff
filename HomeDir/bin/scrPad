@@ -1,5 +1,5 @@
 #!/bin/sh
-redshift -t 6500:1000 -b 1:0.3 -l 53.5:9.9 &
+redshift -t 6500:1000 -b 1:0.8 -l 53.5:9.9 &
 # tmux new-session -d 'bash --init-file ~/bin/vimBash.sh'
 tmux new-session -d 'bash'
 # tmux split-window -v
@@ -8,7 +8,7 @@ tmux new-session -d 'bash'
 tmux new-window 'bash'
 tmux send-keys "r" C-m
 tmux new-window 'bash'
-tmux send-keys "nvim -n ~/scratch/scrPadTMP.txt ~/Dropbox/scr/TODO.md ~/Dropbox/scr/NOTES.md ~/.vimrc ~/.config/i3/config" C-m
+tmux send-keys "nvim -n ~/scratch/scrPadTMP.txt ~/Dropbox/scr/TODO.md ~/Dropbox/scr/NOTES.md ~/.bashrc ~/.vimrc ~/.config/i3/config" C-m
 tmux new-window 'cmus'
 tmux new-window 'calcurse'
 tmux select-window -t :=1

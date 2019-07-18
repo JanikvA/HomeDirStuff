@@ -60,7 +60,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
+bindsym $mod+m exec rofi -show window
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -209,18 +211,21 @@ client.urgent #002b36 #dc322f #fdf6e3 #002b36
 
 
 
-assign [class="spotify"] 4
+# assign [class="Canvas"] 4
+# assign [class="Browser"] 4
+assign [class="ROOT"] 4
 assign [class="Thunderbird"] 3
 assign [class="Skype"] 3
 assign [class="Mattermost"] 3
 assign [class="Zathura"] 2
-assign [class="VidyoDesktop"] 5
 assign [class="Gimp"] 6
 assign [class="Firefox"] 2
-
+assign [class="VidyoDesktop"] 5
 
 # for_window [class="Gvim" instance="gvim"] float enable
-for_window [class="Gvim"] floating enable
+
+# for_window [class="Gvim"] floating enable
+# for_window [class="ROOT"] floating enable
 
 bindsym Pause exec import -screen "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m_%y__%H_%M_%S")".png"
 bindsym Shift+Pause exec import "/home/janik/Pictures/ScreenShot_"$(date "+%d_%m_%y__%H_%M_%S")".png"
@@ -229,7 +234,7 @@ bindsym $mod+Control+w exec --no-startup-id thunderbird; exec --no-startup-id sk
 
 bindsym $mod+Control+a exec --no-startup-id pavucontrol
 
-bindsym $mod+Control+l exec i3lock -t -e -n -i ~/Pictures/Wallpapers/space_test.png
+bindsym $mod+Control+l exec i3lock -t -e -n -i ~/Pictures/Wallpapers/solus_test.png
 
 
 bindsym $mod+Shift+Left move workspace to output left
@@ -253,10 +258,13 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease
 bindsym $mod+i exec ~/.config/i3/scripts/raiseOrRun.sh firefox Firefox
 # bindsym $mod+c exec ~/.config/i3/scripts/raiseOrRun.sh neverFindThis Firefox
 
+bindsym $mod+comma [con_mark=_prevFocus0] focus
+bindsym $mod+ctrl+comma [con_mark=_prevFocus2] focus
+
 focus_follows_mouse no
 
 # Background wallpaper 
-exec_always --no-startup-id feh --bg-fill -Z /home/janik/Pictures/Wallpapers/solarized-wallpaper-root.png
+exec_always --no-startup-id feh --bg-fill -Z /home/janik/Pictures/Wallpapers/solus_test.png
 
 # exec --no-startup-id xset r rate 400 50 # Set initial delay 300ms, repeat 45ms
 
@@ -269,7 +277,9 @@ exec --no-startup-id dropbox start # Dropbox
 exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
 # exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier' && xcape -e 'Caps_Lock=Escape'
 
-exec --no-startup-id sleep 1; gnome-terminal -e scrPad; i3-msg move scratchpad
+exec --no-startup-id sleep 2; gnome-terminal -e scrPad; i3-msg move scratchpad
+
+exec --no-startup-id ~/.config/i3/scripts/con_mark.sh
 
 # exec --no-startup-id cernbox start # CERNbox
 

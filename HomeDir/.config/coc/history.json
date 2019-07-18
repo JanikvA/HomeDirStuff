@@ -30,7 +30,8 @@
   "extensions": {
     "%2Fhome%2Fjanik%2FGitLabRepos%2FSTPostProcessing": [
       ":?",
-      "git"
+      "git",
+      "ccls"
     ],
     "%2Fhome%2Fjanik": [
       "python",
