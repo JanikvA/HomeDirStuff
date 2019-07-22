@@ -1,68 +1,95 @@
 " vimrc Janik
+
+" Skip vim plugins {{{
+let g:loaded_rrhelper = 1
+" Skip loading menu.vim, saves ~100ms
+let g:did_install_default_menus = 1
+" }}}
+
+" Python {{{
+" This must be here becasue it makes loading vim VERY SLOW otherwise
+if has('nvim')
+  let g:python_host_skip_check = 1
+  let g:python3_host_skip_check = 1
+  if executable('python2')
+    let g:python_host_prog = exepath('python2')
+  endif
+  if executable('python3')
+    let g:python3_host_prog = exepath('python3')
+  endif
+endif
+" }}}
+
+
+
 let mapleader = ","
 set nocompatible
 set statusline=
-
-"https://github.com/altercation/vim-colors-solarized
-"https://github.com/junegunn/vim-plug
-
+" ### Remove if you don't use Plug ###
 call plug#begin('~/.vim/plugged')
 
-"### TIER 1 ###
+
 Plug 'sirver/ultisnips'
 Plug 'JanikvA/vim-snippets'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'wellle/targets.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'wellle/targets.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mhinz/vim-startify'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'AndrewRadev/switch.vim'
+Plug 'simnalamburt/vim-mundo'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'kkoomen/vim-doge'
 
-
-"### TIER 2 ###
-"Plug 'majutsushi/tagbar'
-"Plug 'ludovicchabant/vim-gutentags'
-
-
-"### TIER 3 ###
-"Plug 'mbbill/undotree'
-"Plug 'tpope/vim-repeat'
-"Plug 'thaerkh/vim-workspace'
-"Plug 'scrooloose/nerdtree'
-"Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 filetype plugin indent on
 
-"### TIER 1 ###
+augroup vimrc
+  autocmd!
+augroup END
 
-" vim-airline
-" let g:airline#extensions#syntastic#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#wordcount#enabled = 0
+" 'kkoomen/vim-doge'
+let g:doge_comment_interactive=1
+let g:doge_mapping_comment_jump_forward="<C-k>"
+let g:doge_mapping_comment_jump_backward="<C-b>"
 
-" Comment out next 2 lines to show current git branch. makes vim slow if
-" working with mount
-let g:airline_section_b = '%-0.10{getcwd()}'
-let g:airline_section_c = '%t'
 
-let g:airline_section_error=''
-let g:airline_section_warning=''
-let g:airline_solarized_bg='dark'
+" vim-startify
 
-"vim-commentary
-au FileType c,cpp setlocal commentstring=//\ %s
+    let g:startify_custom_header = []
+    let g:startify_session_dir = '~/.vim/session'
+    let g:startify_session_autoload = 1
+    let g:startify_session_persistence = 1
+    let g:startify_change_to_dir = 1
+    let g:startify_change_to_vcs_root = 1
+    let g:startify_session_number = 99
+    let g:startify_session_sort = 0
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<C-a>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+    let g:startify_bookmarks = ['~/.vim/plugged/vim-snippets/UltiSnips/', '~/.vim/session/', '~/projects/' ]
+    let g:startify_lists = [
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'files',     'header': ['   MRU']            },
+          \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
 
-"### TIER 2 ###
+    let g:startify_session_before_save = [
+        \ 'echo "Cleaning up before saving.."',
+        \ 'silent! NERDTreeTabsClose'
+        \ ]
+
+"junegunn/rainbow_parentheses.vim
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+" simnalamburt/vim-mundo
+nnoremap <leader>u :MundoToggle<CR>
 
 " fzf
 " If installed using git
@@ -73,11 +100,27 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>f :BLines<CR>
 nnoremap <leader>m :Commands<CR>
 nnoremap <leader>ag :Ag<CR>
+nnoremap <leader>rg :Rg!<CR>
 nnoremap <leader>h :Helptags<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>k :Marks<CR>
 
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-t> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
+  command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%','?'),
+  \   <bang>0)
 
 "fugitive
 nnoremap <leader>gs :Gstatus<CR>
@@ -86,111 +129,41 @@ nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gw :Gwrite<CR><CR>
 set diffopt+=vertical
-"### TIER 3 ###
 
-"junegunn/rainbow_parentheses.vim
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-augroup dummy
-  autocmd!
-  autocmd VimEnter * RainbowParentheses
-augroup END
+set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*,*/.pdf*/,*/.o*/
 
-"tagbar
-nmap <leader>c :TagbarToggle<CR>
-let g:tagbar_map_nexttag = "<C-J>"
-let g:tagbar_map_prevtag = "<C-K>"
-let g:tagbar_show_linenumbers = 1
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<C-a>"
+let g:UltiSnipsJumpForwardTrigger="<C-k>"
+let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 
-"scrooloose/nerdtree
-map <leader>e :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.swp$','\.root$','\.o$','\.pyc$', '\~$']
+" ### remove if not present ###
 
-" thaerkh/vim-workspace
-let g:workspace_autosave = 0
-let g:workspace_autosave_untrailspaces = 0
-let g:workspace_session_disable_on_args = 1
-let g:workspace_session_directory = $HOME . '/.vim/sessions/'
-let g:workspace_autosave_ignore = ['gitcommit','nerdtree','tagbar']
-let g:workspace_persist_undo_history = 0  " enabled = 1 (default), disabled = 0
-
-" undotree
-nnoremap <leader>u :UndotreeToggle<cr>
-let g:undotree_ShortIndicators = 1
-let g:undotree_SetFocusWhenToggle = 1
-
-" guard for distributions lacking the 'persistent_undo' feature.
-if has('persistent_undo')
-    " define a path to store persistent undo files.
-    let target_path = expand('~/.vim/vim-persisted-undo/')    " create the directory and any parent directories
-    " if the location does not exist.
-    if !isdirectory(target_path)
-        call system('mkdir -p ' . target_path)
-    endif    " point Vim to the defined undo directory.
-    let &undodir = target_path    " finally, enable undo persistence.
-    set undofile
-endif
-
-"tagbar
-nmap <leader>c :TagbarToggle<CR>
-let g:tagbar_map_nexttag = "<C-J>"
-let g:tagbar_map_prevtag = "<C-K>"
-let g:tagbar_show_linenumbers = 1
-
-"###############
-
-set wildignore+=*/.pyc/*,*/.swp/*,*/.root/*,*/.so/*,*/.o/*
-
-
-"set statusline+=%#LineNr#
-"set statusline+=\ %f
-"set statusline+=%m\
-"set statusline+=%=
-"set statusline+=%#CursorColumn#
-"set statusline+=\ %y
-""set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-""set statusline+=\[%{&fileformat}\]
-"set statusline+=\ %p%%
-"set statusline+=\ %l:%c
-"set statusline+=\ 
-
-" let g:netrw_liststyle= 2 " Change the default style of netrw
+let g:netrw_liststyle= 2 " Change the default style of netrw
 
 " colo slate
 syntax enable
 set background=dark
 colorscheme solarized
 
-" folding stuff. Very nice for python
+" folding stuff
+"Very nice for python
 set foldmethod=indent
 set foldlevel=999
+nnoremap <silent> <leader>z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr<CR>zM
 
 " set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 " set undodir=~/.vim/undo//
-
-"allows to jump to nearest fold that is closed
-nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
-nnoremap <silent> <leader>zk :call NextClosedFold('k')<cr>
-function! NextClosedFold(dir)
-    let cmd = 'norm!z' . a:dir
-    let view = winsaveview()
-    let [l0, l, open] = [0, view.lnum, 1]
-    while l != l0 && open
-        exe cmd
-        let [l0, l] = [l, line('.')]
-        let open = foldclosed(l) < 0
-    endwhile
-    if open
-        call winrestview(view)
-    endif
-endfunction
 
 noremap <F2>  <Esc>:w<Enter>:!root -l %<Enter>
 noremap <F3> <Esc>:w<Enter>:!python %<Enter>
 " noremap <F3> <Esc>:w !python<CR>
 vnoremap <F3> :w !python<CR>
 noremap <F4> <Esc>:w<Enter>:!./%<Enter>
-noremap <F6> <Esc>:w<Enter>:!pdflatex %<Enter>
+noremap <F5> <Esc>:w<Enter>:!./%
+noremap <F7> <Esc>:w<Enter>:!pdflatex %<Enter>
+
 
 inoremap <c-l>  {<CR><tab><CR>}<up><right>
 
@@ -204,22 +177,29 @@ set wildmode=list:longest,full
 " set path+=$PWD/** "adds the current dir and all subdirs to path. Nice for :find.
 set confirm
 set smartindent
-set pastetoggle=<F5>
+set pastetoggle=<F6>
 set ignorecase
 set smartcase
 set tabstop=4
 set expandtab
 set nu
+set rnu
 set laststatus=2
 set mouse=a
-if has("mouse_sgr")
-  set ttymouse=sgr
-else
-  set ttymouse=xterm2
-end
+if !has('nvim')
+    if has("mouse_sgr")
+        set ttymouse=sgr
+    else
+        set ttymouse=xterm2
+    end
+endif
+set spelllang=en_us   "type '=z' after ':set spell' with cursor on misspelled word
 set scrolloff=5
+set sidescrolloff=7         " Start scrolling n chars before end of screen.
+set sidescroll=2            " The minimal number of columns to scroll horizontally
 set hidden
 set shiftwidth=4
+set shiftround
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 " set formatoptions-=cro " see :help fo-table
@@ -227,72 +207,94 @@ augroup dummy
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "don't auto insert comment. Seems to slow vim down a bit? check this
 augroup END
 
+set lazyredraw              " don't update the display while executing macros
+set ttyfast                 " Send more characters at a given time.
+set nobackup
+set nowritebackup
+set magic "enables extended regex"
+
 set backspace=indent,eol,start
+set ruler
+set noerrorbells
+set title
+set formatoptions+=j
 
 :command W w
 :command Q q
 :command Wa wa
 
+:command Exe !chmod +x %
 :command Pandoc !pandoc -f markdown -t latex -o %:r.pdf %
 :command Pdf silent !xdg-open %:r.pdf &
 syntax on
 
-"TODO for some reason this has a slight delay now. it is instant if i do <leader>dk
-augroup dummy
-  autocmd FileType c,cpp      nnoremap <buffer> <leader>d o<Esc>0istd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
-  autocmd FileType python     nnoremap <buffer> <leader>d o<Esc>0iprint " #### *!*Debug*!* 1 #### "<Esc>0
-augroup END
-nnoremap <leader>r /\*\!\*Debug\*\!\*<Enter>
+"TODO insert mappings:  c-y
+inoremap <C-e> <C-x><C-p>
 
-" nnoremap <leader>mc ?\/\*<Enter>d/\*\/<Enter>dd
-" the following allow to change -> and . in c++ code
-nnoremap üp /\D\.\D<CR>ls-><Esc>:nohlsearch<CR>
-nnoremap üo /\D->\D<CR>lc2l.<Esc>:nohlsearch<CR>
+""TODO for some reason this has a slight delay now. it is instant if i do <leader>dk. And make the number dependen on the number of occurrences. That would be awesome
+"augroup dummy
+"  autocmd FileType c,cpp      nnoremap <buffer> <leader>d ostd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
+"  autocmd FileType python     nnoremap <buffer> <leader>d oprint " #### *!*Debug*!* 1 #### "<Esc>0
+"augroup END
+
+nnoremap <leader>r /\*\!\*Debug\*\!\*<CR>
 
 nnoremap H :bp<CR>
 nnoremap L :bn<CR>
-
-" This workaround leads to :SearchIndex being called twice. Maybe i can optimize it somehow
-nmap n nzz
-nmap N Nzz
-"also centers the first search result
-cnoremap <expr> <CR> getcmdtype() =~ '[/?]' ? '<CR>zz<CR>' : '<CR>' 
 
 nnoremap <space> i<space><Esc>l
 nnoremap <leader>o o<ESC>
 nnoremap <leader>O O<ESC>
 nnoremap <leader>dm %x``x
-" nnoremap <leader>sc :setlocal spell spelllang=en_us
 nnoremap <leader>g <C-]>zz
+nnoremap <leader>G <C-W>}zz
+nnoremap cm :%s///g<left><left>
+vnoremap cm :s///g<left><left>
 
 " vnoremap <leader>y "+y
 nnoremap <leader>y :let @+=@"<Cr>
 nnoremap <leader>p "+p
+nnoremap <leader>n gny:let @+=@"<Cr>
+
 " set clipboard=unnamedplus
 
 " disables vim from clearing clipboard after leaving/suspending vi session
-if executable("xclip")
-    function! PreserveClipboard()
-      call system("xsel -ib", getreg('+')) "<- if using xsel
-    endfunction
-    augroup dummy
-      autocmd VimLeave * call PreserveClipboard()
-    augroup END
-    noremap <silent> <c-z> <Esc>:call system("xsel -ib", getreg('+'))<cr>:suspend<cr>
-endif
+" if executable("xclip")
+function! PreserveClipboard()
+  call system("xsel -ib", getreg('+')) "<- if using xsel
+  " call system('echo ' . shellescape(getreg('+')) .
+  "         \ ' | xclip -selection clipboard')
+  " call system("xclip -selection clipboard -i", getreg('+'))
+endfunction
+" function! PreserveClipboadAndSuspend()
+"   " call PreserveClipboard()
+"   call system("xsel -ib", getreg('+')) "<- if using xsel
+"   suspend
+" endfunction
+augroup dummy
+  autocmd VimLeave * call PreserveClipboard()
+augroup END
+" nnoremap <silent> <c-z> :call PreserveClipboadAndSuspend()<cr>
+" noremap <silent> <c-z> :call system("xsel -ib", getreg('+'))<cr>:suspend<cr>
+noremap <silent> <c-z> <Esc>:call system("xsel -ib", getreg('+'))<cr>:suspend<cr>
+" vnoremap <silent> <c-z> :<c-u>call PreserveClipboadAndSuspend()<cr>
+" endif
 
 " The following doesn't overwrite the register if you paste in visual mode
 vnoremap p "_dP
 
-" loacation list mappings
-nnoremap <leader>ln :lne<cr>
-nnoremap <leader>lp :lp<cr>
+" quickfix list mappings
+nnoremap <leader>cn :cnext<cr>
+nnoremap <leader>cp :cp<cr>
 
+nnoremap <leader>ln :lnext<cr>
+nnoremap <leader>lp :lprevious<cr>
 
 nnoremap <leader>q :q<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>s :w<CR>
-nnoremap <leader><space> <Esc>/<++><Enter>c4l
+"TODO not needed
+" nnoremap <leader><space> <Esc>/<++><Enter>c4l
 
 "tab movement
 nnoremap <leader>1 1gt
@@ -317,23 +319,11 @@ nnoremap üt :tabedit
 " German keyboard mappings
 
 
-"easier window movement
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" " Needed to be able to properly map the alt key
-" execute "set <A-h>=\eh"
-" execute "set <A-j>=\ej"
-" execute "set <A-k>=\ek"
-" execute "set <A-l>=\el"
-
-" " provide hjkl movements in Insert mode and Command-line mode via the <Alt> modifier key
-" noremap! <A-h> <Left>
-" noremap! <A-j> <Down>
-" noremap! <A-k> <Up>
-" noremap! <A-l> <Right>
+""easier window movement
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 
 " Automatic paste mode for terminal
 let &t_SI .= "\<Esc>[?2004h"
@@ -366,7 +356,7 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 
 " If pasting in visual mode the default register is not overwritter
-xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
+" xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -381,26 +371,107 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 
-" custom colour stuff
-" hi Search ctermbg=DarkBlue ctermfg=DarkRed
-" hi Folded ctermbg=DarkMagenta ctermfg=DarkRed
-
 " makes stuff super laggy atm
-set cursorline
 nnoremap üc :set cursorline!<cr>
 " hi CursorLine   ctermbg=black ctermfg=None
 " hi CursorLine   cterm=underline ctermbg=black ctermfg=None
 
-"make cursorline only in active window visible
-augroup CursorLine
-  au!
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
-augroup END
+" does a quick google search. Only works good if an instance of firefox is
+" already running
+function! GoogleSearch(searchTerm)
+     let tmp = a:searchTerm
+     exec "silent !firefox http://google.com/search?q=\"" . tmp . "\""
+     exec "redraw!"
+endfunction
+nnoremap <leader>j :call GoogleSearch("")<Left><Left>
 
-" to make tex files smoother, maybe also turn off syntax. syntax off
-au FileType tex :NoMatchParen
-au FileType tex setlocal nocursorline
+function! GoogleSearchVisual()
+     let searchterm = getreg("g")
+     silent! exec "silent! !firefox \"http://google.com/search?q=" . searchterm . "\" &"
+     exec "redraw!"
+endfunction
+vnoremap <leader>j "gy<Esc>:call GoogleSearchVisual()<CR>
 
-set complete=.,w,b,u,t
-nnoremap <leader>vg :vimgrep //g `git ls-files`<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+nnoremap <leader>vg :noautocmd vimgrep //gj `git ls-files`<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+nnoremap <leader>lv :vimgrep /<C-r>//g %<CR> \| !:copen <Enter>
+
+set complete=.,w,b,u
+set completeopt=menuone
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Make Y behave like other capitals
+nnoremap Y y$
+
+" qq to record, Q to replay
+nnoremap Q @q
+
+function! s:todo() abort
+  let entries = []
+  for cmd in ['git grep -niI -e TODO -e FIXME -e XXX 2> /dev/null',
+            \ 'grep -rniI -e TODO -e FIXME -e XXX * 2> /dev/null']
+    let lines = split(system(cmd), '\n')
+    if v:shell_error != 0 | continue | endif
+    for line in lines
+      let [fname, lno, text] = matchlist(line, '^\([^:]*\):\([^:]*\):\(.*\)')[1:3]
+      call add(entries, { 'filename': fname, 'lnum': lno, 'text': text })
+    endfor
+    break
+  endfor
+
+  if !empty(entries)
+    call setqflist(entries)
+    copen
+  endif
+endfunction
+command! Todo call s:todo()
+
+
+"TODO <c-e>,<c-space>,<c-l>,<BS>,<s-u>,-,_,<c-q> normal mode mapping
+"maybe also: <C-t>
+
+nnoremap m }
+nnoremap M {
+vnoremap m }
+vnoremap M {
+nnoremap gm m
+map 0 ^
+
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+cnoremap <C-K> <C-U>
+cnoremap <C-P> <Up>
+cnoremap <C-N> <Down>
+
+nnoremap <PageUp> <c-u>
+nnoremap <Home> <c-d>
+
+nnoremap <C-e> <C-w>w
+nnoremap <C-q> <C-w>W
+
+let g:matchparen_timeout = 20
+let g:matchparen_insert_timeout = 20
+highlight clear SignColumn
+
+" guard for distributions lacking the 'persistent_undo' feature.
+if has('persistent_undo')
+    " define a path to store persistent undo files.
+    let target_path = expand('~/.vim/vim-persisted-undo/')    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call system('mkdir -p ' . target_path)
+    endif    " point Vim to the defined undo directory.
+    let &undodir = target_path    " finally, enable undo persistence.
+    set undofile
+endif
+
+" make buffer a scratch buffer
+:command MakeScratch setlocal buftype=nofile |setlocal bufhidden=hide |setlocal noswapfile
+
+
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
+
+nnoremap <leader>e :Explore<CR>
