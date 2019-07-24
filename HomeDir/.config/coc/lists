@@ -1,8 +1,9 @@
 extensions
+commands
+marketplace
 searchhistory
 marks
 links
 outline
 grep
-marketplace
 sources

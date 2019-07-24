@@ -1,4 +1,3 @@
-rename Abi_p1.jpg
 rename Abi_p2.jpg
 rename Abi_p3.jpg
 rename Abi_p4.jpg
@@ -48,3 +47,4 @@ rename new_merged_SoverSqrtB.png
 rename new_resolved_SoverSqrtB.png
 rename new_resolved_SoverB.png
 filter True_True*.png
+find blakj

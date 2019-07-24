@@ -127,7 +127,8 @@ alias thisroot='source /home/janik/ROOTinstall/root/bin/thisroot.sh'
 alias root='root -l'
 # alias v='vi'
 alias v='nvim'
-alias sv='vim -u ~/.minvimrc' # No vimrc ar plugins. very fast
+# alias sv='vim -u ~/.minvimrc' # No vimrc ar plugins. very fast
+alias sv='vim'
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias acmSetup="source ~/acmDev/acm/acmSetup.sh"
 alias getTags="ctags -R"
@@ -187,3 +188,5 @@ source /home/janik/ROOTinstall/root/bin/thisroot.sh
 echo ".bashrc has been executed"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

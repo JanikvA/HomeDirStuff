@@ -54,10 +54,12 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym --release $mod+Shift+u exec xkill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -243,6 +245,7 @@ bindsym $mod+Shift+Right move workspace to output right
 bindsym $mod+Control+v exec ~/.vim-anywhere/bin/run
 # bindsym X exec gvim --class floatingVim
 # for_window [class="^floatingVim$"] floating enable
+bindsym $mod+Control+n exec nvim-qt
 
 
 # Pulse Audio controls

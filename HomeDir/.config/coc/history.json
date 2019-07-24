@@ -9,7 +9,10 @@
       "outlin",
       "links",
       "marks",
-      "sear"
+      "sear",
+      "exn",
+      "ext",
+      "comma"
     ],
     "%2Fmnt%2Fdust%2Fphd%2FmonoH%2FmyFramework%2Fsource": [
       "exte"
@@ -21,7 +24,10 @@
     },
     "%2Fhome%2Fjanik": [
       "sourc",
-      "ext"
+      "marke",
+      "exten",
+      "ext",
+      "ex"
     ],
     "%2Fmnt%2Fdust%2FmonoH%2FforkMonoHbbNtuple%2Fsource": [
       "ex"
@@ -36,7 +42,8 @@
     "%2Fhome%2Fjanik": [
       "python",
       "pytho",
-      "cocs"
+      "cocs",
+      "py"
     ],
     "%2Fhome%2Fjanik%2Fscratch": [
       "kj"
@@ -54,6 +61,9 @@
       "smartf",
       "coc-sh",
       "search"
+    ],
+    "%2Fhome%2Fjanik": [
+      "eslint"
     ]
   },
   "marks": {

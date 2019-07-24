@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1563433829499,
+  "lastUpdate": 1563955067900,
   "extension": {
     "coc-pyls": {
       "disabled": true
@@ -14,6 +14,42 @@
       "disabled": true
     },
     "coc-sh": {
+      "disabled": false
+    },
+    "coc-eslint": {
+      "disabled": true
+    },
+    "coc-tabnine": {
+      "disabled": false
+    },
+    "coc-marketplace": {
+      "disabled": false
+    },
+    "coc-ultisnips": {
+      "disabled": false
+    },
+    "coc-ccls": {
+      "disabled": false
+    },
+    "coc-lists": {
+      "disabled": false
+    },
+    "coc-tag": {
+      "disabled": false
+    },
+    "coc-syntax": {
+      "disabled": true
+    },
+    "coc-json": {
+      "disabled": false
+    },
+    "coc-vimtex": {
+      "disabled": false
+    },
+    "coc-python": {
+      "disabled": false
+    },
+    "coc-smartf": {
       "disabled": true
     }
   }

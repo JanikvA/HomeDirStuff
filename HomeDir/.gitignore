@@ -3,4 +3,3 @@
 *.o
 tags
 .ccls-cache/
-.config/coc/extensions/
