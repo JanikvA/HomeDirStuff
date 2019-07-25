@@ -21,6 +21,17 @@ if has('nvim')
     Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
     Plug 'nixprime/cpsm', { 'do': './install.sh --PY3=ON' }
     Plug 'deoplete-plugins/deoplete-jedi'
+else
+
+    " Plug 'https://gitlab.com/yramagicman/auto-omnicomplete.git'
+
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/async.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Plug 'prabirshrestha/asyncomplete-buffer.vim'
+    Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+
 endif
 
 Plug 'sirver/ultisnips'
@@ -44,24 +55,24 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'svermeulen/vim-easyclip'
+Plug 'thiagoalessio/rainbow_levels.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'google/vim-searchindex'
+Plug 'junegunn/vim-easy-align'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'zirrostig/vim-schlepp'
 
 if has('nvim')
-    Plug 'ludovicchabant/vim-gutentags'
     Plug 'majutsushi/tagbar'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-    Plug 'junegunn/vim-easy-align'
     Plug 'lervag/vimtex'
     Plug 'junegunn/gv.vim' " :GV will open commit browser
     Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'thiagoalessio/rainbow_levels.vim'
     Plug 'sheerun/vim-polyglot'
-    Plug 'zirrostig/vim-schlepp'
-    Plug 'google/vim-searchindex'
-    Plug 'michaeljsmith/vim-indent-object'
-    Plug 'cyansprite/Extract' "could remove this now
     Plug 'airblade/vim-gitgutter'
+"     Plug 'cyansprite/Extract' "could remove this now. it remaps s?
 endif
 
 " Colors
@@ -73,6 +84,33 @@ endif
 
 call plug#end()
 filetype plugin indent on
+
+" 'https://gitlab.com/yramagicman/auto-omnicomplete.git'
+" let g:AutoOmniComplete_complete_map="\<c-x>\<c-n>"
+
+" 'prabirshrestha/asyncomplete.vim'
+if !has('nvim')
+let g:asyncomplete_auto_popup = 1
+
+if has('python3')
+    let g:UltiSnipsExpandTrigger="<c-a>"
+    call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+        \ 'name': 'ultisnips',
+        \ 'whitelist': ['*'],
+        \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+        \ }))
+endif
+
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': [],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
+endif
 
 "svermeulen/vim-easyclip
 
@@ -125,7 +163,9 @@ if has('nvim')
     let g:deoplete#enable_at_startup = 1
     " matcher_cpsm
     call deoplete#custom#source('_', 'matchers', ['matcher_cpsm'])
+    call deoplete#custom#source('_', 'sorters', [])
     " call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+
     call deoplete#custom#var('around', {
                 \   'range_above': 50,
                 \   'range_below': 50,
@@ -133,9 +173,10 @@ if has('nvim')
                 \   'mark_below': '[↓]',
                 \   'mark_changes': '[*]',
                 \})
+
     call deoplete#custom#var('tabnine', {
-                \ 'line_limit': 100,
-                \ 'max_num_results': 5,
+                \ 'line_limit': 1000,
+                \ 'max_num_results': 10,
                 \ })
     call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
 endif
@@ -235,7 +276,7 @@ nnoremap <leader>t :Tags<CR>
 nnoremap <leader>k :Marks<CR>
 
 " Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
+" imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-t> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
@@ -353,8 +394,8 @@ nnoremap <silent> <leader>z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(
 set directory=~/.vim/swap//
 
 vnoremap <F3> :w !python<CR>
-noremap <F4> <Esc>:w<Enter>:!./%<Enter>
-noremap <F5> <Esc>:w<Enter>:!./%
+noremap <F4> <Esc>:w<Enter>:!.%<Enter>
+noremap <F5> <Esc>:w<Enter>:!.%
 noremap <F7> <Esc>:w<Enter>:!pdflatex %<Enter>
 
 inoremap <c-l>  {<CR><tab><CR>}<up><right>
@@ -564,10 +605,10 @@ nnoremap <leader>vg :noautocmd vimgrep //gj `git ls-files`<left><left><left><lef
 nnoremap <leader>lv :vimgrep /<C-r>//g %<CR> \| !:copen <Enter>
 
 set complete=.,w,b,u
-set completeopt=menuone,noselect,longest
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+set completeopt=menuone,noselect,longest,noinsert
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
+" inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
 " Make Y behave like other capitals
 nnoremap Y y$
@@ -726,3 +767,16 @@ function! TabToggle()
         endif
     endif
 endfunction
+
+if !has('nvim')
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+
+    inoremap <silent><expr> <TAB>
+                \ pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ asyncomplete#force_refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+endif
