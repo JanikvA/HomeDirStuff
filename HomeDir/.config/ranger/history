@@ -1,15 +1,3 @@
-rename Abi_p2.jpg
-rename Abi_p3.jpg
-rename Abi_p4.jpg
-rename vonAhnen_Janik_Abitur_Zeugniss.pdf
-rename SupervisionAgreement.pdf
-rename Forschungsskizze.pdf
-rename IDcard.pdf
-rename PIER.pdf
-filter 
-f
-rename highLVL_out.png
-rename mj1l.png
 rename ttbar_dileptonic.png
 rename CR_def.png
 rename pre_post_fit_regions.png
@@ -30,7 +18,6 @@ search desy
 find scr
 mkdir sigPlots
 cd sigPlots/
-delete
 filter
 
 filter p
@@ -48,3 +35,16 @@ rename new_resolved_SoverSqrtB.png
 rename new_resolved_SoverB.png
 filter True_True*.png
 find blakj
+mkdir newpics
+filter SoverSqrt.*compare.*png
+filter resolved.*SoverSq.*compar
+find tes
+filter 2HDMa,zp2hdm.*png
+filter all
+filter A
+filter merged,r
+delete
+filter merged,reso
+filter merged
+search filter 2H
+filter 2HDMa,

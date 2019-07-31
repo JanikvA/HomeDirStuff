@@ -1,20 +1,20 @@
 {
-  "lastUpdate": 1563955067900,
+  "lastUpdate": 1564490680294,
   "extension": {
     "coc-pyls": {
       "disabled": true
     },
     "coc-git": {
-      "disabled": false
+      "disabled": true
     },
     "coc-yank": {
-      "disabled": false
+      "disabled": true
     },
     "coc-calc": {
       "disabled": true
     },
     "coc-sh": {
-      "disabled": false
+      "disabled": true
     },
     "coc-eslint": {
       "disabled": true
@@ -23,19 +23,19 @@
       "disabled": false
     },
     "coc-marketplace": {
-      "disabled": false
+      "disabled": true
     },
     "coc-ultisnips": {
-      "disabled": false
+      "disabled": true
     },
     "coc-ccls": {
-      "disabled": false
+      "disabled": true
     },
     "coc-lists": {
-      "disabled": false
+      "disabled": true
     },
     "coc-tag": {
-      "disabled": false
+      "disabled": true
     },
     "coc-syntax": {
       "disabled": true
@@ -44,10 +44,10 @@
       "disabled": false
     },
     "coc-vimtex": {
-      "disabled": false
+      "disabled": true
     },
     "coc-python": {
-      "disabled": false
+      "disabled": true
     },
     "coc-smartf": {
       "disabled": true

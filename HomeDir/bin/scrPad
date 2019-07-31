@@ -1,10 +1,11 @@
 #!/bin/sh
 redshift -t 6500:1000 -b 1:0.8 -l 53.5:9.9 &
-# tmux new-session -d 'bash --init-file ~/bin/vimBash.sh'
+# tmux new-session -d 'bash --init-file ~/bin/vimbash.sh'
 tmux new-session -d 'bash'
 # tmux split-window -v
 # tmux split-window -v 'ipython'
 # tmux split-window -h
+# tmux new-window 'bash'
 tmux new-window 'bash'
 tmux send-keys "r" C-m
 tmux new-window 'bash'

@@ -10,15 +10,6 @@ set statusline=
 " ### Remove if you don't use Plug ###
 call plug#begin('~/.vim/plugged')
 
-" " if has('nvim')
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} "needs vim 8
-" Plug 'wellle/tmux-complete.vim'
-" " endif
-" " endif
-" " Plug 'maralla/completor.vim' "needs vim 8
-
-"for petter performance but less features than coc
-
 if has('nvim')
     if has('nvim')
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -29,7 +20,25 @@ if has('nvim')
     endif
     Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
     Plug 'nixprime/cpsm', { 'do': './install.sh --PY3=ON' }
-    Plug 'deoplete-plugins/deoplete-jedi'
+
+    " Plug 'deoplete-plugins/deoplete-jedi' 
+
+    Plug 'prabirshrestha/async.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'lighttiger2505/deoplete-vim-lsp'
+
+else
+
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " Plug 'https://gitlab.com/yramagicman/auto-omnicomplete.git'
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/async.vim'
+    " Plug 'prabirshrestha/vim-lsp'
+    " Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Plug 'prabirshrestha/asyncomplete-buffer.vim'
+    " Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+
 endif
 
 Plug 'sirver/ultisnips'
@@ -39,7 +48,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'cloudhead/neovim-fuzzy'
 Plug 'tpope/vim-repeat'
 Plug 'wellle/targets.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -53,70 +61,29 @@ Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'svermeulen/vim-easyclip'
+Plug 'thiagoalessio/rainbow_levels.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'google/vim-searchindex'
+Plug 'junegunn/vim-easy-align'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'zirrostig/vim-schlepp'
+    Plug 'junegunn/gv.vim' " :GV will open commit browser
 
 if has('nvim')
-    Plug 'ludovicchabant/vim-gutentags'
+
     Plug 'majutsushi/tagbar'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-    Plug 'junegunn/vim-easy-align'
     Plug 'lervag/vimtex'
-    Plug 'junegunn/gv.vim' " :GV will open commit browser
     Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'thiagoalessio/rainbow_levels.vim'
-    Plug 'junegunn/goyo.vim'
     Plug 'sheerun/vim-polyglot'
-    Plug 'zirrostig/vim-schlepp'
-    Plug 'google/vim-searchindex'
-    Plug 'michaeljsmith/vim-indent-object'
-    Plug 'cyansprite/Extract'
     Plug 'airblade/vim-gitgutter'
+    Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
+    " Plug 'w0rp/ale'
+"     Plug 'cyansprite/Extract' "could remove this now. it remaps s?
 endif
-
-" Plug 'christoomey/vim-tmux-navigator'
-" Plug 'ggvgc/vim-fuzzysearch'
-"interesting but super slow and messy
-" Plug 'philip-karlsson/aerojump.nvim', { 'do': ':UpdateRemotePlugins' } 
-
-
-" Plug 'huawenyu/neogdb.vim'
-" Plug 'sakhnik/nvim-gdb'
-" Plug 'Vigemus/nvimux'
-
-
-" Plug 'liuchengxu/vista.vim' "TODO not working atm. Wait for dev
-
-" Plug 'Shougo/echodoc.vim'
-
-" Plug 'davidhalter/jedi-vim'
-
-" Plug 'w0rp/ale'
-" Plug 'junegunn/vim-peekaboo'
-" Plug 'JanikvA/vim-yankstack'
-" Plug 'svermeulen/vim-easyclip'
-" Plug 'maxbrunsfeld/vim-yankstack'
-
-" Pretty much all i want from these is the highlighting of the current search match. Should really try to replace these
-" Plug 'qxxxb/vim-searchhi'
-" Plug 'osyo-manga/vim-anzu'
-
-" Plug 'Valloric/YouCompleteMe' " for vim <8
-
-" Plug 'junegunn/vim-after-object'
-
-" Plug 'junegunn/vim-online-thesaurus'
-
-" Plug 'thaerkh/vim-workspace'
-
-" Plug 'tpope/vim-unimpaired'
-" Plug 'francoiscabrol/ranger.vim'
-" Plug 'tpope/vim-obsession'
-" Plug 'mhinz/vim-signify' "could replace gitgutter
-" Plug 'scrooloose/syntastic' "could replace ale
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
-
 
 " Colors
 Plug 'iCyMind/NeoSolarized'
@@ -128,9 +95,88 @@ endif
 call plug#end()
 filetype plugin indent on
 
+" " 'w0rp/ale'
+" " Ale
+" " let g:ale_lint_on_enter = 1
+" " let g:ale_lint_on_text_changed = 'never'
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" " let g:ale_python_pylint_options = '-E'
+" nnoremap <leader>ale :ALEToggle<cr>
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" " let g:ale_linters = {'python': ['flake8', 'pylint'], 'cpp':['cppcheck', 'clang-check-8']}
+" let g:ale_linters = {'python':['pyls'], 'cpp':['cppcheck', 'clang-check-8']}
+" let g:ale_fixers = {'python': ['autopep8'], 'cpp':['clang-format']}
+" " let g:ale_python_autopep8_options='--aggressive --aggressive --max-line-length 79'
+" " let g:ale_python_flake8_options='--ignore E501'
+" let g:ale_c_parse_compile_commands=1 "will read compile_commands.json
+" let g:ale_c_build_dir='../build' " use the following command to produce a json file with compiler flags: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ../source/
+" " let g:ale_cpp_clangcheck_executable='clang-check-8'
+" let g:airline#extensions#ale#enabled = 1
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" " Write this in your vimrc file
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_insert_leave = 0
+" let g:ale_lint_on_save = 1
+" " let g:ale_disable_lsp=1
+" " let g:ale_open_list = 1
+
+" 'https://gitlab.com/yramagicman/auto-omnicomplete.git'
+" let g:AutoOmniComplete_complete_map="\<c-x>\<c-n>"
+
+" 'prabirshrestha/asyncomplete.vim'
+
+if !has('nvim')
+let g:asyncomplete_auto_popup = 1
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ asyncomplete#force_refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" if has('python3')
+"     let g:UltiSnipsExpandTrigger="<c-a>"
+"     call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+"         \ 'name': 'ultisnips',
+"         \ 'whitelist': ['*'],
+"         \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+"         \ }))
+" endif
+
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': [],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
+endif
+
+"svermeulen/vim-easyclip
+
+let g:EasyClipShareYanks = 1
+let g:EasyClipEnableBlackHoleRedirect = 0
+let g:EasyClipYankHistorySize = 50
+let g:EasyClipShareYanksFile = 'easyclip'
+let g:EasyClipShareYanksDirectory = $HOME . '/.vim/vim-persisted-undo/'
+let g:EasyClipUseCutDefaults = 0
+"only makes sense if EasyClipEnableBlackHoleRedirect is set to 1
+" nmap x <Plug>MoveMotionPlug
+" xmap x <Plug>MoveMotionXPlug
+" nmap xx <Plug>MoveMotionLinePlug
+
 " easymotion
 let g:EasyMotion_do_mapping=0
 let g:EasyMotion_smartcase = 1
+
 function! s:config_easyfuzzymotion(...) abort
     return extend(copy({
                 \   'converters': [incsearch#config#fuzzyword#converter()],
@@ -140,143 +186,104 @@ function! s:config_easyfuzzymotion(...) abort
                 \   'is_stay': 1
                 \ }), get(a:, 1, {}))
 endfunction
-nmap <silent><expr> m incsearch#go(<SID>config_easyfuzzymotion())
+nmap <silent><expr> ö incsearch#go(<SID>config_easyfuzzymotion())
 
 " 'thiagoalessio/rainbow_levels.vim'
 nnoremap <leader>ig :RainbowLevelsToggle<CR>
 
-" for level in range(0, 10, 2)
-"   exe 'hi! RainbowLevel'.level.' guifg=magenta'
-"   exe 'hi! RainbowLevel'.(level+1).' guifg=cyan'
-" endfor
-
-" 'francoiscabrol/ranger.vim'
-let g:ranger_map_keys = 0
-" let g:ranger_replace_netrw = 1 // open ranger when vim open a directory
-
 
 " 'haya14busa/incsearch.vim'
 let g:incsearch#auto_nohlsearch = 1
-" map /  <Plug>(incsearch-forward)
-" map ?  <Plug>(incsearch-backward)
 let g:incsearch#consistent_n_direction=1
-augroup dummy
-    autocmd VimEnter * IncSearchNoreMap <Tab> <Over>(incsearch-next)
-    autocmd VimEnter * IncSearchNoreMap <S-Tab>  <Over>(incsearch-prev)
-augroup END
-
-
-
-" 'haya14busa/incsearch-fuzzy.vim'
-" map z/ <Plug>(incsearch-fuzzy-/)
-" map z? <Plug>(incsearch-fuzzy-?)
-
-" 'ggvgc/vim-fuzzysearch'
-" let g:fuzzysearch_match_spaces = 1
-" nnoremap <leader><leader> :FuzzySearch<CR>
 
 " 'cyansprite/Extract'
 let g:extract_maxCount=20
 let g:extract_useDefaultMapping=0
 imap <c-v> <Plug>(extract-completeList)
 
-" " " 'philip-karlsson/aerojump.nvim'
-" nmap <leader><leader> <Plug>(AerojumpSpace)
-" nmap <Leader>as <Plug>(AerojumpSpace)
-" nmap <Leader>ab <Plug>(AerojumpBolt)
-" nmap <Leader>aa <Plug>(AerojumpFromCursorBolt)
-" " nmap <leader><leader> <Plug>(AerojumpDefault)
-
 " 'kkoomen/vim-doge'
 let g:doge_comment_interactive=1
 let g:doge_mapping_comment_jump_forward="<C-k>"
 let g:doge_mapping_comment_jump_backward="<C-b>"
 
-"cloudhead/neovim-fuzzy
-" nnoremap <leader><space> :FuzzyGrep<CR>
-
-" liuchengxu/vista.vim
-" nnoremap <leader>v :Vista!! ctags<CR>
-
 " Shougo/deoplete.nvim
 
 if has('nvim')
     let g:deoplete#enable_at_startup = 1
+	call deoplete#custom#option('smart_case', v:true)
+
     " matcher_cpsm
     call deoplete#custom#source('_', 'matchers', ['matcher_cpsm'])
+    call deoplete#custom#source('_', 'sorters', [])
     " call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-    call deoplete#custom#var('around', {
-                \   'range_above': 50,
-                \   'range_below': 50,
-                \   'mark_above': '[↑]',
-                \   'mark_below': '[↓]',
-                \   'mark_changes': '[*]',
-                \})
+
+    " call deoplete#custom#var('around', {
+    "             \   'range_above': 50,
+    "             \   'range_below': 50,
+    "             \   'mark_above': '[↑]',
+    "             \   'mark_below': '[↓]',
+    "             \   'mark_changes': '[*]',
+    "             \})
+
     call deoplete#custom#var('tabnine', {
-                \ 'line_limit': 100,
-                \ 'max_num_results': 5,
+                \ 'line_limit': 200,
                 \ })
-    call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
+                " \ 'max_num_results': 10,
+
+
+call deoplete#custom#option('sources', {
+\ '_': ['tabnine', 'lsp'],
+\})
+
+call deoplete#custom#source('tabnine', 'rank', 600)
+call deoplete#custom#source('lsp', 'rank', 100)
+
+    " call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
+
+    "TODO until i config this correctly turn of warnings and stuff
+    let g:lsp_diagnostics_enabled = 0
+    let g:lsp_highlights_enabled = 0
+    let g:lsp_textprop_enabled = 0
+    let g:lsp_virtual_text_enabled = 0
+    let g:lsp_highlight_references_enabled = 0
+    " highlight lspReference ctermfg=red guifg=red ctermbg=black guibg=green
+
+
+    if (executable('pyls'))
+        " let s:pyls_path = fnamemodify(g:python_host_prog, ':h') . '/'. 'pyls'
+        augroup LspPython
+            autocmd!
+            autocmd User lsp_setup call lsp#register_server({
+                        \ 'name': 'pyls',
+                        \ 'cmd': {server_info->['pyls']},
+                        \ 'whitelist': ['python']
+                        \ })
+        augroup END
+    endif
+    "cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ../source/
+    if executable('ccls')
+        augroup LspCpp
+            autocmd!
+            au User lsp_setup call lsp#register_server({
+                        \ 'name': 'ccls',
+                        \ 'cmd': {server_info->['ccls']},
+                        \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+                        \ 'initialization_options': {'cache': {'directory': '/tmp/ccls/cache' }},
+                        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc', 'cxx'],
+                        \ })
+        augroup END
+    endif
+
+
+    nnoremap gp :LspHover<CR>
+    nnoremap gd :LspDefinition<CR>
+    nnoremap gl :LspDeclaration<CR>
+    nnoremap gi :LspImplementation<CR>
+
+
 endif
 
-" neoclide/coc.nvim
-
-" " Use K for show documentation in preview window
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
-" function! s:show_documentation()
-"   if (index(['vim','help'], &filetype) >= 0)
-"     execute 'h '.expand('<cword>')
-"   else
-"     call CocAction('doHover')
-"   endif
-" endfunction
-
-" trigger completion
-" inoremap <silent><expr> <C-n> coc#refresh()
-
-" function! s:check_back_space() abort
-"     let col = col('.') - 1
-"     return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction
-
-" inoremap <silent><expr> <TAB>
-"         \ pumvisible() ? "\<C-n>" :
-"         \ <SID>check_back_space() ? "\<TAB>" :
-"         \ coc#refresh()
-
-
-
-" nmap <leader>cd <Plug>(coc-definition)
-" nmap <leader>cl <Plug>(coc-declaration)
-" nmap <leader>ci <Plug>(coc-implementation)
-" nmap <leader>ct <Plug>(coc-type-definition)
-" nmap <leader>ce <Plug>(coc-references)
-" nmap <leader>cr <Plug>(coc-rename)
-" nmap <leader>cf <Plug>(coc-fix-current)
-" nmap <leader>cc <Plug>(coc-refactor)
-" vmap <leader>ca <Plug>(coc-codeaction-selected)
-
-
-" " press <esc> to cancel.
-" nmap <C-j> <Plug>(coc-smartf-forward)
-" nmap <C-k> <Plug>(coc-smartf-backward)
-" nmap <C-l> <Plug>(coc-smartf-repeat)
-" nmap <C-h> <Plug>(coc-smartf-repeat-opposite)
-
-" augroup Smartf
-"     autocmd!
-"   autocmd User SmartfEnter :hi Conceal ctermfg=white ctermbg=red guifg=white guibg=red
-"   autocmd User SmartfLeave :hi Conceal ctermfg=red ctermbg=white
-" augroup end
-
-" nnoremap <silent> <space>y  :<C-u>CocList --normal yank<cr>
-
-" vmap <leader>p  <Plug>(coc-format-selected)
-" nmap <leader>p  <Plug>(coc-format-selected)
-
-
 " zirrostig/vim-schlepp
-
 
 vmap <unique> <up>    <Plug>SchleppUp
 vmap <unique> <down>  <Plug>SchleppDown
@@ -308,14 +315,11 @@ let g:startify_session_before_save = [
             \ 'echo "Cleaning up before saving.."',
             \ 'silent! NERDTreeTabsClose'
             \ ]
+            " \ 'slient! cclose',
+            " \ 'slient! lclose'
 
 "junegunn/rainbow_parentheses.vim
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-
-"completor
-" let g:completor_clang_binary ='/usr/bin/clang-6.0'
-" let g:completor_python_binary = '/usr/bin/python'
-" let g:completor_complete_options = 'menuone,noselect,preview'
 
 "RainbowParantheses
 augroup dummy
@@ -328,21 +332,9 @@ augroup dummy
     au FileType text setlocal commentstring=#\ %s
 augroup END
 
-""vim-peekaboo
-"let g:peekaboo_delay = 1000
-
 "  vim-autoformat
 nnoremap <leader>af :Autoformat
 nnoremap <leader>aaf :bufdo Autoformat
-
-
-" " " ale
-" let g:ale_echo_cursor = 1 " 0 makes cursor invisible if on line with error otherwise. Newer vim versions fix this
-" let b:ale_linters = ['autopep8']
-" let b:ale_fixers = ['autopep8']
-" " let g:ale_python_pylint_options = '-E'
-" let g:airline#extensions#ale#enabled = 1
-" nnoremap <leader>ale :ALEToggle<cr>
 
 " vim-easy-align
 xmap ga <Plug>(EasyAlign)
@@ -350,16 +342,6 @@ nmap ga <Plug>(EasyAlign)
 
 " simnalamburt/vim-mundo
 nnoremap <leader>u :MundoToggle<CR>
-
-" " vim-indent-guides
-" let g:indent_guides_auto_colors = 0
-" augroup dummy
-"   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=26
-"   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=6
-" augroup END
-
-" goyo
-nnoremap üg :Goyo<CR>
 
 " vimtex
 let maplocalleader = ","
@@ -440,7 +422,6 @@ nnoremap <Leader>ggt :GitGutterToggle<CR>
 set updatetime=4000 "[ms] default is 4000 ms i.e 4s
 
 " vim-airline
-" let g:airline#extensions#syntastic#enabled = 0
 let g:airline_extensions = ['tabline']
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#wordcount#enabled = 0 " Makes sometimes problems with Goyo
@@ -448,8 +429,7 @@ let g:airline#extensions#wordcount#enabled = 0 " Makes sometimes problems with G
 " Comment out next 2 lines to show current git branch. makes vim slow if
 " working with mount
 let g:airline_section_b = '%-0.25{getcwd()}'
-" let g:airline_section_c = '%t'
-" let g:airline_section_c = '%{coc#status()}'
+let g:airline_section_c = '%t'
 
 let g:airline_section_error=''
 let g:airline_section_warning=''
@@ -505,54 +485,27 @@ let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 let g:netrw_liststyle= 2 " Change the default style of netrw
 let g:netrw_banner = 0
 
-" colo slate
 syntax enable
 set background=dark
-" colorscheme solarized
-"TODO make ifelse
 colorscheme NeoSolarized
 
 " folding stuff
-"Very nice for python
 set foldmethod=indent
 set foldlevel=999
 nnoremap <silent> <leader>z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr<CR>zM
 
 " set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
-" set undodir=~/.vim/undo//
 
-"allows to jump to nearest fold that is closed
-nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
-nnoremap <silent> <leader>zk :call NextClosedFold('k')<cr>
-function! NextClosedFold(dir)
-    let cmd = 'norm!z' . a:dir
-    let view = winsaveview()
-    let [l0, l, open] = [0, view.lnum, 1]
-    while l != l0 && open
-        exe cmd
-        let [l0, l] = [l, line('.')]
-        let open = foldclosed(l) < 0
-    endwhile
-    if open
-        call winrestview(view)
-    endif
-endfunction
-
-noremap <F2>  <Esc>:w<Enter>:!root -l %<Enter>
-noremap <F3> <Esc>:w<Enter>:!python %<Enter>
-" noremap <F3> <Esc>:w !python<CR>
 vnoremap <F3> :w !python<CR>
 noremap <F4> <Esc>:w<Enter>:!./%<Enter>
 noremap <F5> <Esc>:w<Enter>:!./%
 noremap <F7> <Esc>:w<Enter>:!pdflatex %<Enter>
 
-
 inoremap <c-l>  {<CR><tab><CR>}<up><right>
 
 " maybe use this instead of H,L
 set wcm=<C-z>
-nnoremap <leader><Tab> :buffer<Space><C-z><C-z>
 nnoremap <leader><Tab> :buffer<Space><C-z>
 
 set wildmenu "allows easier use of tab completions, e.g. :e <tab>, :buffer <tab>
@@ -566,7 +519,9 @@ set smartcase
 set tabstop=4
 set expandtab
 set nu
-set rnu
+if has('nvim')
+    set rnu
+endif
 set laststatus=2
 set mouse=a
 if !has('nvim')
@@ -606,6 +561,7 @@ set formatoptions+=j
 :command Q q
 :command Wa wa
 
+:command CDC cd %:p:h
 :command Exe !chmod +x %
 :command Pandoc !pandoc -f markdown -t latex -o %:r.pdf %
 :command Pdf silent !xdg-open %:r.pdf &
@@ -613,12 +569,6 @@ syntax on
 
 "TODO insert mappings:  c-y
 inoremap <C-e> <C-x><C-p>
-
-""TODO for some reason this has a slight delay now. it is instant if i do <leader>dk. And make the number dependen on the number of occurrences. That would be awesome
-"augroup dummy
-"  autocmd FileType c,cpp      nnoremap <buffer> <leader>d ostd::cout<<" #### *!*Debug*!* 1 #### "<<std::endl;<Esc>0
-"  autocmd FileType python     nnoremap <buffer> <leader>d oprint " #### *!*Debug*!* 1 #### "<Esc>0
-"augroup END
 
 nnoremap <leader>r /\*\!\*Debug\*\!\*<CR>
 
@@ -645,29 +595,13 @@ nnoremap <leader>y :let @+=@"<Cr>
 nnoremap <leader>p "+p
 nnoremap <leader>n gny:let @+=@"<Cr>
 
-" set clipboard=unnamedplus
-
-" disables vim from clearing clipboard after leaving/suspending vi session
-" if executable("xclip")
 function! PreserveClipboard()
     call system("xsel -ib", getreg('+')) "<- if using xsel
-    " call system('echo ' . shellescape(getreg('+')) .
-    "         \ ' | xclip -selection clipboard')
-    " call system("xclip -selection clipboard -i", getreg('+'))
 endfunction
-" function! PreserveClipboadAndSuspend()
-"   " call PreserveClipboard()
-"   call system("xsel -ib", getreg('+')) "<- if using xsel
-"   suspend
-" endfunction
 augroup dummy
     autocmd VimLeave * call PreserveClipboard()
 augroup END
-" nnoremap <silent> <c-z> :call PreserveClipboadAndSuspend()<cr>
-" noremap <silent> <c-z> :call system("xsel -ib", getreg('+'))<cr>:suspend<cr>
 noremap <silent> <c-z> <Esc>:call system("xsel -ib", getreg('+'))<cr>:suspend<cr>
-" vnoremap <silent> <c-z> :<c-u>call PreserveClipboadAndSuspend()<cr>
-" endif
 
 " The following doesn't overwrite the register if you paste in visual mode
 vnoremap p "_dP
@@ -682,8 +616,6 @@ nnoremap <leader>lp :lprevious<cr>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>s :w<CR>
-"TODO not needed
-" nnoremap <leader><space> <Esc>/<++><Enter>c4l
 
 "tab movement
 nnoremap <leader>1 1gt
@@ -697,24 +629,15 @@ inoremap kj <Esc>
 cmap kj <Esc>
 
 " German keyboard mappings
-" nnoremap ä ?
-" nnoremap ö /
-nmap ä ?
-nmap ö /
+" nmap <s-ä> ?
+nmap ä /
 nnoremap üh :nohlsearch<CR>
+nnoremap üq :qa<CR>
+nnoremap ün :set nu!<CR>
 
 "experimental
-nnoremap ün :set nu!<CR>
-nnoremap üq :qa<CR>
 nnoremap üt :tabedit
 " German keyboard mappings
-
-
-""easier window movement
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
-"nnoremap <C-H> <C-W><C-H>
 
 " Automatic paste mode for terminal
 let &t_SI .= "\<Esc>[?2004h"
@@ -745,10 +668,6 @@ function! XTermPasteBegin()
 endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-
-" If pasting in visual mode the default register is not overwritter
-" xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
-
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
             \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
@@ -764,7 +683,7 @@ vnoremap <silent> # :<C-U>
 nnoremap üc :set cursorline!<cr>
 
 if has('nvim')
-    "" makes stuff a bit laggy atm
+    " can makes stuff a bit laggy atm
     set cursorline
     ""make cursorline only in active window visible
     augroup dummy
@@ -789,41 +708,21 @@ function! GoogleSearchVisual()
 endfunction
 vnoremap <leader>j "gy<Esc>:call GoogleSearchVisual()<CR>
 
-" " to make tex files smoother, maybe also turn off syntax. syntax off
-" augroup dummy
-"     au FileType tex :NoMatchParen
-"     au FileType tex setlocal nocursorline
-" augroup END
-
 nnoremap <leader>vg :noautocmd vimgrep //gj `git ls-files`<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 nnoremap <leader>lv :vimgrep /<C-r>//g %<CR> \| !:copen <Enter>
 
 set complete=.,w,b,u
-set completeopt=menuone,noselect,longest
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+set completeopt=menuone,noselect,longest,noinsert
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-
-function! FzyCommand(choice_command, vim_command)
-    try
-        echom "yo1"
-        let output = system(a:choice_command . " | fzy ")
-    catch /Vim:Interrupt/
-        " Swallow errors from ^C, allow redraw! below
-    endtry
-    redraw!
-    if v:shell_error == 0 && !empty(output)
-        echom "yo2"
-        exec a:vim_command . ' ' . output
-    endif
-endfunction
-
+" inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
 " Make Y behave like other capitals
 nnoremap Y y$
 
 " qq to record, Q to replay
 nnoremap Q @q
+vnoremap Q :normal @q<CR>
 
 function! s:todo() abort
     let entries = []
@@ -837,7 +736,6 @@ function! s:todo() abort
         endfor
         break
     endfor
-
     if !empty(entries)
         call setqflist(entries)
         copen
@@ -847,11 +745,7 @@ command! Todo call s:todo()
 
 
 "TODO <c-e>,<c-space>,<c-l>,<BS>,<s-u>,-,_,<c-q> normal mode mapping
-"maybe also: <C-t>
-
-nnoremap M m
-
-map 0 ^
+"maybe also: <C-t>, <s-m>
 
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
@@ -913,24 +807,12 @@ function! TermToggle(height)
     endif
 endfunction
 
-" if has('nvim')
-" Terminal mode:
 tnoremap <C-e> <c-\><c-n><c-w>w
 tnoremap <C-q> <c-\><c-n><c-w>W
 tnoremap <C-v> <C-\><C-n>
 tnoremap <Esc> <C-\><C-n>
-" Toggle terminal on/off (neovim)
-nnoremap <leader><leader> :call TermToggle(6)<CR>
-" tnoremap <Esc> <C-\><C-n>:call TermToggle(6)<CR>
-
-" set termguicolors 
-" hi Cursor guifg=orange guibg=blue ctermfg=white ctermbg=red
-" hi Cursor2 guifg=red guibg=red
-" set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor50
-" endif
-
-set shortmess+=c
-
+nnoremap <C-t> :call TermToggle(6)<CR>
+tnoremap <Esc> <C-\><C-n>:call TermToggle(6)<CR>
 
 if has('nvim')
     function! TerminalOptions()
@@ -948,39 +830,31 @@ else
     au TerminalOpen * call TerminalOptions()
 endif
 
-"if has('nvim')
-"    "makes problems with fzf but i dont know why. the 'normal! i' is the problem and can be solved with startinsert!
-"    augroup dummy
-"        autocmd BufEnter * if &buftype == 'terminal' | exec "normal! i" | endif
-"    augroup END
-"endif
-
 " make c-q and c-s work
 silent !stty -ixon > /dev/null 2>/dev/null
 
-
-
-""works only with the easyclip plugin
-"function! s:yank_list()
-"  redir => ys
-"  silent Yanks
-"  redir END
-"  return split(ys, '\n')[1:]
-"endfunction
-"function! s:yank_handler(reg)
-"  if empty(a:reg)
-"    echo "aborted register paste"
-"  else
-"    let token = split(a:reg, ' ')
-"    execute 'Paste' . token[0]
-"  endif
-"endfunction
-"command! FZFYank call fzf#run({
-            "\ 'source': <sid>yank_list(),
-            "\ 'sink': function('<sid>yank_handler'),
-            "\ 'options': '-m',
-            "\ 'down': 12
-            "\ })
+"works only with the easyclip plugin
+function! s:yank_list()
+  redir => ys
+  silent Yanks
+  redir END
+  return split(ys, '\n')[1:]
+endfunction
+function! s:yank_handler(reg)
+  if empty(a:reg)
+    echo "aborted register paste"
+  else
+    let token = split(a:reg, ' ')
+    execute 'Paste' . token[0]
+  endif
+endfunction
+command! FZFYank call fzf#run({
+            \ 'source': <sid>yank_list(),
+            \ 'sink': function('<sid>yank_handler'),
+            \ 'options': '-m',
+            \ 'down': 12
+            \ })
+nnoremap <leader><space> :FZFYank<CR>
 
 nnoremap <leader>v :call TabToggle()<cr>
 function! TabToggle()
@@ -997,3 +871,16 @@ function! TabToggle()
         endif
     endif
 endfunction
+
+if !has('nvim')
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+
+    inoremap <silent><expr> <TAB>
+                \ pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ asyncomplete#force_refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+endif
