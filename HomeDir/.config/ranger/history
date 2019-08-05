@@ -1,9 +1,3 @@
-rename ttbar_dileptonic.png
-rename CR_def.png
-rename pre_post_fit_regions.png
-rename 
-rename mj1l_withCut.png
-mkdir interestingTalks
 rename sideBand_c_sf_b_70.png
 rename vfabiani
 rename sideBand_fitProblem.png
@@ -18,12 +12,10 @@ search desy
 find scr
 mkdir sigPlots
 cd sigPlots/
-filter
 
 filter p
 rename monoH_feyDig.png
 rename merged_resolved.png
-filter png
 filter True_True
 rename merged_MH.png
 rename resolved_MH.png
@@ -43,8 +35,16 @@ filter 2HDMa,zp2hdm.*png
 filter all
 filter A
 filter merged,r
-delete
 filter merged,reso
 filter merged
 search filter 2H
 filter 2HDMa,
+find utt
+rename outTableb.pdf
+rename monoH_signalStudy_JanikvA.pdf
+filter 0_9
+filter png
+filter
+filter LLR.*AVERAGED_2HDM.*png
+delete
+rename monoH_signalStudy_LLR_JanikvA.pdf

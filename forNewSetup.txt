@@ -10,3 +10,4 @@ skype
 spotify
 zathura
 vimiv
+luakit

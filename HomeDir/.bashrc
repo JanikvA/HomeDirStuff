@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+#shr ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 # stty -ixon
@@ -133,8 +133,13 @@ alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd
 alias acmSetup="source ~/acmDev/acm/acmSetup.sh"
 alias getTags="ctags -R"
 alias mail="v ~/scratch/mail.txt"
-alias gpom="git push origin master"
 alias TODO='git ls-files | xargs cat | grep TODO'
+
+alias gpom="git push origin master"
+alias gpb='git push origin `git rev-parse --abbrev-ref HEAD`'
+alias gca='git commit -am'
+alias gst='git status'
+alias gco='git checkout'
 
 function cl {
     builtin cd "$@" && ls -F
@@ -190,3 +195,4 @@ echo ".bashrc has been executed"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_COMPLETION_TRIGGER=','

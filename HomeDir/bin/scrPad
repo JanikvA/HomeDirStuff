@@ -9,8 +9,8 @@ tmux new-session -d 'bash'
 tmux new-window 'bash'
 tmux send-keys "r" C-m
 tmux new-window 'bash'
-tmux send-keys "nvim -n ~/scratch/scrPadTMP.txt ~/Dropbox/scr/TODO.md ~/Dropbox/scr/NOTES.md ~/.bashrc ~/.vimrc ~/.config/i3/config" C-m
-tmux new-window 'cmus'
-tmux new-window 'calcurse'
+tmux send-keys "vim -n ~/scratch/scrPadTMP.txt ~/Dropbox/scr/TODO.txt ~/Dropbox/scr/NOTES.txt ~/.bashrc ~/.vimrc ~/.config/i3/config" C-m
+# tmux new-window 'cmus'
+# tmux new-window 'calcurse'
 tmux select-window -t :=1
 tmux -2 attach-session -d

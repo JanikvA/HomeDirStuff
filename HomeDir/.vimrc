@@ -29,15 +29,21 @@ if has('nvim')
 
 else
 
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+    Plug 'nixprime/cpsm', { 'do': './install.sh --PY3=ON' }
+
     " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-    " Plug 'https://gitlab.com/yramagicman/auto-omnicomplete.git'
-    Plug 'prabirshrestha/asyncomplete.vim'
-    Plug 'prabirshrestha/async.vim'
-    " Plug 'prabirshrestha/vim-lsp'
-    " Plug 'prabirshrestha/asyncomplete-lsp.vim'
-    Plug 'prabirshrestha/asyncomplete-buffer.vim'
-    " Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+    " " Plug 'https://gitlab.com/yramagicman/auto-omnicomplete.git'
+    " Plug 'prabirshrestha/asyncomplete.vim'
+    " Plug 'prabirshrestha/async.vim'
+    " " Plug 'prabirshrestha/vim-lsp'
+    " " Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    " Plug 'prabirshrestha/asyncomplete-buffer.vim'
+    " " Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 
 endif
 
@@ -85,6 +91,9 @@ if has('nvim')
 "     Plug 'cyansprite/Extract' "could remove this now. it remaps s?
 endif
 
+    " for bookmarks with netrw?
+    " Plug 'skywind3000/quickmenu.vim'
+
 " Colors
 Plug 'iCyMind/NeoSolarized'
 if has('nvim')
@@ -94,6 +103,19 @@ endif
 
 call plug#end()
 filetype plugin indent on
+
+function! FzyCommand(choice_command, vim_command)
+  try
+    let output = system(a:choice_command . " | fzy ")
+  catch /Vim:Interrupt/
+    " Swallow errors from ^C, allow redraw! below
+  endtry
+  redraw!
+  if v:shell_error == 0 && !empty(output)
+    exec a:vim_command . ' ' . output
+  endif
+endfunction
+nnoremap <leader><leader> :call FzyCommand("ag . --silent -l -g ''", ":e")<cr>
 
 " " 'w0rp/ale'
 " " Ale
@@ -105,8 +127,8 @@ filetype plugin indent on
 " nnoremap <leader>ale :ALEToggle<cr>
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " " let g:ale_linters = {'python': ['flake8', 'pylint'], 'cpp':['cppcheck', 'clang-check-8']}
-" let g:ale_linters = {'python':['pyls'], 'cpp':['cppcheck', 'clang-check-8']}
-" let g:ale_fixers = {'python': ['autopep8'], 'cpp':['clang-format']}
+" let g:ale_linters = {'python':['flake8'], 'cpp':['cppcheck', 'clang-check-8']}
+" let g:ale_fixers = {'python': ['black', 'isort', 'mypy'], 'cpp':['clang-format']}
 " " let g:ale_python_autopep8_options='--aggressive --aggressive --max-line-length 79'
 " " let g:ale_python_flake8_options='--ignore E501'
 " let g:ale_c_parse_compile_commands=1 "will read compile_commands.json
@@ -119,7 +141,7 @@ filetype plugin indent on
 " let g:ale_lint_on_text_changed = 'never'
 " let g:ale_lint_on_insert_leave = 0
 " let g:ale_lint_on_save = 1
-" " let g:ale_disable_lsp=1
+" let g:ale_disable_lsp=1
 " " let g:ale_open_list = 1
 
 " 'https://gitlab.com/yramagicman/auto-omnicomplete.git'
@@ -127,38 +149,35 @@ filetype plugin indent on
 
 " 'prabirshrestha/asyncomplete.vim'
 
-if !has('nvim')
-let g:asyncomplete_auto_popup = 1
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ asyncomplete#force_refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" if has('python3')
-"     let g:UltiSnipsExpandTrigger="<c-a>"
-"     call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
-"         \ 'name': 'ultisnips',
-"         \ 'whitelist': ['*'],
-"         \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
-"         \ }))
+" if !has('nvim')
+" let g:asyncomplete_auto_popup = 1
+" function! s:check_back_space() abort
+"     let col = col('.') - 1
+"     return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction
+" inoremap <silent><expr> <TAB>
+"   \ pumvisible() ? "\<C-n>" :
+"   \ <SID>check_back_space() ? "\<TAB>" :
+"   \ asyncomplete#force_refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" " if has('python3')
+" "     let g:UltiSnipsExpandTrigger="<c-a>"
+" "     call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+" "         \ 'name': 'ultisnips',
+" "         \ 'whitelist': ['*'],
+" "         \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+" "         \ }))
+" " endif
+" call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+"     \ 'name': 'buffer',
+"     \ 'whitelist': ['*'],
+"     \ 'blacklist': [],
+"     \ 'completor': function('asyncomplete#sources#buffer#completor'),
+"     \ 'config': {
+"     \    'max_buffer_size': 5000000,
+"     \  },
+"     \ }))
 " endif
-
-call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-    \ 'name': 'buffer',
-    \ 'whitelist': ['*'],
-    \ 'blacklist': [],
-    \ 'completor': function('asyncomplete#sources#buffer#completor'),
-    \ 'config': {
-    \    'max_buffer_size': 5000000,
-    \  },
-    \ }))
-endif
 
 "svermeulen/vim-easyclip
 
@@ -208,7 +227,7 @@ let g:doge_mapping_comment_jump_backward="<C-b>"
 
 " Shougo/deoplete.nvim
 
-if has('nvim')
+" if has('nvim')
     let g:deoplete#enable_at_startup = 1
 	call deoplete#custom#option('smart_case', v:true)
 
@@ -226,11 +245,16 @@ if has('nvim')
     "             \})
 
     call deoplete#custom#var('tabnine', {
-                \ 'line_limit': 200,
+                \ 'line_limit': 100,
                 \ })
                 " \ 'max_num_results': 10,
 
 
+if has('nvim')
+    call deoplete#custom#var('tabnine', {
+                \ 'line_limit': 500,
+                \ })
+                " \ 'max_num_results': 10,
 call deoplete#custom#option('sources', {
 \ '_': ['tabnine', 'lsp'],
 \})
@@ -377,17 +401,20 @@ nnoremap <leader>ag :Ag<CR>
 nnoremap <leader>rg :Rg!<CR>
 nnoremap <leader>h :Helptags<CR>
 nnoremap <leader>t :Tags<CR>
+nnoremap <leader>a :BTags<CR>
 nnoremap <leader>k :Marks<CR>
 
 " Insert mode completion
-" imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-t> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 
-let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-j:down --bind ctrl-k:up'
+
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all --bind ctrl-d:deselect-all --bind ctrl-j:down --bind ctrl-k:up'
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
 
 command! -bang -nargs=* Rg
             \ call fzf#vim#grep(
@@ -809,7 +836,7 @@ endfunction
 
 tnoremap <C-e> <c-\><c-n><c-w>w
 tnoremap <C-q> <c-\><c-n><c-w>W
-tnoremap <C-v> <C-\><C-n>
+tnoremap <C-g> <C-\><C-n>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-t> :call TermToggle(6)<CR>
 tnoremap <Esc> <C-\><C-n>:call TermToggle(6)<CR>
@@ -884,3 +911,5 @@ if !has('nvim')
                 \ asyncomplete#force_refresh()
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 endif
+
+" set termguicolors
